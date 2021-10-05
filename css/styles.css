@@ -1,9 +1,16 @@
 body {
-    font-family: "Commissioner", sans-serif;
-    color: #ee560f;
+  font-family: "Commissioner", sans-serif;
+  font-size: 14px;
+  color: #ee560f;
 }
 
 h1 {
-    font-family: "Tourney", sans-serif;
-    color: #1D2540;
+  font-family: "Tourney", sans-serif;
+  font-weight: "italic";
+  font-size: 37px;
+  color: #1d2540;
+}
+
+img {
+  width: 190px;
 }
