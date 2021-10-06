@@ -13,10 +13,16 @@ h1 {
 
 img {
   width: 190px;
+  text-align: center;
 }
 
 .section-page-footer {
-  align: bottom;
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 .universeofgames {
