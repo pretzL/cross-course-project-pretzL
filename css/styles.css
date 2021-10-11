@@ -3,7 +3,7 @@ html {
 }
 
 nav {
-  position: fixed;
+  position: static;
 }
 
 body {
