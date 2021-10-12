@@ -39,3 +39,22 @@ h1 {
 .universeofgames {
   color: #1d2540;
 }
+
+nav li {
+  position: relative;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: #1d2540;
+  padding: 10px;
+  color: #fff;
+}
