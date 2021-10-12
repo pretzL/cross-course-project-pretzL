@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+header {
+  background: #1d2540;
+}
+
 nav {
   position: static;
 }
@@ -57,4 +61,8 @@ nav a:hover {
   background-color: #1d2540;
   padding: 10px;
   color: #fff;
+}
+
+img .background {
+  width: 100%;
 }
