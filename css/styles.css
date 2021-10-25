@@ -13,20 +13,50 @@ html {
   padding: CHANGE AS NEEDED;
 } */
 
+/* CSS Grids */
+
 header {
+  grid-area: myheader;
+  background: #464343;
+}
+nav {
+  grid-area: mynav;
+}
+main {
+  grid-area: mymain;
+}
+footer {
+  grid-area: myfooter;
   background: #1d2540;
 }
 
-nav {
-  position: static;
-}
+/* Main elements */
 
 body {
   font-family: "Commissioner", sans-serif;
   font-size: 14px;
-  color: #ee560f;
-  background-color: grey;
   margin: 0;
+  display: grid;
+  grid-template-areas: "myheader myheader myheader" "mynav mynav mynav" "mymain mymain mymain" "myfooter myfooter myfooter";
+}
+
+header {
+  margin: 0;
+  padding: 1rem;
+}
+
+main {
+  color: #fff;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: #fff;
 }
 
 h1 {
@@ -36,30 +66,36 @@ h1 {
   color: #1d2540;
 }
 
-/* This was gathered from W3 schools, find a better reference or rewrite later */
-.image-centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 190px;
-}
-
-.section-page-footer {
-  position: fixed;
-  bottom: 0;
-  height: auto;
-  margin-top: 50px;
-  width: 100%;
-  text-align: center;
-}
-
-.universeofgames {
+h2 {
+  font-family: "Tourney", sans-serif;
+  font-weight: "italic";
+  font-size: 24px;
   color: #1d2540;
 }
 
-nav li {
-  position: relative;
-  display: inline-block;
+.maingreybackground {
+  background: #464343;
+}
+
+/* Navigation */
+
+.navigation-items {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu:checked ~ nav {
+  display: inline;
+}
+
+.navigation {
+  display: flex;
+  background: #c5d1d9;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -70,14 +106,84 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav ul {
+  padding: 0px;
+}
+
+nav li {
+  display: block;
+}
+
 .active {
-  background-color: #1d2540;
-  padding: 10px;
+  font-weight: bold;
+}
+
+/* Icons */
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+/* Images */
+
+.image-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 190px;
+}
+
+.background-images-blackreach {
+  background-image: url("../images/blackreachbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-images-skyrim {
+  background-image: url("../images/skyrimwallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-images-raft {
+  background-image: url("../images/raftwallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-flex {
+  display: flex;
+}
+
+.image-triplegrid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  height: 140px;
+}
+
+.universeofgames {
   color: #fff;
 }
 
 img .background {
   width: 100%;
+}
+
+/* Searchbar */
+
+.searchbar {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 918px;
+  height: 32px;
+  border-radius: 5px;
+  justify-self: center;
 }
 
 /* .button {

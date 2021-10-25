@@ -10,31 +10,66 @@
     />
     <title>GameHub | Home</title>
     <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <section class="logoheader">
+        <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
+      </section>
+      <section class="navigation">
+        <label for="hamburger-menu"><span class="material-icons md-48">list</span></label>
+        <input type="checkbox" id="hamburger-menu" class="hamburger-menu" />
+        <nav class="navigation-items">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="searchbar">
+          <button>
+            <span class="material-icons md-18">search</span>
+          </button>
+          <form action="#">
+            <input type="text" placeholder="Search" name="search" />
+          </form>
+        </div>
+      </section>
     </header>
-    <main>
-      <section>
-        <h1>Hello world!</h1>
-        <a href="https://github.com/Noroff-FEU-Assignments/cross-course-project-pretzL">My GitHub Repo</a>
-        <p class="header1">Welcome to my first website.</p>
-        <h2>Featured Games</h2>
-        <h2>Coming Soon</h2>
-        <p>GameHub allows you to pre-order games, get your latest games here first &copy;</p>
+    <main class="background-images-blackreach">
+      <section class="maingreybackground">
+        <section>
+          <h1>GameHub</h1>
+        </section>
+        <section>
+          <h2>Featured Games</h2>
+          <div class="container-flex">
+            <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+            <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
+            <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+          </div>
+        </section>
+        <section>
+          <h2>Coming Soon</h2>
+          <p>GameHub allows you to pre-order games, get your latest games here first &copy;</p>
+          <div class="container-flex">
+            <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+            <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
+            <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+          </div>
+        </section>
       </section>
     </main>
     <!--This is a comment so I can remember how to properly make comments in HTML later.-->
     <footer class="section-page-footer">
       <h3 class="universeofgames">The Universe of Games</h3>
+      <form action="submit.php" method="POST">
+        <input type="email" placeholder="Your Email" name="youremail" required />
+        <button type="submit" class="emailsubmitbutton button">
+          <span class="material-icons md-36">arrow_forward</span>
+        </button>
+      </form>
       <p>
         At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
         Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're looking
