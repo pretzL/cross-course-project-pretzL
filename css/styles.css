@@ -178,12 +178,19 @@ img .background {
 
 .searchbar {
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 918px;
-  height: 32px;
+  margin: auto;
+  margin: auto;
+  position: relative;
+}
+
+.pos-search {
+  position: absolute;
+}
+
+.search-form {
   border-radius: 5px;
-  justify-self: center;
+  height: 22px;
+  text-align: center;
 }
 
 /* .button {
