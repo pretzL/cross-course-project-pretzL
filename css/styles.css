@@ -65,9 +65,11 @@ h1 {
   font-size: 37px;
   color: #1d2540;
   background-color: #c5d1d9;
-  width: 918px;
+  width: auto;
   text-align: center;
   border-radius: 10px;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 h2 {
@@ -81,8 +83,19 @@ h2 {
   background: #464343;
   margin-right: 300px;
   margin-left: 300px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.all-games-anchor {
+  float: right;
+  margin-right: 4rem;
+}
 /* Navigation */
 
 .navigation-items {
@@ -95,6 +108,10 @@ h2 {
 
 .hamburger-menu:checked ~ nav {
   display: inline;
+  height: 150px;
+  width: 50px;
+  background-color: #c5d1d9;
+  float: left;
 }
 
 .navigation {
@@ -103,13 +120,19 @@ h2 {
   margin: 0;
   padding: 0;
   margin-top: 10px;
+  height: 50px;
+}
+
+.navigation-box {
+  position: relative;
 }
 
 nav a {
   text-decoration: none;
+  text: #1d2540;
 }
 
-nav a:hover {
+a:hover {
   text-decoration: underline;
 }
 
@@ -126,6 +149,10 @@ nav li {
 }
 
 /* Icons */
+
+.material-icons {
+  position: relative;
+}
 
 .material-icons.md-48 {
   font-size: 48px;
