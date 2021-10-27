@@ -198,6 +198,12 @@ nav li {
   text-align: center;
 }
 
+.footer-container-flex {
+  display: flex;
+  padding: 30px;
+  text-align: left;
+}
+
 .flex {
   flex: 1;
 }
@@ -257,4 +263,24 @@ img .background {
 
 .all-games-anchor:hover {
   text-decoration: underline;
+}
+
+.footer-anchors {
+  display: block;
+  margin-right: 4rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.footer-anchors:hover {
+  text-decoration: underline;
+}
+
+.footer-anchor-div {
+  margin-top: 50px;
+}
+
+.footer-copyright {
+  text-align: right;
+  margin-top: 15rem;
 }

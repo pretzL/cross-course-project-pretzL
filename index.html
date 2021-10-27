@@ -93,19 +93,36 @@
     </main>
     <!--This is a comment so I can remember how to properly make comments in HTML later.-->
     <footer class="section-page-footer">
-      <h3 class="universeofgames">The Universe of Games</h3>
-      <form action="submit.php" method="POST">
-        <input type="email" placeholder="Your Email" name="youremail" required />
-        <button type="submit" class="emailsubmitbutton button">
-          <span class="material-icons md-36">arrow_forward</span>
-        </button>
-      </form>
-      <p>
-        At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
-        Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're looking
-        at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
-        our marketplace so others can enjoy that game as much as you have -while making some of your money back!
-      </p>
+      <section class="footer-container-flex">
+        <div class="flex">
+          <h3>Stay Connected</h3>
+          <p>Sign up for our newsletter!</p>
+          <form action="submit.php" method="POST">
+            <input type="email" placeholder="Your Email" name="youremail" required />
+            <button type="submit" class="emailsubmitbutton button">
+              <span class="material-icons md-36">arrow_forward</span>
+            </button>
+          </form>
+        </div>
+        <div class="flex footer-anchor-div">
+          <a href="list-of-games.html" class="footer-anchors">Games</a>
+          <a href="contact.html" class="footer-anchors">Contact Us</a>
+          <a href="list-of-games.html" class="footer-anchors">Marketplace</a>
+        </div>
+        <div class="flex">
+          <h3 class="universeofgames">The Universe of Games</h3>
+          <p>
+            At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with.
+            Our Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're
+            looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell
+            the game on our marketplace so others can enjoy that game as much as you have -while making some of your
+            money back!
+          </p>
+        </div>
+        <div class="flex">
+          <p class="footer-copyright">&copy; 2021 GameHub</p>
+        </div>
+      </section>
     </footer>
   </body>
 </html>
