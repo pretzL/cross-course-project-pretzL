@@ -243,8 +243,20 @@ img .background {
   text-align: center;
 }
 
+.email-form {
+  border-radius: 5px 0 0 5px;
+  height: 2rem;
+  width: 10rem;
+  padding-top: 0;
+}
+
 .button {
   border-radius: 5px;
+  text-align: center;
+}
+
+.email-submit-button {
+  border-radius: 0px 5px 5px 0px;
   text-align: center;
 }
 

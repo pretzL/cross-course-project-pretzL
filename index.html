@@ -97,12 +97,14 @@
         <div class="flex">
           <h3>Stay Connected</h3>
           <p>Sign up for our newsletter!</p>
-          <form action="submit.php" method="POST">
-            <input type="email" placeholder="Your Email" name="youremail" required />
-            <button type="submit" class="emailsubmitbutton button">
-              <span class="material-icons md-36">arrow_forward</span>
-            </button>
-          </form>
+          <div>
+            <form action="submit.php" method="POST">
+              <input type="email" placeholder="Your Email" name="youremail" class="email-form" required />
+              <button type="submit" class="email-submit-button">
+                <span class="material-icons md-36">arrow_forward</span>
+              </button>
+            </form>
+          </div>
         </div>
         <div class="flex footer-anchor-div">
           <a href="list-of-games.html" class="footer-anchors">Games</a>
