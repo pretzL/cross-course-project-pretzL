@@ -103,14 +103,12 @@
         <div class="flex">
           <h3>Stay Connected</h3>
           <p>Sign up for our newsletter!</p>
-          <div>
-            <form action="submit.php" method="POST" class="flex">
-              <input type="email" placeholder="Your Email" name="youremail" class="email-form" required />
-              <button type="submit" class="email-submit-button">
-                <span class="material-icons md-18">arrow_forward</span>
-              </button>
-            </form>
-          </div>
+          <section class="email-parent">
+            <div class="email-form">
+              <input type="text" placeholder="Your Email" />
+              <button>→</button>
+            </div>
+          </section>
           <div class="footer-icon-container">
             <div class="footer-icon-specified">
               <i class="fab fa-facebook"></i>

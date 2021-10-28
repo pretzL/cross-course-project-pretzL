@@ -249,6 +249,7 @@ nav li {
 }
 
 .flex {
+  display: flex;
   flex: 1;
 }
 
@@ -293,19 +294,31 @@ img .background {
   text-align: center;
 }
 
-.email-form {
-  border-radius: 5px 0 0 5px;
-  padding-top: 0;
-}
-
 .button {
   border-radius: 5px;
   text-align: center;
 }
 
-.email-submit-button {
-  border-radius: 0px 5px 5px 0px;
-  text-align: center;
+.email-parent {
+  background: #1d2540;
+  display: flex;
+  justify-content: center;
+}
+
+.email-form {
+  display: flex;
+}
+
+.email-form input {
+  border: none;
+  border-radius: 4px 0 0 4px;
+  padding: 0.75rem;
+}
+
+.email-form button {
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 0.75rem;
 }
 
 /* Text */
