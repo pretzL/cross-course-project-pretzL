@@ -201,19 +201,19 @@ nav li {
 }
 
 .background-images-blackreach {
-  background-image: url("../images/blackreachbackground.jpg");
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachbackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .background-images-skyrim {
-  background-image: url("../images/skyrimwallpaper.jpg");
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/skyrimwallpaper.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .background-images-raft {
-  background-image: url("../images/raftwallpaper.jpg");
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/raftwallpaper.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
