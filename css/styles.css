@@ -66,11 +66,13 @@ main {
 }
 
 footer {
-  position: relative;
+  position: aboslute;
   bottom: 0;
-  height: auto;
+  left: 0;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
   color: #fff;
 }
 
@@ -105,6 +107,10 @@ h2 {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+.universeofgames-container {
+  max-width: 25%;
 }
 
 /* Navigation */
@@ -199,16 +205,6 @@ nav li {
   margin: 0 1rem 0 0;
 }
 
-.footer-icon-container {
-  display: flex;
-  margin-top: 2rem;
-}
-
-.footer-icon-specified {
-  font-size: 3rem;
-  padding: 0.5rem;
-}
-
 /* Images */
 
 .image-centered {
@@ -242,15 +238,12 @@ nav li {
   text-align: center;
 }
 
-.footer-container-flex {
-  display: flex;
-  padding: 30px;
-  text-align: left;
-}
-
 .flex {
   display: flex;
-  flex: 1;
+}
+
+.flex > * {
+  border: none;
 }
 
 .image-triplegrid {
@@ -299,28 +292,6 @@ img .background {
   text-align: center;
 }
 
-.email-parent {
-  background: #1d2540;
-  display: flex;
-  justify-content: center;
-}
-
-.email-form {
-  display: flex;
-}
-
-.email-form input {
-  border: none;
-  border-radius: 4px 0 0 4px;
-  padding: 0.75rem;
-}
-
-.email-form button {
-  border: none;
-  border-radius: 0 4px 4px 0;
-  padding: 0 0.75rem;
-}
-
 /* Text */
 
 .pre-order-text {
@@ -350,10 +321,28 @@ img .background {
 }
 
 .footer-anchor-div {
-  margin-top: 50px;
+  margin-top: 3rem;
 }
 
 .footer-copyright {
   text-align: right;
   margin-top: 15rem;
+}
+
+.footer-first {
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group > * {
+  border: none;
+}
+
+.footer-icons {
+  margin-top: 2rem;
+  font-size: 3rem;
+  display: flex;
+  gap: 0.5rem;
 }
