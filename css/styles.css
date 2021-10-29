@@ -105,13 +105,29 @@ h2 {
   padding-bottom: 6rem;
 }
 
-a {
+main a,
+footer a {
   text-decoration: none;
   color: #fff;
 }
 
 .header-first {
   width: 100%;
+}
+
+.header-third {
+  flex: 1;
+  justify-content: center;
+}
+
+.header-fourth {
+  font-size: 2rem;
+  color: #1d2540;
+}
+
+.right-nav-icon {
+  padding-right: 1rem;
+  padding-top: 0.8rem;
 }
 
 .universeofgames-container {
@@ -122,6 +138,8 @@ a {
 
 nav {
   display: none;
+  position: absolute;
+  top: 195px;
 }
 
 .hamburger-menu {
@@ -251,9 +269,15 @@ img .background {
   width: 100%;
 }
 
-/* Searchbar */
-
 /* Forms */
+
+.header-form-group {
+  display: flex;
+}
+
+.header-form-group > * {
+  border: none;
+}
 
 .button {
   border-radius: 5px;
