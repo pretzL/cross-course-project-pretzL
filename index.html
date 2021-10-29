@@ -20,37 +20,35 @@
   </head>
   <body class="body-wrapper">
     <header>
-      <section class="logoheader">
+      <div class="header-first">
         <a href="index.html">
           <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
         </a>
-      </section>
-      <section class="navigation">
-        <div class="navigation-box">
-          <label for="hamburger-menu" class="hamburger-label"><span class="material-icons md-48">list</span></label>
-          <input type="checkbox" id="hamburger-menu" class="hamburger-menu" />
-          <nav class="navigation-items">
-            <ul>
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="popular.html">Popular</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="searchbar">
-          <button class="pos-search">
-            <span class="material-icons md-18">search</span>
-          </button>
-          <form action="#">
-            <input type="text" placeholder="Search" name="search" class="search-form" />
-          </form>
-        </div>
-        <div class="right-side-icons-container">
-          <a href="login.html"><span class="material-icons md-48 right-side-icons"> account_circle </span> </a>
-          <a href="my-cart.html"><span class="material-icons md-48 right-side-icons"> shopping_cart </span> </a>
-        </div>
-      </section>
+      </div>
+      <div class="header-second navigation-box">
+        <label for="hamburger-menu" class="hamburger-label"><span class="material-icons md-48">list</span></label>
+        <input type="checkbox" id="hamburger-menu" class="hamburger-menu" />
+        <nav class="navigation-items">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="popular.html">Popular</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-third header-form-group">
+        <form action="#">
+          <input type="text" placeholder="Search" name="search" class="search-form" />
+        </form>
+        <button class="pos-search">
+          <span class="material-icons md-18">search</span>
+        </button>
+      </div>
+      <div class="header-fourth">
+        <a href="login.html"><span class="material-icons md-48 header-icons"> account_circle </span> </a>
+        <a href="my-cart.html"><span class="material-icons md-48 header-icons"> shopping_cart </span> </a>
+      </div>
     </header>
     <main class="background-images-blackreach">
       <section class="maingreybackground">
@@ -103,7 +101,7 @@
         <h3>Stay Connected</h3>
         <p>Sign up for our newsletter!</p>
         <div class="form-group">
-          <input type="text" placeholder="Your Email" />
+          <input type="email" placeholder="Your Email" />
           <button>→</button>
         </div>
         <div class="footer-icons">
