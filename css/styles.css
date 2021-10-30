@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Commissioner";
-  src: url(https://fonts.google.com/specimen/Commissioner);
+  src: url(../fonts/Commissioner-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: "Tourney";
-  src: url(https://fonts.google.com/specimen/Tourney);
+  src: url(../fonts/Tourney-VariableFont_wdth\wght.ttf);
 }
 
 html {
