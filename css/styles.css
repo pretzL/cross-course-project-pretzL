@@ -1,17 +1,6 @@
-/* @font-face {
-  font-family: "Commissioner";
-  src: url(../fonts/Commissioner-VariableFont_wght.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Tourney";
-  src: url(../fonts/Tourney-VariableFont_wdth\wght.ttf) format("truetype");
-}
-
 html {
   scroll-behavior: smooth;
 }
-*/
 
 /* CSS Grids */
 
