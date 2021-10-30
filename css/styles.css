@@ -105,12 +105,6 @@ h2 {
   padding-bottom: 6rem;
 }
 
-main a,
-footer a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .header-first {
   width: 100%;
 }
@@ -132,6 +126,31 @@ footer a {
 
 .universeofgames-container {
   max-width: 25%;
+}
+
+.searchbar-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 10%;
+}
+
+.searchbar-pos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.searchbar-pos > input {
+  width: 80%;
+  height: 50%;
+  text-align: center;
+}
+
+.searchbar-pos > button {
+  height: 60%;
+  width: 5%;
 }
 
 /* Navigation */
@@ -190,6 +209,7 @@ nav a:hover {
 
 .material-icons {
   position: relative;
+  color: #1d2540;
 }
 
 .material-icons.md-48 {
@@ -292,9 +312,11 @@ img .background {
 }
 
 .all-games-anchor {
+  text-decoration: none;
   float: right;
   margin-right: 4rem;
   margin-top: 0;
+  color: #fff;
 }
 
 .all-games-anchor:hover {
@@ -306,6 +328,8 @@ img .background {
   margin-right: 4rem;
   margin-top: 0.5rem;
   text-align: left;
+  color: #fff;
+  text-decoration: none;
 }
 
 .footer-anchors:hover {
