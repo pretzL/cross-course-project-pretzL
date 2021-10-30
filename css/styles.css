@@ -359,7 +359,7 @@ img .background {
 /* MOBILE */
 @media only screen and (max-width: 800px) {
   .narrow {
-    width: 50%;
+    width: 60%;
     justify-content: center;
   }
 
@@ -388,7 +388,7 @@ img .background {
 
 @media only screen and (max-width: 1280px) {
   .narrow {
-    width: 70%;
+    width: 80%;
   }
 
   .narrow h1 {
