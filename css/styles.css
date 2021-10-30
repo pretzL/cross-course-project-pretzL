@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Commissioner";
   src: url(../fonts/Commissioner-VariableFont_wght.ttf) format("truetype");
 }
@@ -11,6 +11,7 @@
 html {
   scroll-behavior: smooth;
 }
+*/
 
 /* CSS Grids */
 
@@ -78,7 +79,7 @@ footer {
 }
 
 h1 {
-  font-family: "Tourney", cursive;
+  font-family: "Tourney", sans-serif;
   font-size: 2.3rem;
   color: #1d2540;
   background-color: #c5d1d9;
