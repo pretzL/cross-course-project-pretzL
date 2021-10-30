@@ -314,7 +314,7 @@ img .background {
 
 .all-games-anchor {
   text-decoration: none;
-  float: right;
+  position: relative;
   margin-right: 4rem;
   margin-top: 0;
   color: #fff;
@@ -322,6 +322,10 @@ img .background {
 
 .all-games-anchor:hover {
   text-decoration: underline;
+}
+
+.all-games-container {
+  float: right;
 }
 
 .footer-anchors {
@@ -359,4 +363,58 @@ img .background {
   font-size: 3rem;
   display: flex;
   gap: 0.5rem;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 700px) {
+  .narrow {
+    width: 60%;
+    justify-content: center;
+  }
+
+  .narrow h1 {
+    width: 60%;
+    font-size: 1.38rem;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .narrow img {
+    width: 80%;
+    height: auto;
+  }
+
+  .comingsoon-container {
+    padding-top: 2rem;
+  }
+
+  .universeofgames-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .narrow {
+    width: 80%;
+  }
+
+  .narrow h1 {
+    width: 60%;
+    font-size: 1.84rem;
+    margin: 0 auto;
+  }
+
+  .narrow img {
+    width: 90%;
+    height: auto;
+  }
+
+  .comingsoon-container {
+    padding-top: 2rem;
+  }
+
+  .universeofgames-container {
+    display: none;
+  }
 }
