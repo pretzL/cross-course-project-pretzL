@@ -176,6 +176,7 @@ nav {
 .hamburger-menu:checked ~ nav {
   display: block;
   background-color: #c5d1d9;
+  border-radius: 0 0 5px 5px;
 }
 
 nav ul {
