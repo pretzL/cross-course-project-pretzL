@@ -357,6 +357,37 @@ img .background {
 
 /* MEDIA QUERIES */
 
+/* TABLET */
+
+@media only screen and (max-width: 1280px) {
+  .narrow {
+    width: 80%;
+  }
+
+  .narrow h1 {
+    width: 60%;
+    font-size: 1.84rem;
+    margin: 0 auto;
+  }
+
+  .narrow img {
+    width: 90%;
+    height: auto;
+  }
+
+  .comingsoon-container {
+    padding-top: 2rem;
+  }
+
+  .universeofgames-container {
+    display: none;
+  }
+
+  .searchbar-pos > button {
+    width: 10%;
+  }
+}
+
 /* MOBILE */
 @media only screen and (max-width: 800px) {
   .narrow {
@@ -383,31 +414,8 @@ img .background {
   .universeofgames-container {
     display: none;
   }
-}
 
-/* TABLET */
-
-@media only screen and (max-width: 1280px) {
-  .narrow {
-    width: 80%;
-  }
-
-  .narrow h1 {
-    width: 60%;
-    font-size: 1.84rem;
-    margin: 0 auto;
-  }
-
-  .narrow img {
-    width: 90%;
-    height: auto;
-  }
-
-  .comingsoon-container {
-    padding-top: 2rem;
-  }
-
-  .universeofgames-container {
-    display: none;
+  .searchbar-pos > button {
+    width: 20%;
   }
 }
