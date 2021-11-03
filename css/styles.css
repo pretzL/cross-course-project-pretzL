@@ -386,6 +386,16 @@ img .background {
   .searchbar-pos > button {
     width: 10%;
   }
+
+  .container-flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-triplegrid {
+    margin-bottom: 1rem;
+  }
 }
 
 /* MOBILE */
@@ -417,5 +427,15 @@ img .background {
 
   .searchbar-pos > button {
     width: 20%;
+  }
+
+  .container-flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-triplegrid {
+    margin-bottom: 1rem;
   }
 }
