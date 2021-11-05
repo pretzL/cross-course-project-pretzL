@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* CSS Grids */
+/* CSS GRIDS */
 
 header {
   grid-area: myheader;
@@ -18,7 +18,7 @@ footer {
   background: #1d2540;
 }
 
-/* Main elements */
+/* MAIN ELEMENTS */
 
 body {
   font-family: "Commissioner", sans-serif;
@@ -46,11 +46,7 @@ main {
   color: #fff;
   width: 100%;
   height: fit-content;
-}
-
-.body-wrapper > main {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
 }
 
 footer {
@@ -60,6 +56,11 @@ footer {
   justify-content: space-around;
   gap: 3rem;
   color: #fff;
+}
+
+.body-wrapper > main {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -147,7 +148,25 @@ h4 {
   width: 5%;
 }
 
-/* Navigation */
+.container-flex {
+  display: flex;
+  padding: 30px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex > * {
+  border: none;
+}
+
+.universeofgames {
+  color: #fff;
+}
+
+/* NAVIGATION */
 
 nav {
   display: none;
@@ -200,7 +219,7 @@ nav a:hover {
   background-color: #c5d1d9;
 }
 
-/* Icons */
+/* ICONS */
 
 .material-icons {
   position: relative;
@@ -223,7 +242,7 @@ nav a:hover {
   font-size: 1.12rem;
 }
 
-/* Images */
+/* IMAGES */
 
 .image-centered {
   display: block;
@@ -250,20 +269,6 @@ nav a:hover {
   background-repeat: no-repeat;
 }
 
-.container-flex {
-  display: flex;
-  padding: 30px;
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex > * {
-  border: none;
-}
-
 .image-triplegrid {
   margin-left: auto;
   margin-right: auto;
@@ -276,15 +281,11 @@ nav a:hover {
   margin-left: 0.7rem;
 }
 
-.universeofgames {
-  color: #fff;
-}
-
 img .background {
   width: 100%;
 }
 
-/* Forms */
+/* FORMS */
 
 .header-form-group {
   display: flex;
@@ -299,7 +300,15 @@ img .background {
   text-align: center;
 }
 
-/* Text */
+.form-group {
+  display: flex;
+}
+
+.form-group > * {
+  border: none;
+}
+
+/* TEXT */
 
 .pre-order-text {
   text-align: center;
@@ -344,20 +353,14 @@ img .background {
   align-self: flex-end;
 }
 
-.form-group {
-  display: flex;
-}
-
-.form-group > * {
-  border: none;
-}
-
 .footer-icons {
   margin-top: 2rem;
   font-size: 3rem;
   display: flex;
   gap: 0.5rem;
 }
+
+/* HIDDEN TEXT FOR ACCESSIBILITY */
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -384,14 +387,15 @@ img .background {
     margin: 0 auto;
   }
 
+  .narrow h2 {
+    width: 60%;
+    font-size: 1.84rem;
+    margin: 0 auto;
+  }
+
   .narrow img {
     width: 90%;
     height: auto;
-  }
-
-  footer {
-    flex-direction: column;
-    align-content: center;
   }
 
   .footer-first {
@@ -432,19 +436,22 @@ img .background {
 /* MOBILE */
 @media only screen and (max-width: 800px) {
   .narrow {
-    width: 60%;
     justify-content: center;
   }
 
   .narrow h1 {
-    width: 60%;
     font-size: 1.38rem;
     margin: 0 auto;
     justify-content: center;
   }
 
+  .narrow h2 {
+    width: 60%;
+    font-size: 1.84rem;
+    margin: 0 auto;
+  }
+
   .narrow img {
-    width: 80%;
     height: auto;
   }
 
