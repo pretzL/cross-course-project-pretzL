@@ -87,8 +87,16 @@ h2 {
   margin-left: 1rem;
 }
 
-h4 {
-  display: none;
+h3 {
+  font-family: "Commissioner", sans-serif;
+  font-size: 1.17rem;
+  color: #1d2540;
+  background-color: #c5d1d9;
+  width: 10rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .main-grey-background {
@@ -116,6 +124,7 @@ h4 {
 .right-nav-icon {
   padding-right: 1rem;
   padding-top: 0.8rem;
+  color: #1d2540;
 }
 
 .universeofgames-container {
@@ -192,6 +201,45 @@ h4 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.add-to-cart-cta {
+  background: #1d2540;
+  color: #fff;
+}
+
+.about-game-section {
+  display: grid;
+  width: 50vw;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.about-text-container {
+  margin-left: 7rem;
+}
+
+.wishlist-container {
+  margin: 0 auto;
+}
+
+.wishlist-review-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-want-container {
+  margin-right: 2rem;
+}
+
+.cart-cta-container {
+  display: grid;
+  justify-content: center;
+  width: 36.5vw;
+  float: right;
+}
+
 /* NAVIGATION */
 
 nav {
@@ -249,7 +297,6 @@ nav a:hover {
 
 .material-icons {
   position: relative;
-  color: #1d2540;
 }
 
 .material-icons.md-48 {
@@ -273,6 +320,7 @@ nav a:hover {
   background-color: #1d2540;
   color: #c5d1d9;
   padding: 0.4rem;
+  margin-right: 0.5rem;
 }
 
 /* IMAGES */
@@ -322,6 +370,14 @@ nav a:hover {
 
 img .background {
   width: 100%;
+}
+
+.user-review-image {
+  margin: 0.5rem;
+}
+
+.user-rating-totalscore-image {
+  margin-top: 0.5rem;
 }
 
 /* FORMS */
@@ -415,6 +471,10 @@ img .background {
 
 .all-games-header {
   margin-bottom: 0px;
+}
+
+.about-text-container > h3 {
+  margin-bottom: 2.5vh;
 }
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
@@ -586,5 +646,30 @@ img .background {
 
   .all-games-filters {
     font-size: 0.8rem;
+  }
+
+  .about-game-section {
+    grid-template-columns: 1fr;
+    justify-content: start;
+  }
+
+  .reviews-container {
+    margin: 0 auto;
+  }
+
+  .about-text-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+  }
+
+  .about-text-container > h3 {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .reviews-container > h3 {
+    justify-content: center;
+    margin: 0 auto;
   }
 }
