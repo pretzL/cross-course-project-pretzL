@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, CSS, HTML, Noroff" />
-    <meta
-      name="description"
-      content="GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games."
-    />
+    <meta name="description" content="GameHub is an online shop where users can purchase computer games. View our list of games here and find your next favorite game!" />
     <title>GameHub | Games</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -19,14 +16,12 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap" rel="stylesheet" />
   </head>
   <body class="body-wrapper">
     <header>
       <section>
+        <h4 class="visually-hidden">GameHub Logo Container</h4>
         <div class="header-first">
           <a href="index.html">
             <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
@@ -34,6 +29,7 @@
         </div>
       </section>
       <section class="flex navigation-bar">
+        <h4 class="visually-hidden">Navigation bar, search bar and cart and account buttons</h4>
         <div class="header-second">
           <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
           <input type="checkbox" class="hamburger-menu" id="hamburger-menu" />
@@ -49,7 +45,7 @@
         <div class="header-third header-form-group">
           <div class="searchbar-pos">
             <input type="text" placeholder="Search" />
-            <button class="search-button"><i class="fas fa-search"></i></button>
+            <button class="search-button" onclick="window.location.href = 'search.html'"><i class="fas fa-search"></i></button>
           </div>
         </div>
         <div class="header-fourth">
@@ -58,52 +54,61 @@
         </div>
       </section>
     </header>
-    <main class="background-images-raft">
-      <section class="maingreybackground narrow">
-        <section>
-          <h1>All Games</h1>
-          <div class="container-flex">
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
+    <main class="background-images-skyrim">
+      <section class="main-grey-background narrow">
+        <h4 class="visually-hidden">Main page content. List of all games with a filter menu to find specific games.</h4>
+        <div>
+          <h1 class="all-games-header">All Games</h1>
+          <div class="games-container-flex">
+            <div class="all-games-filters">
+              <div><input type="checkbox" name="actiongames" value="actiongames" id="actiongames" class="filter-checkbox" /><label for="actiongames">Action</label></div>
+              <div><input type="checkbox" name="mmogames" value="mmogames" id="mmogames" class="filter-checkbox" /><label for="mmogames">MMO</label></div>
+              <div><input type="checkbox" name="kidsgames" value="kidsgames" id="kidsgames" class="filter-checkbox" /><label for="kidsgames">Kids</label></div>
+              <div><input type="checkbox" name="newgames" value="newgames" id="newgames" class="filter-checkbox" /><label for="newgames">New</label></div>
+              <div><input type="checkbox" name="newgames" value="newgames" id="newgames" class="filter-checkbox" /><label for="newgames">New</label></div>
+              <div><input type="checkbox" name="rpggames" value="rpggames" id="rpggames" class="filter-checkbox" /><label for="rpggames">RPG</label></div>
+              <div><input type="checkbox" name="rtsgames" value="rtsgames" id="rtsgames" class="filter-checkbox" /><label for="rtsgames">RTS</label></div>
+              <div><input type="checkbox" name="fpsgames" value="fpsgames" id="fpsgames" class="filter-checkbox" /><label for="fpsgames">FPS</label></div>
+              <div><input type="checkbox" name="usedgames" value="usedgames" id="usedgames" class="filter-checkbox" /><label for="usedgames">Used</label></div>
+              <div><input type="checkbox" name="usedgames" value="usedgames" id="usedgames" class="filter-checkbox" /><label for="usedgames">Used</label></div>
             </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
+            <div class="games-triplegrid-container">
+              <div class="flex games-triplegrid-style">
+                <a href="game-profile-page.html">
+                  <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+                </a>
+                <p>Raft</p>
+                <div class="game-icon-container">
+                  <span class="material-icons md-18 game-icon"> shopping_cart </span>
+                  <span class="material-icons md-18 game-icon"> favorite </span>
+                </div>
+              </div>
+              <div class="flex games-triplegrid-style">
+                <a href="game-profile-page.html">
+                  <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
+                </a>
+                <p>The Elder Scrolls V: Skyrim</p>
+                <div class="game-icon-container">
+                  <span class="material-icons md-18 game-icon"> shopping_cart </span>
+                  <span class="material-icons md-18 game-icon"> favorite </span>
+                </div>
+              </div>
+              <div class="flex games-triplegrid-style">
+                <a href="game-profile-page.html">
+                  <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
+                </a>
+                <p>Raft</p>
+                <div class="game-icon-container">
+                  <span class="material-icons md-18 game-icon"> shopping_cart </span>
+                  <span class="material-icons md-18 game-icon"> favorite </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="all-games-container">
-            <a href="list-of-games.html" class="all-games-anchor">See all games</a>
+          <div class="page-navigation-menu">
+            <p><a href="#back" class="page-navigation-anchor">Back</a> 1 2 3 ... 17 18 <a href="#next" class="page-navigation-anchor">Next</a></p>
           </div>
-        </section>
-        <section class="comingsoon-container">
-          <h1>Marketplace</h1>
-          <p class="pre-order-text">GameHub allows you to pre-order games, get your latest games here first &copy;</p>
-          <div class="container-flex">
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-          </div>
-        </section>
+        </div>
       </section>
     </main>
     <footer>
@@ -128,11 +133,9 @@
       <div class="universeofgames-container">
         <h3 class="universeofgames">The Universe of Games</h3>
         <p>
-          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
-          Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're
-          looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell
-          the game on our marketplace so others can enjoy that game as much as you have -while making some of your money
-          back!
+          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our Advanced algorithm will suggest games based on previous
+          purchases, wishlist items and which games you're looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
+          our marketplace so others can enjoy that game as much as you have -while making some of your money back!
         </p>
       </div>
       <p class="footer-copyright">&copy; 2021 GameHub</p>
