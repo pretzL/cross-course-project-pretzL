@@ -132,6 +132,34 @@ h3 {
   color: #fff;
 }
 
+.item-price-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items-container {
+  text-align: left;
+}
+
+.price-container {
+  text-align: right;
+}
+
+.shipping-card-container {
+  display: flex;
+  padding: 30px;
+  gap: 3rem;
+}
+
+.shipping-card-container * h3 {
+  justify-self: center;
+}
+
+.image-triplegrid-container {
+  justify-content: center;
+}
+
 /* MAIN ELEMENTS */
 
 body {
@@ -343,6 +371,14 @@ footer {
   gap: 2rem;
 }
 
+.shipping-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .creditcard-container {
   display: flex;
   flex-direction: column;
@@ -361,6 +397,15 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+}
+
+.items-container {
+  flex-direction: column;
+}
+
+.item-price-container {
+  display: flex;
+  gap: 10vw;
 }
 
 /* NAVIGATION */
@@ -817,5 +862,25 @@ img .background {
 
   .right-nav-icon {
     padding-right: 0.5rem;
+  }
+
+  .item-price-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shipping-card-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shipping-card-container * h3 {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .items-container,
+  .price-container {
+    text-align: center;
   }
 }

@@ -8,7 +8,7 @@
       name="description"
       content="GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games."
     />
-    <title>GameHub | Checkout</title>
+    <title>GameHub | Home</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link
@@ -19,14 +19,12 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap" rel="stylesheet" />
   </head>
   <body class="body-wrapper">
     <header>
       <section>
+        <h5 class="visually-hidden">GameHub Logo Container</h5>
         <div class="header-first">
           <a href="index.html">
             <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
@@ -34,12 +32,13 @@
         </div>
       </section>
       <section class="flex navigation-bar">
+        <h5 class="visually-hidden">Navigation bar, search bar and cart and account buttons</h5>
         <div class="header-second">
           <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
           <input type="checkbox" class="hamburger-menu" id="hamburger-menu" />
           <nav>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html" class="active">Home</a></li>
               <li><a href="list-of-games.html">Games</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact Us</a></li>
@@ -49,7 +48,7 @@
         <div class="header-third header-form-group">
           <div class="searchbar-pos">
             <input type="text" placeholder="Search" />
-            <button class="search-button"><i class="fas fa-search"></i></button>
+            <button class="search-button" onclick="window.location.href = 'search.html'"><i class="fas fa-search"></i></button>
           </div>
         </div>
         <div class="header-fourth">
@@ -58,57 +57,71 @@
         </div>
       </section>
     </header>
-    <main class="background-images-raft">
-      <section class="maingreybackground narrow">
+    <main class="background-images-blackreach">
+      <section class="main-grey-background narrow">
         <section>
           <h1>Checkout</h1>
-          <div class="container-flex">
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
+          <div class="item-price-parent">
+            <h3>Your Cart</h3>
+            <div class="item-price-container">
+              <div class="items-container">
+                <h3>Items</h3>
+                <p>The Elder Scrolls V: Skyrim</p>
+                <p>Raft</p>
+              </div>
+              <div class="price-container">
+                <h3>Price</h3>
+                <p>$40.83</p>
+                <p>$19.94</p>
+                <p>Total: $60.77</p>
+              </div>
             </div>
           </div>
-          <div class="all-games-container">
-            <a href="list-of-games.html" class="all-games-anchor">See all games</a>
+          <div class="shipping-card-container">
+            <div>
+              <h3>Shipping</h3>
+              <div>
+                <input type="checkbox" name="use-saved-info" value="use-saved-info" id="use-saved-info" class="use-saved-info" /><label for="use-saved-info">Use my saved info</label>
+              </div>
+              <div class="shipping-container">
+                <div class="cardnumber-container">
+                  <input type="text" placeholder="Address" class="create-account-form-large cardnumber-form" />
+                </div>
+                <div class="date-cvc-container">
+                  <input type="number" placeholder="Postcode" class="create-account-form-small date-form" />
+                  <input type="text" placeholder="City" class="create-account-form-small cvc-form" />
+                </div>
+                <div class="cardnumber-container">
+                  <input type="text" placeholder="Country" class="create-account-form-large cardnumber-form" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3>Credit Card Info</h3>
+              <div>
+                <input type="checkbox" name="use-saved-info" value="use-saved-info" id="use-saved-info" class="use-saved-info" /><label for="use-saved-info">Use my saved info</label>
+              </div>
+              <div class="shipping-container">
+                <div class="cardnumber-container">
+                  <input type="number" placeholder="Card Number" class="create-account-form-large cardnumber-form" />
+                </div>
+                <div class="date-cvc-container">
+                  <input type="date" placeholder="DD/MM" class="create-account-form-small date-form" />
+                  <input type="number" placeholder="CVC" class="create-account-form-small cvc-form" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="create-account-container">
+            <button class="create-account-cta button">Order</button>
           </div>
         </section>
-        <section class="comingsoon-container">
-          <h1>Coming Soon</h1>
-          <p class="pre-order-text">GameHub allows you to pre-order games, get your latest games here first &copy;</p>
-          <div class="container-flex">
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-            <div class="flex image-triplegrid-style">
-              <a href="game-profile-page.html">
-                <img src="images/raftwallpaper.jpg" alt="Raft Game Image" class="image-triplegrid" />
-              </a>
-            </div>
-          </div>
-        </section>
+      </section>
       </section>
     </main>
     <footer>
       <div class="footer-first">
-        <h3>Stay Connected</h3>
+        <h4>Stay Connected</h4>
         <p>Sign up for our newsletter!</p>
         <div class="form-group">
           <input type="email" placeholder="Your Email" />
@@ -126,13 +139,11 @@
         <a href="list-of-games.html" class="footer-anchors">Marketplace</a>
       </div>
       <div class="universeofgames-container">
-        <h3 class="universeofgames">The Universe of Games</h3>
+        <h4 class="universeofgames">The Universe of Games</h4>
         <p>
-          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
-          Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're
-          looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell
-          the game on our marketplace so others can enjoy that game as much as you have -while making some of your money
-          back!
+          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our Advanced algorithm will suggest games based on previous
+          purchases, wishlist items and which games you're looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
+          our marketplace so others can enjoy that game as much as you have -while making some of your money back!
         </p>
       </div>
       <p class="footer-copyright">&copy; 2021 GameHub</p>
