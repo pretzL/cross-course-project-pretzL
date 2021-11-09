@@ -207,15 +207,14 @@ h3 {
 }
 
 .about-game-section {
-  display: grid;
+  display: flex;
   width: 50vw;
-  grid-template-columns: 1fr 1fr;
   justify-content: center;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .about-text-container {
-  margin-left: 7rem;
+  margin-left: 4rem;
 }
 
 .wishlist-container {
@@ -378,6 +377,11 @@ img .background {
 
 .user-rating-totalscore-image {
   margin-top: 0.5rem;
+}
+
+.skyrim-youtube-video {
+  width: 13.75rem;
+  height: 8.75rem;
 }
 
 /* FORMS */
@@ -671,5 +675,22 @@ img .background {
   .reviews-container > h3 {
     justify-content: center;
     margin: 0 auto;
+  }
+
+  .user-review-image {
+    width: 100%;
+  }
+
+  .about-game-section {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .wishlist-review-info {
+    flex-direction: column;
+  }
+
+  .skyrim-youtube-video {
+    margin-bottom: 1rem;
   }
 }
