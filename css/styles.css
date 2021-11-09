@@ -407,6 +407,55 @@ img .background {
   border: none;
 }
 
+.create-account-form-large {
+  border-radius: 5px;
+  width: 20vw;
+  height: 3vh;
+}
+
+.create-account-form-small {
+  border-radius: 5px;
+  width: 8vw;
+}
+
+.account-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  align-items: center;
+  gap: 2rem;
+}
+
+.creditcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.date-cvc-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3.5rem;
+}
+
+.create-account-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.create-account-cta {
+  background: #1d2540;
+  width: 10vw;
+  height: 4vh;
+}
+
+.create-account-cta.button {
+  color: #fff;
+}
+
 /* TEXT */
 
 .pre-order-text {
@@ -692,5 +741,45 @@ img .background {
 
   .skyrim-youtube-video {
     margin-bottom: 1rem;
+  }
+
+  .account-form-container {
+    width: 50vw;
+    gap: 2rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .creditcard-container {
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .date-cvc-container {
+    gap: 2rem;
+  }
+
+  .create-account-container {
+    margin-top: 3rem;
+  }
+
+  .create-account-cta {
+    width: 10vw;
+    height: 4vh;
+  }
+
+  .create-account-form-large {
+    border-radius: 5px;
+    width: 50vw;
+    height: 3vh;
+  }
+
+  .create-account-form-small {
+    width: 20vw;
+  }
+
+  .create-account-cta {
+    width: 50vw;
+    height: 4vh;
   }
 }
