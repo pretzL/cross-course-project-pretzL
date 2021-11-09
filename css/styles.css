@@ -132,32 +132,8 @@ h3 {
   color: #fff;
 }
 
-.item-price-parent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.items-container {
-  text-align: left;
-}
-
-.price-container {
-  text-align: right;
-}
-
-.shipping-card-container {
-  display: flex;
-  padding: 30px;
-  gap: 3rem;
-}
-
-.shipping-card-container * h3 {
-  justify-self: center;
-}
-
-.image-triplegrid-container {
-  justify-content: center;
+.customer-service-container h3 {
+  width: 20vw;
 }
 
 /* MAIN ELEMENTS */
@@ -408,6 +384,48 @@ footer {
   gap: 10vw;
 }
 
+.customer-service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-price-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items-container {
+  text-align: left;
+}
+
+.price-container {
+  text-align: right;
+}
+
+.shipping-card-container {
+  display: flex;
+  padding: 30px;
+  gap: 3rem;
+}
+
+.shipping-card-container * h3 {
+  justify-self: center;
+}
+
+.image-triplegrid-container {
+  justify-content: center;
+}
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* NAVIGATION */
 
 nav {
@@ -574,6 +592,12 @@ img .background {
 
 .form-group > * {
   border: none;
+}
+
+.create-account-form-extra-large {
+  border-radius: 5px;
+  width: 20vw;
+  height: 10vh;
 }
 
 .create-account-form-large {
@@ -882,5 +906,14 @@ img .background {
   .items-container,
   .price-container {
     text-align: center;
+  }
+
+  .customer-service-container h3 {
+    width: 50vw;
+  }
+
+  .create-account-form-extra-large {
+    width: 50vw;
+    height: 10vh;
   }
 }
