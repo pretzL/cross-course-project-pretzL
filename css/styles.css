@@ -136,6 +136,14 @@ h3 {
   width: 20vw;
 }
 
+.create-account-anchor {
+  display: flex;
+  color: #fff;
+  justify-content: flex-end;
+  margin-right: 2vw;
+  margin-top: 2vw;
+}
+
 /* MAIN ELEMENTS */
 
 body {
@@ -956,5 +964,9 @@ img .background {
 
   .cart-price-container {
     text-align: center;
+  }
+
+  .create-account-anchor {
+    margin-right: 5vw;
   }
 }
