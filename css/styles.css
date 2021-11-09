@@ -394,6 +394,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .items-container {
@@ -424,6 +426,23 @@ footer {
   width: 30vw;
   align-items: center;
   gap: 2rem;
+}
+
+.container-column {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+}
+
+.image-mini-container {
+  flex-direction: row;
+}
+
+.cart-parent {
+  width: 50vw;
+}
+
+.cart-price-container {
+  text-align: right;
 }
 
 /* NAVIGATION */
@@ -569,6 +588,11 @@ img .background {
 .skyrim-youtube-video {
   width: 13.75rem;
   height: 8.75rem;
+}
+
+.image-mini {
+  width: 4.3rem;
+  height: 5rem;
 }
 
 /* FORMS */
@@ -915,5 +939,9 @@ img .background {
   .create-account-form-extra-large {
     width: 50vw;
     height: 10vh;
+  }
+
+  .cart-price-container {
+    text-align: center;
   }
 }
