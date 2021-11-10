@@ -474,6 +474,25 @@ footer {
   margin-bottom: 10vh;
 }
 
+.faq-container {
+  flex-direction: column;
+  align-content: center;
+  width: 40vw;
+}
+
+.faq-container h3 {
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.faq-container p {
+  width: 30vw;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
 /* NAVIGATION */
 
 nav {
@@ -976,5 +995,22 @@ img .background {
 
   .create-account-anchor {
     margin-right: 5vw;
+  }
+
+  .faq-container {
+    width: 65vw;
+  }
+
+  .faq-container h3 {
+    width: 65vw;
+  }
+
+  .faq-container h1 {
+    width: 65vw;
+    margin-bottom: 1rem;
+  }
+
+  .faq-container p {
+    width: 50vw;
   }
 }
