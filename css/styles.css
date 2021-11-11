@@ -449,7 +449,10 @@ footer {
 }
 
 .cart-price-container {
+  display: flex;
+  flex-direction: column;
   text-align: right;
+  gap: 1rem;
 }
 
 .remember-me-container {
@@ -1016,6 +1019,7 @@ img .background {
 
   .cart-price-container {
     text-align: center;
+    gap: 0;
   }
 
   .create-account-anchor {
