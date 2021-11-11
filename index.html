@@ -104,6 +104,20 @@
             </div>
           </div>
         </section>
+        <div class="newsletter-overlay-container">
+          <div class="newsletter-popup" id="newsletter-popup">
+            <div>
+              <h3>Success!</h3>
+              <p>Thank you for signing up for our newsletter</p>
+            </div>
+            <div class="create-account-container">
+              <button class="create-account-cta button">Continue Shopping</button>
+            </div>
+            <div class="create-account-container">
+              <button class="create-account-cta button">My Profile</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -111,8 +125,9 @@
         <h4>Stay Connected</h4>
         <p>Sign up for our newsletter!</p>
         <div class="form-group">
-          <input type="email" placeholder="Your Email" />
-          <button>→</button>
+          <input type="email" placeholder="Your Email" id="email" />
+          <label for="newsletter-popup-checkbox"><button>→</button></label>
+          <input type="checkbox" id="newsletter-popup-checkbox" class="newsletter-popup-checkbox" />
         </div>
         <div class="footer-icons">
           <i class="fab fa-facebook"></i>

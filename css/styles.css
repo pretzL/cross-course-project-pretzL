@@ -228,19 +228,11 @@ footer {
   max-width: 25%;
 }
 
-.searchbar-container {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 10%;
-}
-
 .searchbar-pos {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 50%;
-  margin-left: 4rem;
+  width: 60vw;
+  margin-left: -2.8rem;
 }
 
 .searchbar-pos > input {
@@ -512,11 +504,32 @@ footer {
   width: 90%;
 }
 
+/* OVERLAY */
+
+.newsletter-overlay-container {
+  display: none;
+}
+
+.newsletter-popup {
+  background-color: #fff;
+  color: var(--dark-blue);
+  border-radius: 5px;
+}
+
+.newsletter-popup-checkbox {
+  display: none;
+}
+
+.newsletter-popup-checkbox:checked ~ .newsletter-overlay-container {
+  display: block;
+  position: relative;
+  z-index: 9999;
+}
+
 /* NAVIGATION */
 
 nav {
-  display: none;
-  position: absolute;
+  display: inline-block;
   top: 195px;
 }
 
@@ -525,20 +538,11 @@ nav {
 }
 
 .hamburger-label {
-  float: left;
-  color: var(--dark-blue);
-  padding: 10px;
-  font-size: 2rem;
-  display: block;
-}
-
-.hamburger-menu:checked ~ nav {
-  display: block;
-  background-color: var(--light-blue);
-  border-radius: 0 0 5px 5px;
+  display: none;
 }
 
 nav ul {
+  display: flex;
   padding: 0;
 }
 
@@ -547,10 +551,10 @@ nav li {
 }
 
 nav a {
+  display: block;
   text-decoration: none;
   color: var(--dark-blue);
   padding: 10px;
-  display: block;
 }
 
 nav a:hover {
@@ -850,7 +854,9 @@ img .background {
   }
 
   .searchbar-pos {
-    width: 35vw;
+    width: 40vw;
+    margin-left: 3rem;
+    justify-content: center;
   }
 
   .container-flex {
@@ -1035,5 +1041,33 @@ img .background {
 
   .wishlist-container {
     flex-direction: column;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 195px;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .hamburger-label {
+    float: left;
+    color: var(--dark-blue);
+    padding: 10px;
+    font-size: 2rem;
+    display: block;
+  }
+
+  .hamburger-menu:checked ~ nav {
+    display: block;
+    background-color: var(--light-blue);
+    border-radius: 0 0 5px 5px;
+  }
+
+  nav ul {
+    display: block;
   }
 }
