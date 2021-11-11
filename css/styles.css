@@ -776,6 +776,11 @@ img .background {
     width: 10%;
   }
 
+  .searchbar-pos {
+    margin-left: 4rem;
+    justify-content: center;
+  }
+
   .container-flex {
     display: flex;
     flex-direction: column;
@@ -801,6 +806,34 @@ img .background {
 
   .games-triplegrid-style > p {
     margin-top: 0;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 195px;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .hamburger-label {
+    float: left;
+    color: var(--dark-blue);
+    padding: 10px;
+    font-size: 2rem;
+    display: block;
+  }
+
+  .hamburger-menu:checked ~ nav {
+    display: block;
+    background-color: var(--light-blue);
+    border-radius: 0 0 5px 5px;
+  }
+
+  nav ul {
+    display: block;
   }
 }
 
