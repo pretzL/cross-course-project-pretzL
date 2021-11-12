@@ -312,7 +312,6 @@ footer {
 
 .wishlist-review-info {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -374,7 +373,6 @@ footer {
 
 .date-cvc-container {
   display: flex;
-  flex-direction: row;
   gap: 3.5rem;
 }
 
@@ -442,10 +440,6 @@ footer {
   grid-template-columns: 0.5fr 0.5fr;
 }
 
-.image-mini-container {
-  flex-direction: row;
-}
-
 .cart-parent {
   width: 50vw;
 }
@@ -491,7 +485,6 @@ footer {
 
 .wishlist-container {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
 }
 
@@ -524,6 +517,9 @@ footer {
 .wishlist,
 .contact {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #add-to-cart:checked ~ .cart {
@@ -982,11 +978,6 @@ img .background {
     font-size: 0.8rem;
   }
 
-  .about-game-section {
-    grid-template-columns: 1fr;
-    justify-content: start;
-  }
-
   .reviews-container {
     margin: 0 auto;
   }
@@ -1014,6 +1005,7 @@ img .background {
   .about-game-section {
     flex-direction: column;
     margin: 0 auto;
+    width: 63vw;
   }
 
   .wishlist-review-info {
