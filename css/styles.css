@@ -1174,7 +1174,8 @@ img .background {
   }
 
   .cart-popup,
-  .wishlist-popup {
+  .wishlist-popup,
+  .contact-popup {
     width: 60vw;
   }
 
