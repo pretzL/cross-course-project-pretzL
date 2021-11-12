@@ -318,7 +318,9 @@ footer {
 }
 
 .wishlist-want-container {
+  display: flex;
   margin-right: 2rem;
+  align-items: center;
 }
 
 .cart-cta-container {
@@ -509,24 +511,79 @@ footer {
 
 /* OVERLAY */
 
-.newsletter-overlay-container {
+#add-to-cart,
+#add-to-wishlist,
+#send-contact,
+.cart,
+.wishlist,
+.contact {
   display: none;
 }
 
-.newsletter-popup {
-  background-color: #fff;
-  color: var(--dark-blue);
-  border-radius: 5px;
+.cart,
+.wishlist,
+.contact {
+  position: absolute;
 }
 
-.newsletter-popup-checkbox {
-  display: none;
-}
-
-.newsletter-popup-checkbox:checked ~ .newsletter-overlay-container {
+#add-to-cart:checked ~ .cart {
   display: block;
-  position: relative;
-  z-index: 9999;
+}
+
+#add-to-wishlist:checked ~ .wishlist {
+  display: block;
+}
+
+#send-contact:checked ~ .contact {
+  display: block;
+}
+
+.cart-popup,
+.wishlist-popup,
+.contact-popup {
+  display: flex;
+  background: #fff;
+  color: var(--dark-blue);
+  width: 30vw;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px black;
+  align-items: center;
+}
+
+.overlay-button-flex {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.newsletter-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h6 {
+  font-family: "Tourney", sans-serif;
+  font-size: 2rem;
+  color: var(--dark-blue);
+  margin: 1rem 0 0 0;
+}
+
+.cart-text,
+.wishlist-text,
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-text p,
+.wishlist-text p,
+.contact p {
+  text-align: center;
 }
 
 /* NAVIGATION */
@@ -713,6 +770,10 @@ img .background {
   background: var(--dark-blue);
   width: 10vw;
   height: 4vh;
+}
+
+.create-account-cta:hover {
+  text-decoration: underline;
 }
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
@@ -1106,5 +1167,18 @@ img .background {
 
   nav ul {
     display: block;
+  }
+
+  .overlay-button-flex {
+    flex-direction: column;
+  }
+
+  .cart-popup,
+  .wishlist-popup {
+    width: 60vw;
+  }
+
+  .overlay-button-flex .create-account-container {
+    margin-top: 0;
   }
 }
