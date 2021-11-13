@@ -1196,7 +1196,8 @@ img .background {
   .wishlist-popup,
   .contact-popup,
   .account-popup,
-  .order-popup {
+  .order-popup,
+  .newsletter-popup {
     width: 60vw;
   }
 
