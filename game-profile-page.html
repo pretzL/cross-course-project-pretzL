@@ -2,42 +2,212 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width_device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, CSS, HTML, Noroff" />
     <meta
       name="description"
-      content="GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games."
+      content="GameHub is an online shop where users can purchase computer games. The Elder Scrolls V: Skyrim is an extremely popular RPG game which you can buy or resell on our marketplace."
     />
-    <!--Change this to be the game name eventually-->
-    <title>GameHub | Game Profile Page</title>
+    <title>GameHub | Elder Scrolls V: Skyrim</title>
     <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="body-wrapper">
     <header>
-      <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
       <section>
-        <h1>About GameHub</h1>
-        <a href="https://github.com/Noroff-FEU-Assignments/cross-course-project-pretzL">My GitHub Repo</a>
+        <h4 class="visually-hidden">GameHub Logo Container</h4>
+        <div class="header-first">
+          <a href="index.html">
+            <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
+          </a>
+        </div>
+      </section>
+      <section class="flex navigation-bar">
+        <h4 class="visually-hidden">Navigation bar, search bar and cart and account buttons</h4>
+        <div class="header-second">
+          <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
+          <input type="checkbox" class="hamburger-menu" id="hamburger-menu" />
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="list-of-games.html">Games</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-third header-form-group">
+          <div class="searchbar-pos">
+            <input type="text" placeholder="Search" />
+            <button class="search-button" onclick="window.location.href = 'search.html'"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="header-fourth">
+          <a href="my-cart.html"><span class="material-icons md-36 right-nav-icon"> shopping_cart </span></a>
+          <a href="login.html"><span class="material-icons md-36 right-nav-icon"> account_circle </span></a>
+        </div>
+      </section>
+    </header>
+    <main class="background-images-blackreach">
+      <section class="main-grey-background narrow">
+        <h5 class="visually-hidden">Main content. The Elder Scrolls V: Skyrim game profile page.</h5>
+        <section>
+          <h1>The Elder Scrolls V: Skyrim</h1>
+          <div class="container-flex image-triplegrid-container">
+            <div class="image-triplegrid-style">
+              <a href="game-profile-page.html">
+                <img src="images/blackreachbackground.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
+              </a>
+            </div>
+            <div class="image-triplegrid-style">
+              <iframe
+                src="https://www.youtube.com/embed/JSRtYpNRoN0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="skyrim-youtube-video"
+              ></iframe>
+            </div>
+            <div class="image-triplegrid-style">
+              <a href="game-profile-page.html">
+                <img src="images/skyrimwallpaper.jpg" alt="Skyrim Game Image" class="image-triplegrid" />
+              </a>
+            </div>
+          </div>
+          <div class="wishlist-review-container">
+            <div class="wishlist-review-info">
+              <div class="wishlist-want-container">
+                <label for="add-to-wishlist"><span class="material-icons md-18 game-icon"> favorite </span></label>
+                <input type="checkbox" id="add-to-wishlist" />
+                <div class="wishlist">
+                  <div class="wishlist-popup">
+                    <div class="wishlist-text">
+                      <h6>Success!</h6>
+                      <p>Item has been added to your wishlist.</p>
+                    </div>
+                    <div class="overlay-button-flex">
+                      <div class="create-account-container">
+                        <a href="list-of-games.html"><button class="create-account-cta button">Continue Shopping</button></a>
+                      </div>
+                      <div class="create-account-container">
+                        <a href="wishlist.html"><button class="create-account-cta button">My Wishlist</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>143 people want this</p>
+              </div>
+              <div>
+                <p>38 reviews</p>
+              </div>
+              <div>
+                <img src="images/user-rating.svg" alt="user rating total score" class="user-rating-totalscore-image" />
+              </div>
+            </div>
+            <div class="cart-cta-container">
+              <label for="add-to-cart"><span class="material-icons md-18 game-icon"> shopping_cart </span></label>
+              <input type="checkbox" id="add-to-cart" />
+              <div class="cart">
+                <div class="cart-popup">
+                  <div class="cart-text">
+                    <h6>Success!</h6>
+                    <p>Item has been added to your cart</p>
+                  </div>
+                  <div class="overlay-button-flex">
+                    <div class="create-account-container">
+                      <a href="list-of-games.html"><button class="create-account-cta button">Continue Shopping</button></a>
+                    </div>
+                    <div class="create-account-container">
+                      <a href="my-cart.html"><button class="create-account-cta button">My Cart</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about-game-section">
+          <h5 class="visually-hidden">About the game, reviews</h5>
+          <div class="about-text-container">
+            <h3>About the game</h3>
+            <p>
+              The Elder Scrolls V: Skyrim, the 2011 Game of the Year, is the newest chapter in the highly anticipated Elder Scrolls saga. Developed by Bethesda Game Studios, Skyrim
+              reimagines and revolutionizes the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose.
+            </p>
+          </div>
+          <div class="reviews-container">
+            <h3>Reviews</h3>
+            <div>
+              <img src="images/user-review-element1.png" alt="user review" class="user-review-image" />
+            </div>
+            <div>
+              <img src="images/user-review-element2.png" alt="user review" class="user-review-image" />
+            </div>
+            <div>
+              <img src="images/user-review-element3.png" alt="user review" class="user-review-image" />
+            </div>
+            <div>
+              <img src="images/user-review-element4.png" alt="user review" class="user-review-image" />
+            </div>
+          </div>
+        </section>
       </section>
     </main>
-    <!--This is a comment so I can remember how to properly make comments in HTML later.-->
-    <footer class="section-page-footer">
-      <h3 class="universeofgames">The Universe of Games</h3>
-      <p>
-        At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
-        Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're looking
-        at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
-        our marketplace so others can enjoy that game as much as you have -while making some of your money back!
-      </p>
+    <footer>
+      <div class="footer-first">
+        <h4>Stay Connected</h4>
+        <p>Sign up for our newsletter!</p>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" />
+          <button><label for="send-newsletter">→</label></button>
+          <input type="checkbox" id="send-newsletter" />
+          <div class="newsletter">
+            <div class="newsletter-popup">
+              <div class="newsletter-text">
+                <h6>Success!</h6>
+                <p>Thank you for signing up for our newsletter.</p>
+              </div>
+              <div class="overlay-button-flex">
+                <div class="create-account-container">
+                  <a href="list-of-games.html"><button class="create-account-cta button">Continue Shopping</button></a>
+                </div>
+                <div class="create-account-container">
+                  <a href="user-profile.html"><button class="create-account-cta button">My Profile</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="footer-anchor-div">
+        <a href="list-of-games.html" class="footer-anchors">Games</a>
+        <a href="contact.html" class="footer-anchors">Contact Us</a>
+        <a href="user-profile.html" class="footer-anchors">Profile</a>
+      </div>
+      <div class="universeofgames-container">
+        <h4 class="universeofgames">The Universe of Games</h4>
+        <p>
+          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our Advanced algorithm will suggest games based on previous
+          purchases, wishlist items and which games you're looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
+          our marketplace so others can enjoy that game as much as you have -while making some of your money back!
+        </p>
+      </div>
+      <p class="footer-copyright">&copy; 2021 GameHub</p>
     </footer>
   </body>
 </html>

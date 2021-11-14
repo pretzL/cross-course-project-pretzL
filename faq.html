@@ -2,41 +2,134 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width_device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, CSS, HTML, Noroff" />
     <meta
       name="description"
-      content="GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games."
+      content="GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games. Here you will find the most frequently asked questions about us, as well as answers."
     />
-    <title>GameHub | FAQ</title>
+    <title>GameHub | FAQ - Frequently Asked Questions</title>
     <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Tourney:ital,wght@1,700&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="body-wrapper">
     <header>
-      <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
       <section>
-        <h1>About GameHub</h1>
-        <a href="https://github.com/Noroff-FEU-Assignments/cross-course-project-pretzL">My GitHub Repo</a>
+        <h5 class="visually-hidden">GameHub Logo Container</h5>
+        <div class="header-first">
+          <a href="index.html">
+            <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
+          </a>
+        </div>
+      </section>
+      <section class="flex navigation-bar">
+        <h5 class="visually-hidden">Navigation bar, search bar and cart and account buttons</h5>
+        <div class="header-second">
+          <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
+          <input type="checkbox" class="hamburger-menu" id="hamburger-menu" />
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="list-of-games.html">Games</a></li>
+              <li><a href="faq.html" class="active">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-third header-form-group">
+          <div class="searchbar-pos">
+            <input type="text" placeholder="Search" />
+            <button class="search-button" onclick="window.location.href = 'search.html'"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="header-fourth">
+          <a href="my-cart.html"><span class="material-icons md-36 right-nav-icon"> shopping_cart </span></a>
+          <a href="login.html"><span class="material-icons md-36 right-nav-icon"> account_circle </span></a>
+        </div>
+      </section>
+    </header>
+    <main class="background-images-blackreach">
+      <section class="main-grey-background narrow">
+        <h4 class="visually-hidden">Main content. Frequently asked questions and answers to them.</h4>
+        <section class="container-flex faq-container">
+          <h1>FAQ</h1>
+          <div>
+            <h3>Q: What is GameHub?</h3>
+            <p>
+              A: GameHub is an online shop where users can purchase computer games. Games could either be used games, they could be brand new games or you could pre-order games.
+            </p>
+            <p>GameHub is a competitively priced website with a huge range of games.</p>
+          </div>
+          <div>
+            <h3>Q: Why should I use GameHub?</h3>
+            <p>
+              A: Not only can you buy games from GameHub, you can also sell your used games or even buy used games from other gamers. That way, you're always getting the most bang
+              for your buck - and you can even make some of it back by using our marketplace!
+            </p>
+          </div>
+          <div class="create-account-container">
+            <a href="contact.html"><button class="create-account-cta button">Contact Us</button></a>
+          </div>
+          <div class="create-account-container">
+            <a href="list-of-games.html"><button class="create-account-cta button">Back to Store</button></a>
+          </div>
+        </section>
       </section>
     </main>
-    <!--This is a comment so I can remember how to properly make comments in HTML later.-->
-    <footer class="section-page-footer">
-      <h3 class="universeofgames">The Universe of Games</h3>
-      <p>
-        At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our
-        Advanced algorithm will suggest games based on previous purchases, wishlist items and which games you're looking
-        at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
-        our marketplace so others can enjoy that game as much as you have -while making some of your money back!
-      </p>
+    <footer>
+      <div class="footer-first">
+        <h4>Stay Connected</h4>
+        <p>Sign up for our newsletter!</p>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" />
+          <button><label for="send-newsletter">→</label></button>
+          <input type="checkbox" id="send-newsletter" />
+          <div class="newsletter">
+            <div class="newsletter-popup">
+              <div class="newsletter-text">
+                <h6>Success!</h6>
+                <p>Thank you for signing up for our newsletter.</p>
+              </div>
+              <div class="overlay-button-flex">
+                <div class="create-account-container">
+                  <a href="list-of-games.html"><button class="create-account-cta button">Continue Shopping</button></a>
+                </div>
+                <div class="create-account-container">
+                  <a href="user-profile.html"><button class="create-account-cta button">My Profile</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="footer-anchor-div">
+        <a href="list-of-games.html" class="footer-anchors">Games</a>
+        <a href="contact.html" class="footer-anchors">Contact Us</a>
+        <a href="user-profile.html" class="footer-anchors">Profile</a>
+      </div>
+      <div class="universeofgames-container">
+        <h4 class="universeofgames">The Universe of Games</h4>
+        <p>
+          At GameHub, it is our mission to make sure you find your next favorite game, at a price you're happy with. Our Advanced algorithm will suggest games based on previous
+          purchases, wishlist items and which games you're looking at the most to make sure you find the perfect fit for you. When you're done playing, you can resell the game on
+          our marketplace so others can enjoy that game as much as you have -while making some of your money back!
+        </p>
+      </div>
+      <p class="footer-copyright">&copy; 2021 GameHub</p>
     </footer>
   </body>
 </html>
