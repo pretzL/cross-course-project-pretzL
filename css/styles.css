@@ -11,10 +11,9 @@ html {
 /* VARIABLES */
 
 :root {
-  --light-green: #41a650;
-  --dark-green: #25592c;
-  --dark-teal: #4197a6;
-  --dark-grey: #4f4f4f;
+  --dark-blue: #1d2540;
+  --dark-grey: #464343;
+  --light-grey: #e5e5e5;
   --text-normal: 1rem;
   --text-h1: 1.5rem;
   --border: 1px solid;
@@ -47,13 +46,15 @@ body {
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  background-color: white;
 }
 
 header {
+  display: flex;
   margin: 0;
   padding-top: 1rem;
   width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 main {
@@ -72,7 +73,30 @@ footer {
   justify-content: space-around;
   gap: 3rem;
   color: black;
-  background-color: var(--dark-grey);
+  background-color: var(--dark-blue);
+}
+
+/* OTHER ELEMENTS */
+
+.searchbar-pos form {
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-pos > input {
+  width: 400px;
+  height: 50px;
+  padding: 1rem;
+  border: var(--border) var(--dark-blue);
+}
+
+.searchbar-pos > button {
+  text-decoration: none;
+  color: white;
+  background-color: var(--dark-blue);
+  padding: 0.7rem 1rem;
+  border: var(--border) var(--dark-blue);
+  height: 50px;
 }
 
 /* TEXT */
@@ -111,14 +135,31 @@ a:hover {
   font-size: 1.12rem;
 }
 
+.right-nav-icon {
+  color: var(--dark-blue);
+}
+
+.header-search-icon {
+  color: white;
+}
+
+.header-icons {
+  display: flex;
+  gap: 3rem;
+}
+
 /* IMAGES */
 
 .header-image {
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/billetto-editorial-header.jpg");
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/header-image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   background-position: center;
+}
+
+.header-logo {
+  width: 100px;
 }
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
