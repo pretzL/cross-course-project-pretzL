@@ -21,8 +21,53 @@
   <body>
     <div class="content-wrapper">
       <div class="content-container">
-        <header class=""></header>
-        <main></main>
+        <header class="">
+          <a href="index.html">
+            <img src="images/GameHub_Logo_changed.png" alt="GameHub Logo" class="image-centered" />
+          </a>
+          <div class="searchbar-pos">
+            <input type="text" placeholder="Search" />
+            <button class="search-button" onclick="window.location.href = 'search.html'"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="navigation-menu">
+            <label class="menu-dropdown" for="menu-dropdown">Menu</label>
+          </div>
+          <div class="header-icons">
+            <a href="my-cart.html"><span class="material-icons md-36 right-nav-icon"> shopping_cart </span></a>
+            <a href="login.html"><span class="material-icons md-36 right-nav-icon"> account_circle </span></a>
+          </div>
+        </header>
+        <section class="header-image">
+          <h1>GameHub</h1>
+          <div class="btn"><a href="/all-games.html">Buy</a></div>
+          <div class="btn"><a href="/marketplace.html">Sell</a></div>
+        </section>
+        <main>
+          <section class="quick-nav">
+            <h2>Quick Links</h2>
+            <div class="quick-links-container">
+              <a href="/new-releases.html" class="quick-links-button">New Releases</a>
+              <a href="/new-releases.html" class="quick-links-button">Best Sellers</a>
+              <a href="/new-releases.html" class="quick-links-button">Used Games</a>
+              <a href="/new-releases.html" class="quick-links-button">Top Games</a>
+            </div>
+          </section>
+          <section class="content-hot-wrapper main-category">
+            <h2>Hot</h2>
+            <div class="content-hot"></div>
+            <div class="btn"><a href="/hot-games.html">View More</a></div>
+          </section>
+          <section class="content-coming-soon-wrapper main-category">
+            <h2>Coming Soon</h2>
+            <div class="content-coming-soon"></div>
+            <div class="btn"><a href="/coming-soon.html">View More</a></div>
+          </section>
+          <section class="content-marketplace-wrapper main-category">
+            <h2>Marketplace</h2>
+            <div class="content-marketplace"></div>
+            <div class="btn"><a href="/marketplace.html">View More</a></div>
+          </section>
+        </main>
         <footer class=""></footer>
       </div>
     </div>
