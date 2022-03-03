@@ -145,6 +145,31 @@ footer {
   font-size: 1.5rem;
 }
 
+.card {
+  width: 300px;
+  background-color: var(--light-grey);
+  color: black;
+  border-radius: 0 0 5px 5px;
+}
+
+.content-hot {
+  display: flex;
+  gap: 3rem;
+}
+
+.btn {
+  background-color: var(--dark-blue);
+  width: 140px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn a {
+  color: white;
+}
+
 /* TEXT */
 
 a {
@@ -232,6 +257,11 @@ h1 {
 
 .top-games-button {
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
+}
+
+.card-image {
+  width: 300px;
+  height: 200px;
 }
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
