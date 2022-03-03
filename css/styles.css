@@ -99,6 +99,24 @@ footer {
   height: 50px;
 }
 
+.header-image-buttons {
+  display: flex;
+  gap: 3rem;
+}
+
+.header-image-buttons .btn {
+  display: flex;
+  background-color: var(--dark-blue);
+  width: 180px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image-buttons .btn a {
+  color: white;
+}
+
 /* TEXT */
 
 a {
@@ -107,6 +125,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h1 {
+  font-size: 4rem;
+  color: white;
 }
 
 /* ICONS */
@@ -151,16 +174,30 @@ a:hover {
 /* IMAGES */
 
 .header-image {
+  background: url("../images/header-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rem;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+/* .header-image {
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/header-image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   background-position: center;
 }
-
-.header-logo {
-  width: 100px;
-}
+*/
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
 
