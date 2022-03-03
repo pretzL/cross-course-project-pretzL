@@ -1,0 +1,174 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* VARIABLES */
+
+:root {
+  --light-green: #41a650;
+  --dark-green: #25592c;
+  --dark-teal: #4197a6;
+  --dark-grey: #4f4f4f;
+  --text-normal: 1rem;
+  --text-h1: 1.5rem;
+  --border: 1px solid;
+}
+
+/* CONTENT CONTAINER */
+
+.content-container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* FLEX REUSABLES */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* MAIN ELEMENTS */
+
+body {
+  font-family: "Commissioner", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+header {
+  margin: 0;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  color: black;
+  width: 100%;
+  height: fit-content;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+footer {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  color: black;
+  background-color: var(--dark-grey);
+}
+
+/* TEXT */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ICONS */
+
+.material-icons {
+  position: relative;
+}
+
+.material-icons:hover {
+  cursor: pointer;
+}
+
+.material-icons.md-48 {
+  font-size: 3rem;
+}
+
+.material-icons.md-36 {
+  font-size: 2.25rem;
+}
+
+.material-icons.md-24 {
+  font-size: 1.5rem;
+}
+
+.material-icons.md-18 {
+  font-size: 1.12rem;
+}
+
+/* IMAGES */
+
+.header-image {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/billetto-editorial-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+}
+
+/* HIDDEN TEXT FOR ACCESSIBILITY */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLET */
+
+@media only screen and (min-width: 767px) {
+}
+
+/* DESKTOP */
+
+@media only screen and (min-width: 1280px) {
+  /* .exhibition-content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "grid1 grid1 grid2"
+      "grid3 grid4 grid2"
+      "grid3 grid4 grid5";
+  }
+
+  .grid1 {
+    grid-area: grid1;
+  }
+
+  .grid2 {
+    grid-area: grid2;
+  }
+
+  .grid3 {
+    grid-area: grid3;
+  }
+
+  .grid4 {
+    grid-area: grid4;
+  }
+
+  .grid5 {
+    grid-area: grid5;
+  } */
+}
