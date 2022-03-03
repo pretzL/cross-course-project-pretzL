@@ -64,6 +64,7 @@ main {
   height: fit-content;
   flex-grow: 1;
   flex-direction: column;
+  align-items: center;
 }
 
 footer {
@@ -115,6 +116,33 @@ footer {
 
 .header-image-buttons .btn a {
   color: white;
+}
+
+.quick-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-links-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.quick-links-button {
+  display: flex;
+  width: 300px;
+  height: 80px;
+  border: var(--border) grey;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.quick-links-container a {
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* TEXT */
@@ -190,14 +218,21 @@ h1 {
   width: 100px;
 }
 
-/* .header-image {
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/header-image.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  background-position: center;
+.new-releases-button {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
 }
-*/
+
+.best-sellers-button {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/raftquicknav.jpg");
+}
+
+.used-games-button {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/skyrimquicknav.jpg");
+}
+
+.top-games-button {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
+}
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
 
