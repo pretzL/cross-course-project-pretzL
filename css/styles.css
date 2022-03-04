@@ -152,7 +152,14 @@ footer {
   border-radius: 0 0 5px 5px;
 }
 
-.content-hot {
+.card h3,
+.card p {
+  margin-left: 1rem;
+}
+
+.content-hot,
+.content-coming-soon,
+.content-marketplace {
   display: flex;
   gap: 3rem;
 }
@@ -173,6 +180,10 @@ footer {
 .view-more {
   margin-left: auto;
   margin-top: 1rem;
+}
+
+.content-marketplace-wrapper {
+  margin-bottom: 3rem;
 }
 
 /* TEXT */
