@@ -12,8 +12,8 @@ async function getUpcomingGames() {
 
     hotContainer.innerHTML = "";
 
-    for (let i = 0; i < games.length; i++) {
-      if (i === 4) {
+    for (let i = 8; i < games.length; i++) {
+      if (i === 12) {
         break;
       }
 

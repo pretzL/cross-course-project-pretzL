@@ -1,10 +1,8 @@
-const marketplaceURL = "https://api.rawg.io/api/games?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-
 const marketplaceContainer = document.querySelector(".content-marketplace");
 
 async function getMarketplaceGames() {
   try {
-    const response = await fetch(marketplaceURL);
+    const response = await fetch(URL);
     const results = await response.json();
     console.log(results);
 

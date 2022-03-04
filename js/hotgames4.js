@@ -1,10 +1,8 @@
-const API_URL = "https://api.rawg.io/api/games?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-
 const hotContainer = document.querySelector(".content-hot");
 
 async function getGames() {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(URL);
     const results = await response.json();
     console.log(results);
 
