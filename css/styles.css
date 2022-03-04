@@ -71,9 +71,8 @@ footer {
   width: 100%;
   padding-bottom: 2rem;
   display: flex;
-  justify-content: space-around;
   gap: 3rem;
-  color: black;
+  color: white;
   background-color: var(--dark-blue);
 }
 
@@ -186,6 +185,42 @@ footer {
   margin-bottom: 3rem;
 }
 
+.footer-first,
+.footer-second,
+.footer-third {
+  margin-left: 2rem;
+}
+
+.footer-second,
+.footer-third {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  width: 20%;
+  gap: 0.5rem;
+}
+
+.footer-first {
+  width: 30%;
+}
+
+.footer-fourth p {
+  width: 80%;
+}
+
+.footer-fourth {
+  margin-left: 5rem;
+}
+
+.footer-fifth {
+  display: flex;
+  width: 30%;
+}
+
+.footer-copyright {
+  align-self: flex-end;
+}
+
 /* TEXT */
 
 a {
@@ -199,6 +234,19 @@ a:hover {
 h1 {
   font-size: 4rem;
   color: white;
+}
+
+.footer-second a,
+.footer-third a {
+  color: white;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 /* ICONS */
@@ -238,6 +286,15 @@ h1 {
 .header-icons {
   display: flex;
   gap: 3rem;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-icons i {
+  font-size: 2rem;
 }
 
 /* IMAGES */
