@@ -78,7 +78,7 @@ footer {
 
 /* OTHER ELEMENTS */
 
-.searchbar-pos form {
+.searchbar-pos {
   display: flex;
   align-items: center;
 }
