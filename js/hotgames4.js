@@ -15,7 +15,7 @@ async function getGames() {
         break;
       }
 
-      hotContainer.innerHTML += `<a href="/details.html?id=${games[i].id}" class="card">
+      hotContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
       <img src="${games[i].background_image}" class="card-image"/>
         <h3>${games[i].name}</h3>
         <p>Rating: ${games[i].rating}</p>
