@@ -41,7 +41,7 @@ function validateForm(form) {
     emailError.style.display = "block";
   }
 
-  // Level 2 process, form validated message
+  // Form validated message
   if (checkLength(firstName.value, 0) && checkLength(lastName.value, 0) && checkLength(subject.value, 9) && validateEmail(email.value)) {
     validatorContainer.style.display = "block";
   }
