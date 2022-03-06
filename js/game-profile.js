@@ -16,6 +16,8 @@ const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
 const headingOne = document.querySelector("h1");
 const headerImage = document.querySelector(".header-image-thinner");
+const subHeading1 = document.querySelector(".subheading1");
+const subHeading2 = document.querySelector(".subheading2");
 
 async function fetchSingleGame() {
   try {
@@ -26,6 +28,8 @@ async function fetchSingleGame() {
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
     headerImage.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image})`;
+    subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
+    subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
 
     const gameGenres = singleResult.genres;
 

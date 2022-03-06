@@ -270,6 +270,7 @@ footer {
 
 .game-summary p {
   font-size: 0.9rem;
+  padding: 0;
 }
 
 .reviews-container {
@@ -374,7 +375,9 @@ h5 {
 .header-image-thinner {
   display: flex;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
-  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 100px;
   justify-content: center;
@@ -416,6 +419,9 @@ h5 {
 .subheading-image {
   display: flex;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
   justify-content: center;
   align-items: center;
@@ -536,6 +542,31 @@ h5 {
       "game-grid1 game-grid1 game-grid3"
       "game-grid4 game-grid4 game-grid4"
       "game-grid4 game-grid4 game-grid4";
+  }
+
+  .header-image-thinner {
+    height: 200px;
+  }
+
+  .game-summary {
+    width: 800px;
+    margin-left: 3rem;
+  }
+
+  .game-summary p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .reviews-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 80%;
+  }
+
+  .reviews-container img {
+    width: 50%;
   }
 }
 
