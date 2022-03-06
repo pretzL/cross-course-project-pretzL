@@ -43,10 +43,10 @@
             <button class="search-button" type="submit"><i class="fas fa-search header-search-icon"></i></button>
           </div>
         </header>
-        <section class="header-image">
+        <section class="header-image-thinner">
           <h1>Login</h1>
         </section>
-        <main>
+        <main class="form-page">
           <div class="validator-container"><p>Form sent!</p></div>
           <form class="contact-form">
             <div>
@@ -59,11 +59,11 @@
             <div>
               <label>
                 Password (required)
-                <input name="password" id="password" />
+                <input type="password" name="password" id="password" />
                 <div class="form-error" id="password-error">Please enter your password</div>
               </label>
             </div>
-            <button class="btn">Submit</button>
+            <button class="btn form-btn">Submit</button>
           </form>
         </main>
         <footer>
@@ -101,7 +101,7 @@
         </footer>
       </div>
     </div>
-    <script src="/js/index.js"></script>
+    <script src="/js/login.js"></script>
     <script src="js/components/error.js"></script>
   </body>
 </html>
