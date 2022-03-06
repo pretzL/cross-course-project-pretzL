@@ -215,6 +215,70 @@ footer {
   justify-content: space-evenly;
 }
 
+.details-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--light-grey);
+}
+
+.game-info {
+  display: grid;
+  margin-top: 1rem;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "game-grid1 game-grid1 game-grid1"
+    "game-grid2 game-grid3 game-grid3"
+    "game-grid4 game-grid4 game-grid4"
+    "game-grid4 game-grid4 game-grid4";
+}
+
+.game-grid1 {
+  grid-area: game-grid1;
+}
+
+.game-grid2 {
+  grid-area: game-grid2;
+}
+
+.game-grid3 {
+  grid-area: game-grid3;
+}
+
+.game-grid4 {
+  grid-area: game-grid4;
+}
+
+.game-grid5 {
+  grid-area: grid5;
+}
+
+.about-the-game {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.about-the-game p {
+  margin: 0.2rem 0;
+}
+
+.game-summary {
+  padding: 0 0.5rem;
+}
+
+.game-summary p {
+  font-size: 0.9rem;
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
 /* TEXT */
 
 a {
@@ -307,6 +371,15 @@ h5 {
   gap: 10rem;
 }
 
+.header-image-thinner {
+  display: flex;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
+  object-fit: cover;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+}
+
 .header-logo {
   width: 100px;
 }
@@ -330,6 +403,28 @@ h5 {
 .card-image {
   width: 300px;
   height: 200px;
+}
+
+.game-image-large {
+  width: 100%;
+}
+
+.game-image-small {
+  width: 100%;
+}
+
+.subheading-image {
+  display: flex;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.reviews-container img {
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* HIDDEN TEXT FOR ACCESSIBILITY */
@@ -435,7 +530,16 @@ h5 {
     gap: 3rem;
   }
 
-  /* .exhibition-content {
+  .game-info {
+    grid-template-areas:
+      "game-grid1 game-grid1 game-grid2"
+      "game-grid1 game-grid1 game-grid3"
+      "game-grid4 game-grid4 game-grid4"
+      "game-grid4 game-grid4 game-grid4";
+  }
+}
+
+/* .exhibition-content {
     display: grid;
     grid-gap: 1rem;
     grid-template-areas:
@@ -463,4 +567,3 @@ h5 {
   .grid5 {
     grid-area: grid5;
   } */
-}
