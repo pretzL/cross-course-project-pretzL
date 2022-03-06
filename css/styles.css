@@ -299,7 +299,7 @@ footer {
 }
 
 .form-page {
-  margin: 1rem 0;
+  margin: 3rem 0;
 }
 
 .form-page form {
@@ -311,7 +311,7 @@ footer {
   padding: 1rem;
   border-radius: 10px;
   background-color: lightgrey;
-  width: 800px;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -637,6 +637,10 @@ h5 {
 
   .reviews-container img {
     width: 50%;
+  }
+
+  .form-page form {
+    width: 30vw;
   }
 }
 
