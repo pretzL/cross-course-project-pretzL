@@ -27,9 +27,18 @@ async function fetchSingleGame() {
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
-    headerImage.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image})`;
+    headerImage.style.backgroundImage = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image})`;
     subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
     subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
+    headerImage.style.backgroundSize = "cover";
+    headerImage.style.backgroundRepeat = "norepeat";
+    headerImage.style.backgroundPosition = "center";
+    subHeading1.style.backgroundSize = "cover";
+    subHeading1.style.backgroundRepeat = "norepeat";
+    subHeading1.style.backgroundPosition = "center";
+    subHeading2.style.backgroundSize = "cover";
+    subHeading2.style.backgroundRepeat = "norepeat";
+    subHeading2.style.backgroundPosition = "center";
 
     const gameGenres = singleResult.genres;
 

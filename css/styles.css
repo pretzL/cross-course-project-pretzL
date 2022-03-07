@@ -435,7 +435,7 @@ h5 {
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("../images/blackreachquicknav.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   width: 100vw;
   height: 100px;
   justify-content: center;
@@ -618,6 +618,7 @@ h5 {
   }
 
   .game-info {
+    padding: 0 1rem;
     grid-template-areas:
       "game-grid1 game-grid1 game-grid2"
       "game-grid1 game-grid1 game-grid3"
