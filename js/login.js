@@ -8,6 +8,9 @@ const passwordError = document.querySelector("#password-error");
 
 const validatorContainer = document.querySelector(".validator-container");
 
+const loginButton = document.querySelector(".login-btn");
+const createAccountButton = document.querySelector(".create-account-btn");
+
 function validateLogin(form) {
   form.preventDefault();
 
@@ -24,8 +27,11 @@ function validateLogin(form) {
   }
 
   // Validation Message Checker
-  if (checkLength(username.value, 3) && checkLength(password.value, 3)) {
+  if (checkLength(username.value, 2) && checkLength(password.value, 5)) {
     validatorContainer.style.display = "block";
+    setTimeout(() => {
+      location.href = "/user-profile.html?name=" + username.value;
+    }, 3000);
   }
 }
 
@@ -34,3 +40,7 @@ form.addEventListener("submit", validateLogin);
 function checkLength(value, char) {
   return value.trim().length > char;
 }
+
+createAccountButton.onclick = () => {
+  location.href = `/create-account.html`;
+};
