@@ -73,7 +73,7 @@ function validateForm(form) {
     validatorContainer.style.display = "block";
     buttonSubmit.onclick = setTimeout(() => {
       location.href = "/login.html";
-    }, 3000);
+    }, 2000);
   }
 }
 

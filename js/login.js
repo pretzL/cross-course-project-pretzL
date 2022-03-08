@@ -31,7 +31,7 @@ function validateLogin(form) {
     validatorContainer.style.display = "block";
     setTimeout(() => {
       location.href = "/user-profile.html?name=" + username.value;
-    }, 3000);
+    }, 2000);
   }
 }
 
