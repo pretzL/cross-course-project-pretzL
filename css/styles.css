@@ -355,13 +355,24 @@ footer {
 }
 
 .suggested-games,
-.all-games-content {
+.all-games-content,
+.search-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.all-games-content {
+.error-container {
+  display: none;
+  color: red;
+  font-size: 1rem;
+  border: var(--border) red;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.all-games-content,
+.search-content {
   margin: 2rem 0;
 }
 
@@ -816,7 +827,8 @@ h5 {
     justify-content: center;
   }
 
-  .all-games-content {
+  .all-games-content,
+  .search-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
