@@ -15,6 +15,7 @@ const searchContainer = document.querySelector(".search-content");
 async function getSearch() {
   try {
     searchContainer.innerHTML = "";
+    errorContainer.innerHTML = "";
 
     const url = cors + baseURL + key + "&search=" + search;
 
@@ -29,7 +30,7 @@ async function getSearch() {
         errorContainer.innerHTML = errorMessage("We don't recognize that game");
         errorContainer.style.display = "block";
       }
-      if (games.length > 1) {
+      if (games.length < 1) {
         errorContainer.innerHTML = errorMessage("Please be more specific");
         errorContainer.style.display = "block";
       }
