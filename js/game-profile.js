@@ -74,11 +74,14 @@ async function fetchSuggested() {
 
     suggestedGames.innerHTML = "";
 
+    let newArr = [];
     for (let i = 0; i < games.length; i++) {
-      if (games[i].id === id) {
-        continue;
+      if (games[i].id !== id) {
+        newArr.push(games[i]);
       }
-
+    }
+    console.log(newArr);
+    for (let i = 0; i < newArr.length; i++) {
       if (i === 3) {
         break;
       }
