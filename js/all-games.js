@@ -14,6 +14,10 @@ async function getGames() {
     gamesContainer.innerHTML = "";
 
     for (let i = 0; i < games.length; i++) {
+      if (games[i].rating === 0) {
+        continue;
+      }
+
       gamesContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
           <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
             <h3>${games[i].name}</h3>

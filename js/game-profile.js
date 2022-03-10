@@ -9,9 +9,9 @@ if (id === null) {
   location.href = "/";
 }
 
-const url = "https://api.rawg.io/api/games";
+const baseURL = "https://api.rawg.io/api/games";
 const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-const detailsURL = url + "/" + id + key;
+const detailsURL = baseURL + "/" + id + key;
 
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
@@ -65,7 +65,7 @@ fetchSingleGame();
 
 async function fetchSuggested() {
   try {
-    const response = await fetch(url + key);
+    const response = await fetch(baseURL + key);
     const results = await response.json();
 
     const games = results.results;
