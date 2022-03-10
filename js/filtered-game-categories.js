@@ -37,7 +37,7 @@ async function getFilteredGames() {
     const results = await response.json();
 
     const games = results.results;
-    console.log(games);
+
     gamesContainer.innerHTML = "";
 
     for (let i = 0; i < games.length; i++) {
