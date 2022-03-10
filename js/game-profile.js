@@ -9,8 +9,9 @@ if (id === null) {
   location.href = "/";
 }
 
+const url = "https://api.rawg.io/api/games";
 const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-const detailsURL = "https://api.rawg.io/api/games/" + id + key;
+const detailsURL = url + "/" + id + key;
 
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
@@ -18,6 +19,7 @@ const headingOne = document.querySelector("h1");
 const headerImage = document.querySelector(".header-image-thinner");
 const subHeading1 = document.querySelector(".subheading1");
 const subHeading2 = document.querySelector(".subheading2");
+const suggestedGames = document.querySelector(".suggested-games");
 
 async function fetchSingleGame() {
   try {
@@ -61,3 +63,37 @@ async function fetchSingleGame() {
 }
 
 fetchSingleGame();
+
+async function fetchSuggested() {
+  try {
+    const response = await fetch(url + key);
+    const results = await response.json();
+    console.log(results);
+
+    const games = results.results;
+
+    suggestedGames.innerHTML = "";
+
+    for (let i = 0; i < games.length; i++) {
+      if (games[i].id === id) {
+        continue;
+      }
+
+      if (i === 3) {
+        break;
+      }
+
+      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
+          <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
+            <h3>${games[i].name}</h3>
+            <p>Rating: ${games[i].rating}</p>
+            <p>Released: ${games[i].released}</p>
+            </a>`;
+    }
+  } catch (error) {
+    console.log(error);
+    errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
+  }
+}
+
+fetchSuggested();
