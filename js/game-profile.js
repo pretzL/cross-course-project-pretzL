@@ -25,7 +25,6 @@ async function fetchSingleGame() {
   try {
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-    console.log(singleResult);
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
@@ -68,29 +67,24 @@ async function fetchSuggested() {
   try {
     const response = await fetch(url + key);
     const results = await response.json();
-    console.log(results);
 
     const games = results.results;
 
     suggestedGames.innerHTML = "";
 
-    let newArr = [];
-    for (let i = 0; i < games.length; i++) {
-      if (games[i].id !== id) {
-        newArr.push(games[i]);
-      }
-    }
-    console.log(newArr);
-    for (let i = 0; i < newArr.length; i++) {
+    const filteredID = Number(id);
+    const filteredGames = games.filter((game) => game.id !== filteredID).slice(0, 3);
+
+    for (let i = 0; i < filteredGames.length; i++) {
       if (i === 3) {
         break;
       }
 
-      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
-          <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
-            <h3>${games[i].name}</h3>
-            <p>Rating: ${games[i].rating}</p>
-            <p>Released: ${games[i].released}</p>
+      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${filteredGames[i].id}" class="card">
+          <img src="${filteredGames[i].background_image}" class="card-image" alt="${filteredGames[i].name}"/>
+            <h3>${filteredGames[i].name}</h3>
+            <p>Rating: ${filteredGames[i].rating}</p>
+            <p>Released: ${filteredGames[i].released}</p>
             </a>`;
     }
   } catch (error) {

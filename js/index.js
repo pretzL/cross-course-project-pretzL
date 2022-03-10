@@ -8,7 +8,6 @@ async function getGames() {
   try {
     const response = await fetch(URL);
     const results = await response.json();
-    console.log(results);
 
     const games = results.results;
 
