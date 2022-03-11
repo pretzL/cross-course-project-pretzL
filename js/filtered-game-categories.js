@@ -20,9 +20,17 @@ const headingOne = document.querySelector("h1");
 
 const today = new Date().toISOString().split("T")[0];
 
+const oneYearFromNow = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+const filteredYear = oneYearFromNow.toISOString().split("T")[0];
+
 if (parameter === "new") {
   orderBy = `&dates=2022-01-01,${today}&ordering=-released`;
   headingOne.innerHTML = "New Releases";
+}
+
+if (parameter === "coming") {
+  orderBy = `&dates=${today},${filteredYear}&ordering=released`;
+  headingOne.innerHTML = "Coming Soon";
 }
 
 if (parameter === "top") {
