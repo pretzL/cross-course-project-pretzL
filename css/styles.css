@@ -766,35 +766,19 @@ h5 {
   footer {
     flex-direction: row;
     align-items: normal;
-    gap: 3rem;
+    gap: 2rem;
     text-align: left;
   }
 
   .footer-first,
   .footer-second,
   .footer-third {
-    margin-left: 2rem;
-  }
-
-  .footer-second,
-  .footer-third {
-    width: 20%;
+    margin-left: 1rem;
   }
 
   .footer-fourth {
     display: block;
-  }
-
-  .footer-first {
-    width: 30%;
-  }
-
-  .footer-fourth p {
-    width: 80%;
-  }
-
-  .footer-fifth {
-    width: 30%;
+    width: 45%;
   }
 
   .footer-icons {
