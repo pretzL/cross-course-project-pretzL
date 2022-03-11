@@ -63,7 +63,7 @@ async function fetchSingleGame() {
 }
 
 fetchSingleGame();
-
+// TRY TO MERGE THESE TWO TOGETHER. NEW FETCH, PASS IN TAGS, DISPLAY IN SUGGESTED WITH FILTERED NUMBER FIX.
 async function fetchSuggested() {
   try {
     const response = await fetch(baseURL + key);
