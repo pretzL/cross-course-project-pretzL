@@ -12,6 +12,8 @@ const itemTwoPrice = document.querySelector(".item-two-price");
 
 const itemTotalPrice = document.querySelector(".item-total-price");
 
+const checkoutButton = document.querySelector(".checkout-btn");
+
 let firstItemPrice = 40.83;
 let secondItemPrice = 19.94;
 
@@ -49,3 +51,7 @@ itemTwoPlusButton.onclick = () => {
 let totalPriceTotal = firstItemPriceTotal + secondItemPriceTotal;
 
 itemTotalPrice.innerHTML = "Total:" + "$" + totalPriceTotal;
+
+checkoutButton.onclick = () => {
+  location.href = "/checkout.html";
+};
