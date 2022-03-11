@@ -376,6 +376,10 @@ footer {
   margin: 2rem 0;
 }
 
+.cart-cta {
+  margin-top: 1rem;
+}
+
 /* FORMS */
 
 .validator-container {
@@ -526,6 +530,11 @@ h5 {
 
 .user-badges span {
   color: var(--dark-blue);
+}
+
+.cart-cta-icon {
+  color: white;
+  margin-right: 0.5rem;
 }
 
 /* IMAGES */

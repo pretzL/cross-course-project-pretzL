@@ -50,6 +50,7 @@ async function fetchSingleGame() {
                           <p>Release date: ${singleResult.released}</p>
                           <p>Publisher: ${singleResult.publishers[0].name}</p>
                           <p>Tags: ${gameGenres[0].name}, ${gameGenres[1].name}</p>
+                          <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>

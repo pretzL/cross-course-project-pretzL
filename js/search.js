@@ -1,6 +1,8 @@
 const form = document.querySelector(".searchbar-pos");
-
 const input = document.querySelector("#search");
+
+const mobileForm = document.querySelector(".mobile-searchbar");
+const mobileInput = document.querySelector("#mobile-search");
 
 function validateForm(form) {
   form.preventDefault();
@@ -9,3 +11,11 @@ function validateForm(form) {
 }
 
 form.addEventListener("submit", validateForm);
+
+function validateMobileForm(mobileForm) {
+  mobileForm.preventDefault();
+
+  location.href = "/search.html?search=" + mobileInput.value;
+}
+
+mobileForm.addEventListener("submit", validateMobileForm);
