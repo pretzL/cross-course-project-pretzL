@@ -679,6 +679,12 @@ footer {
 
 /* TEXT */
 
+.header-one {
+  color: var(--dark-blue);
+  font-family: "Tourney", sans-serif;
+  margin-top: 2rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -768,6 +774,75 @@ h5 {
 .cart-cta-icon {
   color: white;
   margin-right: 0.5rem;
+}
+
+/* NAVIGATION */
+
+.navbar,
+.navbar ul,
+.nav-item {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.navbar {
+  background-color: var(--dark-blue);
+  position: absolute;
+  display: none;
+  top: 24vh;
+  padding: 1rem 0;
+  height: 95vh;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100vw;
+  justify-items: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.nav-item {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border) white;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.menu-dropdown:hover {
+  cursor: pointer;
+}
+
+.page-active {
+  background-color: white;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.hamburger-active {
+  display: block;
+  z-index: 999;
 }
 
 /* IMAGES */
@@ -1094,6 +1169,15 @@ h5 {
 
   .game-image-small {
     width: 95%;
+  }
+
+  .navbar {
+    height: 25vh;
+    top: 10vh;
+  }
+
+  .nav-menu {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
