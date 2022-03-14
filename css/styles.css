@@ -358,7 +358,9 @@ footer {
 
 .suggested-games,
 .all-games-content,
-.search-content {
+.search-content,
+.user-owned-games-content,
+.user-purchased-games-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -1054,7 +1056,9 @@ h5 {
     margin-bottom: 20vh;
   }
 
-  .suggested-games {
+  .suggested-games,
+  .user-owned-games-content,
+  .user-purchased-games-content {
     flex-direction: row;
     justify-content: center;
   }
