@@ -22,7 +22,7 @@ let firstItemPrice = 40.83;
 let secondItemPrice = 19.94;
 
 let firstItemNumber = 1;
-let secondItemNumber = 2;
+let secondItemNumber = 1;
 
 itemOneMinusButton.onclick = () => {
   firstItemNumber -= 1;

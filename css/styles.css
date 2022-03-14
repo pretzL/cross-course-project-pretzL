@@ -209,7 +209,7 @@ footer {
 .footer-third {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
   gap: 1rem;
 }
 
@@ -224,6 +224,7 @@ footer {
 
 .footer-copyright {
   align-self: flex-end;
+  font-weight: bold;
 }
 
 .header-container {
@@ -274,6 +275,7 @@ footer {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
+  margin: 0 auto;
 }
 
 .about-the-game p {
@@ -603,7 +605,15 @@ footer {
 
 /* FORMS */
 
-.validator-container {
+.cart-validation-container {
+  position: absolute;
+  background-color: var(--light-grey);
+  left: 50%;
+  top: 50%;
+}
+
+.validator-container,
+.cart-validation-container {
   display: none;
   border: solid 1px green;
   color: green;
@@ -782,6 +792,8 @@ h5 {
   width: 100vw;
   height: 100px;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .header-logo {
@@ -815,6 +827,7 @@ h5 {
 
 .game-image-small {
   width: 100%;
+  margin-left: 1rem;
 }
 
 .subheading-image {
@@ -1073,6 +1086,10 @@ h5 {
 
   .checkout-form-group > input {
     width: 15vw;
+  }
+
+  .game-image-small {
+    width: 95%;
   }
 }
 

@@ -13,6 +13,12 @@ const baseURL = "https://api.rawg.io/api/games";
 const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
 const detailsURL = baseURL + "/" + id + key;
 
+const cors = "https://noroffcors.herokuapp.com/";
+
+const page_size = "&page_size=20";
+
+let orderBy = "";
+
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
 const headingOne = document.querySelector("h1");
@@ -25,6 +31,8 @@ async function fetchSingleGame() {
   try {
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
+
+    console.log(singleResult);
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
@@ -50,12 +58,46 @@ async function fetchSingleGame() {
                           <p>Release date: ${singleResult.released}</p>
                           <p>Publisher: ${singleResult.publishers[0].name}</p>
                           <p>Tags: ${gameGenres[0].name}, ${gameGenres[1].name}</p>
+                          <p>Price: $38</p>
                           <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
+                          <div class="cart-validation-container"><p>Item added to cart</p></div>
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>
                           <p class="game-summary">${singleResult.description_raw}</p>
                           </div>`;
+
+    const validatorContainer = document.querySelector(".cart-validation-container");
+    const cartCta = document.querySelector(".cart-cta");
+
+    cartCta.onclick = () => {
+      validatorContainer.style.display = "block";
+    };
+
+    const tags = `&genres=${gameGenres[0].slug},${gameGenres[1].slug}`;
+    const suggestedURL = cors + baseURL + key + tags;
+    const suggestedResponse = await fetch(suggestedURL);
+    const suggestedSingleResult = await suggestedResponse.json();
+
+    const suggestedGamesResult = suggestedSingleResult.results;
+    console.log(suggestedGamesResult);
+    suggestedGames.innerHTML = "";
+
+    const filteredID = Number(id);
+    const filteredGames = suggestedGamesResult.filter((game) => game.id !== filteredID).slice(0, 3);
+
+    for (let i = 0; i < filteredGames.length; i++) {
+      if (i === 3) {
+        break;
+      }
+
+      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${filteredGames[i].id}" class="card">
+          <img src="${filteredGames[i].background_image}" class="card-image" alt="${filteredGames[i].name}"/>
+            <h3>${filteredGames[i].name}</h3>
+            <p>Rating: ${filteredGames[i].rating}</p>
+            <p>Released: ${filteredGames[i].released}</p>
+            </a>`;
+    }
   } catch (error) {
     console.log(error);
     errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
