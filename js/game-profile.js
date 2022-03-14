@@ -29,6 +29,7 @@ const suggestedGames = document.querySelector(".suggested-games");
 
 async function fetchSingleGame() {
   try {
+    //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
 
@@ -74,13 +75,14 @@ async function fetchSingleGame() {
       validatorContainer.style.display = "block";
     };
 
+    //SUGGESTED GAMES QUERY
     const tags = `&genres=${gameGenres[0].slug},${gameGenres[1].slug}`;
     const suggestedURL = cors + baseURL + key + tags;
     const suggestedResponse = await fetch(suggestedURL);
     const suggestedSingleResult = await suggestedResponse.json();
 
     const suggestedGamesResult = suggestedSingleResult.results;
-    console.log(suggestedGamesResult);
+
     suggestedGames.innerHTML = "";
 
     const filteredID = Number(id);
@@ -105,35 +107,3 @@ async function fetchSingleGame() {
 }
 
 fetchSingleGame();
-// TRY TO MERGE THESE TWO TOGETHER. NEW FETCH, PASS IN TAGS, DISPLAY IN SUGGESTED WITH FILTERED NUMBER FIX.
-async function fetchSuggested() {
-  try {
-    const response = await fetch(baseURL + key);
-    const results = await response.json();
-
-    const games = results.results;
-
-    suggestedGames.innerHTML = "";
-
-    const filteredID = Number(id);
-    const filteredGames = games.filter((game) => game.id !== filteredID).slice(0, 3);
-
-    for (let i = 0; i < filteredGames.length; i++) {
-      if (i === 3) {
-        break;
-      }
-
-      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${filteredGames[i].id}" class="card">
-          <img src="${filteredGames[i].background_image}" class="card-image" alt="${filteredGames[i].name}"/>
-            <h3>${filteredGames[i].name}</h3>
-            <p>Rating: ${filteredGames[i].rating}</p>
-            <p>Released: ${filteredGames[i].released}</p>
-            </a>`;
-    }
-  } catch (error) {
-    console.log(error);
-    errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
-  }
-}
-
-fetchSuggested();
