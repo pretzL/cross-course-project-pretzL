@@ -724,6 +724,14 @@ h5 {
   font-size: 1rem;
 }
 
+.powered-by {
+  margin-top: 2rem;
+}
+
+.powered-by a {
+  color: white;
+}
+
 /* ICONS */
 
 .material-icons {
