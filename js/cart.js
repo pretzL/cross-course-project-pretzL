@@ -24,34 +24,46 @@ let secondItemPrice = 19.94;
 let firstItemNumber = 1;
 let secondItemNumber = 1;
 
-itemOneMinusButton.onclick = () => {
-  firstItemNumber -= 1;
-  let firstItemPriceTotal = firstItemPrice * firstItemNumber;
-  itemOneTotalNumber.innerHTML = firstItemNumber;
-  itemOnePrice.innerHTML = "$" + parseFloat(firstItemPriceTotal).toFixed(2);
-};
-
-itemOnePlusButton.onclick = () => {
-  firstItemNumber += 1;
-  let firstItemPriceTotal = firstItemPrice * firstItemNumber;
-  itemOneTotalNumber.innerHTML = firstItemNumber;
-  itemOnePrice.innerHTML = "$" + parseFloat(firstItemPriceTotal).toFixed(2);
-};
-
-itemTwoMinusButton.onclick = () => {
-  secondItemNumber -= 1;
-  let secondItemPriceTotal = secondItemPrice * secondItemNumber;
-  itemTwoTotalNumber.innerHTML = secondItemNumber;
-  itemTwoPrice.innerHTML = "$" + parseFloat(secondItemPriceTotal).toFixed(2);
-};
-
-itemTwoPlusButton.onclick = () => {
-  secondItemNumber += 1;
-  let secondItemPriceTotal = secondItemPrice * secondItemNumber;
-  itemTwoTotalNumber.innerHTML = secondItemNumber;
-  itemTwoPrice.innerHTML = "$" + parseFloat(secondItemPriceTotal).toFixed(2);
-};
+let firstItemPriceTotal = firstItemPrice * firstItemNumber;
+let secondItemPriceTotal = secondItemPrice * secondItemNumber;
 
 let totalPriceTotal = firstItemPriceTotal + secondItemPriceTotal;
 
-itemTotalPrice.innerHTML = "Total:" + "$" + totalPriceTotal;
+itemTotalPrice.innerHTML = "Total: " + "$" + parseFloat(totalPriceTotal).toFixed(2);
+
+itemOneMinusButton.onclick = () => {
+  firstItemNumber--;
+  firstItemPriceTotal = firstItemPrice * firstItemNumber;
+  itemOneTotalNumber.innerHTML = firstItemNumber;
+  itemOnePrice.innerHTML = "$" + parseFloat(firstItemPriceTotal).toFixed(2);
+  priceCalc();
+};
+
+itemOnePlusButton.onclick = () => {
+  firstItemNumber++;
+  firstItemPriceTotal = firstItemPrice * firstItemNumber;
+  itemOneTotalNumber.innerHTML = firstItemNumber;
+  itemOnePrice.innerHTML = "$" + parseFloat(firstItemPriceTotal).toFixed(2);
+  priceCalc();
+};
+
+itemTwoMinusButton.onclick = () => {
+  secondItemNumber--;
+  secondItemPriceTotal = secondItemPrice * secondItemNumber;
+  itemTwoTotalNumber.innerHTML = secondItemNumber;
+  itemTwoPrice.innerHTML = "$" + parseFloat(secondItemPriceTotal).toFixed(2);
+  priceCalc();
+};
+
+itemTwoPlusButton.onclick = () => {
+  secondItemNumber++;
+  secondItemPriceTotal = secondItemPrice * secondItemNumber;
+  itemTwoTotalNumber.innerHTML = secondItemNumber;
+  itemTwoPrice.innerHTML = "$" + parseFloat(secondItemPriceTotal).toFixed(2);
+  priceCalc();
+};
+
+function priceCalc() {
+  totalPriceTotal = firstItemPriceTotal + secondItemPriceTotal;
+  itemTotalPrice.innerHTML = "Total: " + "$" + parseFloat(totalPriceTotal).toFixed(2);
+}
