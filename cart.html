@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, Gamer, Games, Marketplace, Buy, Sell, CSS, HTML, Noroff" />
     <meta name="description" content="Welcome to GameHub - The Universe of Games" />
-    <title>All Games | GameHub</title>
+    <title>Cart | GameHub</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
             <ul class="nav-menu">
               <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="/login.html" class="nav-link">Login</a></li>
-              <li class="nav-item"><a href="/cart.html" class="nav-link">Cart</a></li>
+              <li class="nav-item"><a href="/cart.html" class="nav-link page-active">Cart</a></li>
               <li class="nav-item"><a href="/all-games.html" class="nav-link">Games</a></li>
               <li class="nav-item"><a href="/filtered-game-categories.html?parameter=new" class="nav-link">New Releases</a></li>
               <li class="nav-item"><a href="/filtered-game-categories.html?parameter=top" class="nav-link">Top Games</a></li>
@@ -58,12 +58,41 @@
         </header>
         <section class="header-image-thinner">
           <h5 class="visually-hidden">Page Header section</h5>
-          <h1>Search</h1>
+          <h1>My Cart</h1>
         </section>
-        <main class="all-games-page">
-          <div class="error-container"></div>
-          <div class="search-content">
-            <div class="loader"></div>
+        <main>
+          <div class="cart-page">
+            <h2 class="cart-grid1">Your Items</h2>
+            <div class="cart-item cart-grid2">
+              <h3>Item</h3>
+              <div class="item-one">
+                <img src="images/The_Elder_Scrolls_V_Skyrim_cover.jpg" class="cart-image-small item-grid1" alt="Cart Item Image Small" />
+                <p class="item-grid2">The Elder Scrolls V: Skyrim</p>
+                <div class="item-one-total-counter item-grid3">
+                  <button class="item-one-number-minus">-</button>
+                  <p class="item-one-total-number">1</p>
+                  <button class="item-one-number-plus">+</button>
+                </div>
+              </div>
+              <div class="item-two">
+                <img src="images/raftwallpaper.jpg" class="cart-image-small item-grid1" alt="Cart Item Image Small" />
+                <p class="item-grid2">Raft</p>
+                <div class="item-two-total-counter item-grid3">
+                  <button class="item-two-number-minus">-</button>
+                  <p class="item-two-total-number">1</p>
+                  <button class="item-two-number-plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart-price cart-grid3">
+              <h3>Price</h3>
+              <div class="price-list">
+                <p class="item-one-price">$40.83</p>
+                <p class="item-two-price">$19.94</p>
+              </div>
+            </div>
+            <h4 class="item-total-price cart-grid4">Total:</h4>
+            <button class="btn checkout-btn cart-grid5">Checkout</button>
           </div>
         </main>
         <footer>
@@ -103,7 +132,7 @@
     </div>
     <script src="js/components/error.js"></script>
     <script src="/js/navigation.js"></script>
-    <script src="/js/search-page.js"></script>
+    <script src="/js/cart.js"></script>
     <script src="/js/search.js"></script>
   </body>
 </html>

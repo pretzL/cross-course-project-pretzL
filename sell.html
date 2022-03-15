@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, Gamer, Games, Marketplace, Buy, Sell, CSS, HTML, Noroff" />
     <meta name="description" content="Welcome to GameHub - The Universe of Games" />
-    <title>All Games | GameHub</title>
+    <title>Sell a Game | GameHub</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,7 +50,7 @@
               <li class="nav-item"><a href="/all-games.html" class="nav-link">Games</a></li>
               <li class="nav-item"><a href="/filtered-game-categories.html?parameter=new" class="nav-link">New Releases</a></li>
               <li class="nav-item"><a href="/filtered-game-categories.html?parameter=top" class="nav-link">Top Games</a></li>
-              <li class="nav-item"><a href="/contact.html" class="nav-link">Contact Us</a></li>
+              <li class="nav-item"><a href="/contact.html" class="nav-link page-active">Contact Us</a></li>
               <li class="nav-item"><a href="/user-profile.html" class="nav-link">My Profile</a></li>
               <li class="nav-item"><a href="/sell.html" class="nav-link">Sell</a></li>
             </ul>
@@ -58,13 +58,41 @@
         </header>
         <section class="header-image-thinner">
           <h5 class="visually-hidden">Page Header section</h5>
-          <h1>Search</h1>
+          <h1>Sell a Game</h1>
         </section>
-        <main class="all-games-page">
-          <div class="error-container"></div>
-          <div class="search-content">
-            <div class="loader"></div>
-          </div>
+        <main>
+          <div class="validator-container"><p>Game listing posted!</p></div>
+          <form class="sell-form">
+            <div>
+              <label>
+                Game Title (required)
+                <input name="game-title" id="game-title" />
+              </label>
+              <div class="form-error" id="game-title-error">Please enter the game title</div>
+            </div>
+            <div>
+              <label>
+                Condition (required)
+                <input name="condition" id="condition" />
+                <div class="form-error" id="condition-error">Please enter the condition of the game</div>
+              </label>
+            </div>
+            <div>
+              <label>
+                Physical or digital copy (required)
+                <input name="copy" id="copy" />
+                <div class="form-error" id="copy-error">Please enter if the game is a physical or digital copy</div>
+              </label>
+            </div>
+            <div>
+              <label>
+                List Price (required)
+                <input type="number" name="price" id="price" />
+                <div class="form-error" id="price-error">Please enter your listing price</div>
+              </label>
+            </div>
+            <button class="btn form-btn">Submit</button>
+          </form>
         </main>
         <footer>
           <div class="footer-first">
@@ -103,7 +131,7 @@
     </div>
     <script src="js/components/error.js"></script>
     <script src="/js/navigation.js"></script>
-    <script src="/js/search-page.js"></script>
+    <script src="/js/sell.js"></script>
     <script src="/js/search.js"></script>
   </body>
 </html>

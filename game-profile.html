@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GameHub, Gamer, Games, Marketplace, Buy, Sell, CSS, HTML, Noroff" />
-    <meta name="description" content="Welcome to GameHub - The Universe of Games" />
-    <title>All Games | GameHub</title>
+    <meta name="description" content="Welcome to GameHub - The Universe of Games." />
+    <title>Game Profile | GameHub</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,12 +58,27 @@
         </header>
         <section class="header-image-thinner">
           <h5 class="visually-hidden">Page Header section</h5>
-          <h1>Search</h1>
+          <h1>Game Profile</h1>
         </section>
-        <main class="all-games-page">
+        <main>
           <div class="error-container"></div>
-          <div class="search-content">
-            <div class="loader"></div>
+          <div class="details-container">
+            <div class="game-info">
+              <div class="loader"></div>
+            </div>
+            <div class="game-reviews">
+              <h2 class="subheading1 subheading-image">Reviews</h2>
+              <div class="reviews-container">
+                <img src="/images/user-review-element1.png" />
+                <img src="/images/user-review-element2.png" />
+                <img src="/images/user-review-element3.png" />
+                <img src="/images/user-review-element4.png" />
+              </div>
+            </div>
+            <div class="game-suggested-content">
+              <h2 class="subheading2 subheading-image">Suggested Content</h2>
+              <div class="suggested-games"></div>
+            </div>
           </div>
         </main>
         <footer>
@@ -103,7 +118,7 @@
     </div>
     <script src="js/components/error.js"></script>
     <script src="/js/navigation.js"></script>
-    <script src="/js/search-page.js"></script>
+    <script src="/js/game-profile.js"></script>
     <script src="/js/search.js"></script>
   </body>
 </html>
