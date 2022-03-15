@@ -72,7 +72,7 @@ async function fetchSingleGame() {
     const cartCta = document.querySelector(".cart-cta");
 
     cartCta.onclick = () => {
-      validatorContainer.style.display = "block";
+      validatorContainer.classList.toggle("cart-cta-active");
     };
 
     //SUGGESTED GAMES QUERY
