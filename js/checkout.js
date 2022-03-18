@@ -21,6 +21,8 @@ multiStepForm.addEventListener("click", (e) => {
     incrementor = 1;
   } else if (e.target.matches("[data-previous]")) {
     incrementor = -1;
+  } else {
+    return;
   }
 
   if (incrementor === null) {
