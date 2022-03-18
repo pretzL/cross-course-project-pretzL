@@ -60,6 +60,7 @@ header {
   margin: 0;
   padding: 1rem 0;
   width: 100%;
+  height: 170px;
 }
 
 main {
@@ -812,9 +813,8 @@ h5 {
   background-color: var(--dark-blue);
   position: absolute;
   display: none;
-  top: 24vh;
+  top: 170px;
   padding: 1rem 0;
-  height: 95vh;
 }
 
 .nav-menu {
@@ -824,15 +824,16 @@ h5 {
   width: 100vw;
   justify-items: center;
   align-items: center;
-  height: 20vh;
 }
 
 .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   text-decoration: none;
   width: 100%;
   height: 100%;
-  text-align: center;
   padding: 1rem;
 }
 
@@ -862,7 +863,7 @@ h5 {
 }
 
 .hamburger-active {
-  display: block;
+  display: flex;
   z-index: 999;
 }
 
@@ -1197,8 +1198,7 @@ h5 {
   }
 
   .navbar {
-    height: 25vh;
-    top: 10vh;
+    top: 100px;
   }
 
   .nav-menu {
@@ -1208,33 +1208,8 @@ h5 {
   .cart-validation-container {
     right: 20%;
   }
+
+  .header {
+    height: 100px;
+  }
 }
-
-/* .exhibition-content {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-areas:
-      "grid1 grid1 grid2"
-      "grid3 grid4 grid2"
-      "grid3 grid4 grid5";
-  }
-
-  .grid1 {
-    grid-area: grid1;
-  }
-
-  .grid2 {
-    grid-area: grid2;
-  }
-
-  .grid3 {
-    grid-area: grid3;
-  }
-
-  .grid4 {
-    grid-area: grid4;
-  }
-
-  .grid5 {
-    grid-area: grid5;
-  } */
