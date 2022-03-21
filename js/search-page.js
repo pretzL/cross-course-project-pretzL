@@ -23,7 +23,6 @@ async function getSearch() {
     const results = await response.json();
 
     const games = results.results;
-    console.log(results);
 
     for (let i = 8; i < games.length; i++) {
       if (games.length === 0) {
