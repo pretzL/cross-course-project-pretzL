@@ -130,7 +130,7 @@ footer {
 .header-image-buttons {
   display: flex;
   gap: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .header-image-buttons .btn {
@@ -944,8 +944,8 @@ h5 {
 }
 
 .card-image {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 60%;
 }
 
 .game-image-large {
@@ -1030,19 +1030,48 @@ h5 {
 /* TABLET */
 
 @media only screen and (min-width: 767px) {
+  .content-hot,
+  .content-coming-soon,
+  .content-marketplace,
+  .quick-links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-image-buttons .btn {
+    width: 15vw;
+  }
+}
+
+/* SMALL DESKTOP */
+
+@media only screen and (min-width: 1080px) {
+  .content-hot,
+  .content-coming-soon,
+  .content-marketplace,
+  .quick-links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-image-buttons .btn {
+    width: 15vw;
+  }
 }
 
 /* DESKTOP */
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1380px) {
+  .content-hot,
+  .content-coming-soon,
+  .content-marketplace,
   .quick-links-container {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3rem;
   }
 
-  .content-hot,
-  .content-coming-soon,
-  .content-marketplace {
+  .quick-links-container {
     flex-direction: row;
     gap: 3rem;
   }
@@ -1080,6 +1109,10 @@ h5 {
 
   h1 {
     font-size: 4rem;
+  }
+
+  .header-image-buttons {
+    margin-bottom: 5rem;
   }
 
   .header-image-buttons .btn {
