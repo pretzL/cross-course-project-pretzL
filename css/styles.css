@@ -1123,7 +1123,8 @@ h5 {
   .form-page form,
   .contact-form,
   .customer-service-content,
-  .create-account-form {
+  .create-account-form,
+  .sell-form {
     width: 30vw;
   }
 
