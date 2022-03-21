@@ -32,14 +32,21 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-
     console.log(singleResult);
+
+    const gameGenres = singleResult.genres;
+
+    let background2 = singleResult.background_image;
+
+    if (singleResult.background_image_additional !== null) {
+      background2 = singleResult.background_image_additional;
+    }
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
     headerImage.style.backgroundImage = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image})`;
-    subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
-    subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image_additional})`;
+    subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${background2})`;
+    subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${background2})`;
     headerImage.style.backgroundSize = "cover";
     headerImage.style.backgroundRepeat = "norepeat";
     headerImage.style.backgroundPosition = "center";
@@ -50,15 +57,22 @@ async function fetchSingleGame() {
     subHeading2.style.backgroundRepeat = "norepeat";
     subHeading2.style.backgroundPosition = "center";
 
-    const gameGenres = singleResult.genres;
+    let loopedGameGenres = "";
+
+    for (let count = 0; count < gameGenres.length; count++) {
+      if (count === 3) {
+        break;
+      }
+      loopedGameGenres += gameGenres[count].name + ", ";
+    }
 
     gameInfo.innerHTML = `<img src=${singleResult.background_image} class="game-image-large game-grid1" />
-                          <img src=${singleResult.background_image_additional} class="game-image-small game-grid2" />
+                          <img src=${background2} class="game-image-small game-grid2" />
                           <div class="about-the-game game-grid3">
                           <p>Rating: ${singleResult.rating}</p>
                           <p>Release date: ${singleResult.released}</p>
-                          <p>Publisher: ${singleResult.publishers[0].name}</p>
-                          <p>Tags: ${gameGenres[0].name}, ${gameGenres[1].name}</p>
+                          <p>Developer: ${singleResult.developers[0].name}</p>
+                          <p>Tags: ${loopedGameGenres}</p>
                           <p>Price: $38</p>
                           <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
                           <div class="cart-validation-container"><p>Item added to cart</p></div>
@@ -76,7 +90,13 @@ async function fetchSingleGame() {
     };
 
     //SUGGESTED GAMES QUERY
-    const tags = `&genres=${gameGenres[0].slug},${gameGenres[1].slug}`;
+    let slug2 = "";
+
+    if (gameGenres.slug !== undefined) {
+      genre2 = gameGenres.slug;
+    }
+
+    const tags = `&genres=${gameGenres[0].slug},${slug2}`;
     const suggestedURL = cors + baseURL + key + tags;
     const suggestedResponse = await fetch(suggestedURL);
     const suggestedSingleResult = await suggestedResponse.json();

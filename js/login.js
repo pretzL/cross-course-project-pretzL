@@ -1,4 +1,4 @@
-const form = document.querySelector(".contact-form");
+const contactForm = document.querySelector(".contact-form");
 
 const username = document.querySelector("#username");
 const usernameError = document.querySelector("#username-error");
@@ -11,8 +11,8 @@ const validatorContainer = document.querySelector(".validator-container");
 const loginButton = document.querySelector(".login-btn");
 const createAccountButton = document.querySelector(".create-account-btn");
 
-function validateLogin(form) {
-  form.preventDefault();
+function validateLogin(contactForm) {
+  contactForm.preventDefault();
 
   if (checkLength(username.value, 2)) {
     usernameError.style.display = "none";
@@ -35,7 +35,7 @@ function validateLogin(form) {
   }
 }
 
-form.addEventListener("submit", validateLogin);
+contactForm.addEventListener("submit", validateLogin);
 
 function checkLength(value, char) {
   return value.trim().length > char;

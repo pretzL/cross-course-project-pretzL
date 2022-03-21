@@ -1,16 +1,16 @@
-const form = document.querySelector(".searchbar-pos");
+const searchForm = document.querySelector(".searchbar-pos");
 const input = document.querySelector("#search");
 
 const mobileForm = document.querySelector(".mobile-searchbar");
 const mobileInput = document.querySelector("#mobile-search");
 
-function validateForm(form) {
-  form.preventDefault();
+function validateForm(searchForm) {
+  searchForm.preventDefault();
 
   location.href = "/search.html?search=" + input.value;
 }
 
-form.addEventListener("submit", validateForm);
+searchForm.addEventListener("submit", validateForm);
 
 function validateMobileForm(mobileForm) {
   mobileForm.preventDefault();
