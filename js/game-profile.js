@@ -32,7 +32,6 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-    console.log(singleResult);
 
     const gameGenres = singleResult.genres;
 
@@ -57,17 +56,7 @@ async function fetchSingleGame() {
     subHeading2.style.backgroundRepeat = "norepeat";
     subHeading2.style.backgroundPosition = "center";
 
-    let loopedGameGenres = "";
-
-    for (let count = 0; count < gameGenres.length; count++) {
-      if (gameGenres.length === 0) {
-        loopedGameGenres = "Adventure";
-      }
-      if (count === 3) {
-        break;
-      }
-      loopedGameGenres += gameGenres[count].name + ", ";
-    }
+    const allGenres = gameGenres.map((game) => game.name).join(", ");
 
     gameInfo.innerHTML = `<img src=${singleResult.background_image} class="game-image-large game-grid1" />
                           <img src=${background2} class="game-image-small game-grid2" />
@@ -75,7 +64,7 @@ async function fetchSingleGame() {
                           <p>Rating: ${singleResult.rating}</p>
                           <p>Release date: ${singleResult.released}</p>
                           <p>Developer: ${singleResult.developers[0].name}</p>
-                          <p>Tags: ${loopedGameGenres}</p>
+                          <p>Tags: ${allGenres}</p>
                           <p>Price: $38</p>
                           <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
                           <div class="cart-validation-container"><p>Item added to cart</p></div>
@@ -103,11 +92,11 @@ async function fetchSingleGame() {
         break;
       }
 
-      if (gameGenres[0].slug !== undefined) {
+      if (gameGenres[0].slug) {
         slug1 = gameGenres[0].slug;
       }
 
-      if (gameGenres[1].slug !== undefined) {
+      if (gameGenres.slug) {
         slug2 = gameGenres[1].slug;
       }
 
