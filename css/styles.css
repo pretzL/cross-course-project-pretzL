@@ -15,6 +15,19 @@ p {
   margin: 0;
 }
 
+button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 /* VARIABLES */
 
 :root {
