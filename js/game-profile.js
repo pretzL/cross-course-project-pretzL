@@ -60,6 +60,9 @@ async function fetchSingleGame() {
     let loopedGameGenres = "";
 
     for (let count = 0; count < gameGenres.length; count++) {
+      if (gameGenres.length === 0) {
+        loopedGameGenres = "Adventure";
+      }
       if (count === 3) {
         break;
       }
@@ -90,13 +93,28 @@ async function fetchSingleGame() {
     };
 
     //SUGGESTED GAMES QUERY
+
+    let loopedGameSlugs = "";
+    let slug1 = "adventure";
     let slug2 = "";
 
-    if (gameGenres.slug !== undefined) {
-      genre2 = gameGenres.slug;
+    for (let count = 0; count < gameGenres.length; count++) {
+      if (count === 2) {
+        break;
+      }
+
+      if (gameGenres[0].slug !== undefined) {
+        slug1 = gameGenres[0].slug;
+      }
+
+      if (gameGenres[1].slug !== undefined) {
+        slug2 = gameGenres[1].slug;
+      }
+
+      loopedGameSlugs += gameGenres[count].slug + ",";
     }
 
-    const tags = `&genres=${gameGenres[0].slug},${slug2}`;
+    const tags = `&genres=${slug1},${slug2}`;
     const suggestedURL = cors + baseURL + key + tags;
     const suggestedResponse = await fetch(suggestedURL);
     const suggestedSingleResult = await suggestedResponse.json();

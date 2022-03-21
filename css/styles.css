@@ -720,6 +720,7 @@ a:hover {
 h1 {
   font-size: 2rem;
   color: white;
+  text-align: center;
 }
 
 .footer-second a,
