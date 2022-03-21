@@ -1041,6 +1041,13 @@ h5 {
   .header-image-buttons .btn {
     width: 15vw;
   }
+
+  .all-games-content,
+  .search-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
 /* SMALL DESKTOP */
@@ -1230,9 +1237,7 @@ h5 {
 
   .all-games-content,
   .search-content {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
   }
 
   .cart-page,
