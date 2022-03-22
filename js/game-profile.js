@@ -32,13 +32,19 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-
+    console.log(singleResult);
     const gameGenres = singleResult.genres;
 
     let background2 = singleResult.background_image;
 
     if (singleResult.background_image_additional !== null) {
       background2 = singleResult.background_image_additional;
+    }
+
+    let developer = "Unknown";
+
+    if (singleResult.developers.name !== null || singleResult.developers.name !== undefined) {
+      developer = singleResult.developers[0].name;
     }
 
     pageTitle.innerHTML = `${singleResult.name}`;
@@ -63,7 +69,7 @@ async function fetchSingleGame() {
                           <div class="about-the-game game-grid3">
                           <p>Rating: ${singleResult.rating}</p>
                           <p>Release date: ${singleResult.released}</p>
-                          <p>Developer: ${singleResult.developers[0].name}</p>
+                          <p>Developer: ${developer}</p>
                           <p>Tags: ${allGenres}</p>
                           <p>Price: $38</p>
                           <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
@@ -71,7 +77,7 @@ async function fetchSingleGame() {
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>
-                          <p class="game-summary">${singleResult.description_raw}</p>
+                          <p class="game-summary">${singleResult.description}</p>
                           </div>`;
 
     const validatorContainer = document.querySelector(".cart-validation-container");
