@@ -388,6 +388,10 @@ footer {
   align-items: center;
 }
 
+.user-purchased-games-content {
+  margin-bottom: 1rem;
+}
+
 .suggested-games {
   margin-bottom: 1rem;
 }
@@ -637,6 +641,11 @@ footer {
   align-items: center;
 }
 
+.item-one-total-counter button,
+.item-two-total-counter button {
+  width: 20px;
+}
+
 /* FORMS */
 
 .cart-validation-container {
@@ -763,6 +772,10 @@ h5 {
 
 .powered-by a {
   color: white;
+}
+
+.sloagan-text {
+  font-size: 1em;
 }
 
 /* ICONS */
@@ -1286,5 +1299,9 @@ h5 {
 
   .form-input {
     width: 80%;
+  }
+
+  .sloagan-text {
+    font-size: 1.5em;
   }
 }
