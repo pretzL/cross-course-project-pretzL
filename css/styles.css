@@ -85,6 +85,7 @@ main {
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
+  align-content: center;
 }
 
 footer {
@@ -762,10 +763,6 @@ h5 {
 
 .powered-by a {
   color: white;
-}
-
-.sloagan-text {
-  margin: 0 auto;
 }
 
 /* ICONS */
