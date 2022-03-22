@@ -21,6 +21,7 @@ let orderBy = "";
 
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
+const pageDescription = document.querySelector('meta[name="description"]').content;
 const headingOne = document.querySelector("h1");
 const headerImage = document.querySelector(".header-image-thinner");
 const subHeading1 = document.querySelector(".subheading1");
