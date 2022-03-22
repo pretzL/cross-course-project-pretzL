@@ -1295,6 +1295,10 @@ h5 {
     width: 10vw;
   }
 
+  .item-total-price {
+    margin-top: 3rem;
+  }
+
   .checkout-card {
     width: 30vw;
   }
