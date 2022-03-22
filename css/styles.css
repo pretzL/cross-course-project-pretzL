@@ -731,6 +731,32 @@ footer {
   margin: 2rem 0;
 }
 
+.sell-form-radio {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-items: center;
+  grid-template-areas:
+    "radio1 radio2"
+    "radio3 radio4";
+}
+
+.radio1 {
+  grid-area: radio1;
+}
+
+.radio2 {
+  grid-area: radio2;
+}
+
+.radio3 {
+  grid-area: radio3;
+}
+
+.radio4 {
+  grid-area: radio4;
+}
+
 /* TEXT */
 
 .header-one {

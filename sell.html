@@ -89,20 +89,30 @@
             <div class="form-input">
               <label>
                 Condition (required)
-                <input name="condition" id="condition" />
+                <div class="sell-form-radio">
+                  <label for="condition-new" class="radio1">New</label>
+                  <input type="radio" name="drone" id="condition-new" value="new" class="radio3" />
+                  <label for="condition-used" class="radio2">Used</label>
+                  <input type="radio" name="drone" id="condition-used" value="used" class="radio4" />
+                </div>
                 <div class="form-error" id="condition-error">Please enter the condition of the game</div>
               </label>
             </div>
             <div class="form-input">
               <label>
                 Physical or digital copy (required)
-                <input name="copy" id="copy" />
+                <div class="sell-form-radio">
+                  <label for="physical" class="radio1">Physical</label>
+                  <input type="radio" name="drone2" id="physical" value="physical" class="radio3" />
+                  <label for="digital" class="radio2">Digital</label>
+                  <input type="radio" name="drone2" id="digital" value="digital" class="radio4" />
+                </div>
                 <div class="form-error" id="copy-error">Please enter if the game is a physical or digital copy</div>
               </label>
             </div>
             <div class="form-input">
               <label>
-                List Price (required)
+                List Price in USD (required)
                 <input type="number" name="price" id="price" />
                 <div class="form-error" id="price-error">Please enter your listing price</div>
               </label>

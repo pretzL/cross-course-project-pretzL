@@ -23,18 +23,6 @@ function validateForm(sellForm) {
     gameTitleError.style.display = "block";
   }
 
-  if (checkLength(condition.value, 2)) {
-    conditionError.style.display = "none";
-  } else {
-    conditionError.style.display = "block";
-  }
-
-  if (checkLength(copy.value, 2)) {
-    copyError.style.display = "none";
-  } else {
-    copyError.style.display = "block";
-  }
-
   if (checkLength(price.value, 0)) {
     priceError.style.display = "none";
   } else {
@@ -42,7 +30,7 @@ function validateForm(sellForm) {
   }
 
   // Form validated message
-  if (checkLength(gameTitle.value, 2) && checkLength(condition.value, 2) && checkLength(copy.value, 2) && checkLength(price.value, 0)) {
+  if (checkLength(gameTitle.value, 2) && checkLength(price.value, 0)) {
     validatorContainer.style.display = "block";
   }
 }
