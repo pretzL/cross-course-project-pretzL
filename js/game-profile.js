@@ -65,6 +65,14 @@ async function fetchSingleGame() {
 
     const allGenres = gameGenres.map((game) => game.name).join(", ");
 
+    const descriptionString = singleResult.description;
+
+    const filteredSentences = descriptionString.split(".").filter((item, index) => {
+      if (index < 7) {
+        return item;
+      }
+    });
+
     gameInfo.innerHTML = `<img src=${singleResult.background_image} class="game-image-large game-grid1" />
                           <img src=${background2} class="game-image-small game-grid2" />
                           <div class="about-the-game game-grid3">
@@ -78,7 +86,7 @@ async function fetchSingleGame() {
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>
-                          <p class="game-summary">${singleResult.description}</p>
+                          <p class="game-summary">${filteredSentences}</p>
                           </div>`;
 
     const validatorContainer = document.querySelector(".cart-validation-container");
