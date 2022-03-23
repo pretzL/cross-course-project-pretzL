@@ -177,9 +177,12 @@ footer {
   width: 300px;
   background-color: var(--light-grey);
   box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
-  color: black;
   border-radius: 0 0 5px 5px;
-  padding-bottom: 2rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
 }
 
 .card h3,
@@ -380,7 +383,7 @@ footer {
 .suggested-games,
 .all-games-content,
 .search-content,
-.user-owned-games-content,
+.user-favorite-games-content,
 .user-purchased-games-content {
   display: flex;
   flex-direction: column;
@@ -403,6 +406,10 @@ footer {
   border: var(--border) red;
   padding: 1rem;
   margin-top: 1rem;
+}
+
+.favorites-error {
+  margin: 3rem 0;
 }
 
 .all-games-content,
@@ -657,6 +664,22 @@ footer {
 .modal-buttons {
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.game-profile-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.favorite-icon {
+  align-self: right;
+  color: var(--dark-teal);
+}
+
+.favorite-icon-small {
+  right: -250px;
+  top: -30px;
 }
 
 /* FORMS */
@@ -1266,7 +1289,7 @@ h5 {
   }
 
   .suggested-games,
-  .user-owned-games-content,
+  .user-favorite-games-content,
   .user-purchased-games-content {
     flex-direction: row;
     justify-content: center;

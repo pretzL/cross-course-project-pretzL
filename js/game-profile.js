@@ -1,3 +1,5 @@
+import { getExistingFavorites } from "./components/favoriteFunctions.js";
+
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
@@ -15,13 +17,8 @@ const detailsURL = baseURL + "/" + id + key;
 
 const cors = "https://noroffcors.herokuapp.com/";
 
-const page_size = "&page_size=20";
-
-let orderBy = "";
-
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
-const pageDescription = document.querySelector('meta[name="description"]').content;
 const headingOne = document.querySelector("h1");
 const headerImage = document.querySelector(".header-image-thinner");
 const subHeading1 = document.querySelector(".subheading1");
@@ -81,7 +78,10 @@ async function fetchSingleGame() {
                           <p>Developer: ${developer}</p>
                           <p>Tags: ${allGenres}</p>
                           <p>Price: $38</p>
+                          <div class="game-profile-buttons">
                           <button class="cart-cta btn open-button"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
+                          <span class="material-icons md-36 favorite-icon"> favorite_border </span>
+                          </div>
                           <dialog class="modal" id="modal">
                             <p>Item added to cart!</p>
                             <div class="flex modal-buttons">
@@ -94,6 +94,7 @@ async function fetchSingleGame() {
                           <h3>Summary</h3>
                           <p class="game-summary">${filteredSentences}</p>
                           </div>`;
+    // MODAL
 
     const modal = document.querySelector("#modal");
     const openButton = document.querySelector(".open-button");
@@ -103,17 +104,62 @@ async function fetchSingleGame() {
 
     openButton.addEventListener("click", () => {
       modal.showModal();
-      console.log("open");
     });
 
     closeButton.addEventListener("click", () => {
       modal.close();
-      console.log("close");
     });
 
     checkoutButton.onclick = () => {
       location.href = "/cart.html";
     };
+
+    //FAVORITE ICON
+
+    const favoriteIcon = document.querySelector(".favorite-icon");
+
+    favoriteIcon.addEventListener("click", handleClick);
+
+    const favorites = getExistingFavorites();
+
+    const doesObjectExist = favorites.find(function (fav) {
+      return fav.id === singleResult.id;
+    });
+
+    if (doesObjectExist) {
+      favoriteIcon.innerHTML = " favorite ";
+    }
+
+    function handleClick() {
+      if (favoriteIcon.innerHTML === " favorite_border ") {
+        favoriteIcon.innerHTML = " favorite ";
+        console.log("Favorite added");
+      } else {
+        favoriteIcon.innerHTML = " favorite_border ";
+        console.log("Favorite removed");
+      }
+
+      const currentFavorites = getExistingFavorites();
+
+      const favoriteExists = currentFavorites.find(function (fav) {
+        return fav.id === singleResult.id;
+      });
+
+      if (!favoriteExists) {
+        const gameToFavorite = singleResult;
+
+        currentFavorites.push(gameToFavorite);
+
+        saveFavorites(currentFavorites);
+      } else {
+        const newFavorites = currentFavorites.filter((fav) => fav.id !== singleResult.id);
+        saveFavorites(newFavorites);
+      }
+    }
+
+    function saveFavorites(favorites) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
 
     //SUGGESTED GAMES QUERY
 

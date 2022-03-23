@@ -1,3 +1,5 @@
+import { getExistingFavorites } from "./components/favoriteFunctions.js";
+
 const URL = "https://api.rawg.io/api/games?key=35f9fd70b7b54c25bfa1662ebdeaff60";
 
 const comingSoonContainer = document.querySelector(".content-coming-soon");
@@ -10,7 +12,7 @@ async function getGames() {
     const results = await response.json();
 
     const games = results.results;
-
+    console.log(games);
     hotContainer.innerHTML = "";
 
     for (let i = 0; i < games.length; i++) {
@@ -18,12 +20,15 @@ async function getGames() {
         break;
       }
 
-      hotContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
+      hotContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${games[i].id}">
         <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
-          <h3>${games[i].name}</h3>
-          <p>Rating: ${games[i].rating}</p>
-          <p>Released: ${games[i].released}</p>
-          </a>`;
+        <h3>${games[i].name}</h3>
+        <p>Rating: ${games[i].rating}</p>
+        <p>Released: ${games[i].released}</p>
+      </a>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
+      </div>`;
     }
 
     marketplaceContainer.innerHTML = "";
@@ -33,12 +38,15 @@ async function getGames() {
         break;
       }
 
-      marketplaceContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
-      <img src="${games[i].background_image}" class="card-image"/>
+      marketplaceContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${games[i].id}">
+        <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
         <h3>${games[i].name}</h3>
         <p>Rating: ${games[i].rating}</p>
         <p>Released: ${games[i].released}</p>
-        </a>`;
+      </a>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
+      </div>`;
     }
 
     comingSoonContainer.innerHTML = "";
@@ -48,12 +56,15 @@ async function getGames() {
         break;
       }
 
-      comingSoonContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
-        <img src="${games[i].background_image}" class="card-image"/>
-          <h3>${games[i].name}</h3>
-          <p>Rating: ${games[i].rating}</p>
-          <p>Released: ${games[i].released}</p>
-          </a>`;
+      comingSoonContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${games[i].id}">
+        <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
+        <h3>${games[i].name}</h3>
+        <p>Rating: ${games[i].rating}</p>
+        <p>Released: ${games[i].released}</p>
+      </a>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
+      </div>`;
     }
   } catch (error) {
     console.log(error);
