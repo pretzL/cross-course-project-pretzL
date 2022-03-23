@@ -30,7 +30,7 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-    console.log(singleResult);
+
     const gameGenres = singleResult.genres;
 
     let background2 = singleResult.background_image;
@@ -133,10 +133,8 @@ async function fetchSingleGame() {
     function handleClick() {
       if (favoriteIcon.innerHTML === " favorite_border ") {
         favoriteIcon.innerHTML = " favorite ";
-        console.log("Favorite added");
       } else {
         favoriteIcon.innerHTML = " favorite_border ";
-        console.log("Favorite removed");
       }
 
       const currentFavorites = getExistingFavorites();
