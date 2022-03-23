@@ -3,10 +3,12 @@ const sellForm = document.querySelector(".sell-form");
 const gameTitle = document.querySelector("#game-title");
 const gameTitleError = document.querySelector("#game-title-error");
 
-const condition = document.querySelector("#condition");
+const conditionNew = document.querySelectorAll("#condition-new");
+const conditionUsed = document.querySelectorAll("#condition-used");
 const conditionError = document.querySelector("#condition-error");
 
-const copy = document.querySelector("#copy");
+const copyPhysical = document.querySelectorAll("#physical");
+const copyDigital = document.querySelectorAll("#digital");
 const copyError = document.querySelector("#copy-error");
 
 const price = document.querySelector("#price");
@@ -17,10 +19,22 @@ const validatorContainer = document.querySelector(".validator-container");
 function validateForm(sellForm) {
   sellForm.preventDefault();
 
-  if (checkLength(gameTitle.value, 2)) {
+  if (checkLength(gameTitle.value, 0)) {
     gameTitleError.style.display = "none";
   } else {
     gameTitleError.style.display = "block";
+  }
+
+  if (conditionNew.checked || conditionUsed.checked) {
+    conditionError.style.display = "none";
+  } else {
+    conditionError.style.display = "block";
+  }
+
+  if (copyPhysical.checked || copyDigital.checked) {
+    copyError.style.display = "none";
+  } else {
+    copyError.style.display = "block";
   }
 
   if (checkLength(price.value, 0)) {
@@ -30,7 +44,7 @@ function validateForm(sellForm) {
   }
 
   // Form validated message
-  if (checkLength(gameTitle.value, 2) && checkLength(price.value, 0)) {
+  if (checkLength(gameTitle.value, 0) && (conditionNew.checked || conditionUsed.checked) && (copyPhysical.checked || copyDigital.checked) && checkLength(price.value, 0)) {
     validatorContainer.style.display = "block";
   }
 }
