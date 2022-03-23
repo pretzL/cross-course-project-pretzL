@@ -3,12 +3,12 @@ const sellForm = document.querySelector(".sell-form");
 const gameTitle = document.querySelector("#game-title");
 const gameTitleError = document.querySelector("#game-title-error");
 
-const conditionNew = document.querySelectorAll("#condition-new");
-const conditionUsed = document.querySelectorAll("#condition-used");
+const conditionNew = document.querySelector("#condition-new");
+const conditionUsed = document.querySelector("#condition-used");
 const conditionError = document.querySelector("#condition-error");
 
-const copyPhysical = document.querySelectorAll("#physical");
-const copyDigital = document.querySelectorAll("#digital");
+const copyPhysical = document.querySelector("#physical");
+const copyDigital = document.querySelector("#digital");
 const copyError = document.querySelector("#copy-error");
 
 const price = document.querySelector("#price");
