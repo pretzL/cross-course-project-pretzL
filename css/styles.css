@@ -1095,6 +1095,50 @@ h5 {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+
+  .reviews-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 80%;
+  }
+
+  .user-profile-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .user-info {
+    margin: 1rem 5rem;
+    display: grid;
+    grid-template-areas:
+      "user-grid1 user-grid1 user-grid2"
+      "user-grid3 user-grid3 user-grid3";
+  }
+
+  .user-grid1 {
+    grid-area: user-grid1;
+  }
+
+  .user-grid2 {
+    grid-area: user-grid2;
+  }
+
+  .user-grid3 {
+    grid-area: user-grid3;
+  }
+
+  .user-bio {
+    font-size: 1rem;
+  }
+
+  .user-bio-text {
+    height: 20vh;
+  }
+
+  .user-badges span {
+    font-size: 2.25rem;
+  }
 }
 
 /* SMALL DESKTOP */
@@ -1209,13 +1253,6 @@ h5 {
     margin: 0;
   }
 
-  .reviews-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    width: 80%;
-  }
-
   .reviews-container img {
     width: 50%;
   }
@@ -1226,43 +1263,6 @@ h5 {
   .create-account-form,
   .sell-form {
     width: 30vw;
-  }
-
-  .user-profile-image {
-    width: 300px;
-    height: 300px;
-  }
-
-  .user-info {
-    margin: 1rem 5rem;
-    display: grid;
-    grid-template-areas:
-      "user-grid1 user-grid1 user-grid2"
-      "user-grid3 user-grid3 user-grid3";
-  }
-
-  .user-grid1 {
-    grid-area: user-grid1;
-  }
-
-  .user-grid2 {
-    grid-area: user-grid2;
-  }
-
-  .user-grid3 {
-    grid-area: user-grid3;
-  }
-
-  .user-bio {
-    font-size: 1rem;
-  }
-
-  .user-bio-text {
-    height: 20vh;
-  }
-
-  .user-badges span {
-    font-size: 2.25rem;
   }
 
   .login-page {
