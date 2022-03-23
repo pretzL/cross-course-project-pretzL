@@ -81,19 +81,38 @@ async function fetchSingleGame() {
                           <p>Developer: ${developer}</p>
                           <p>Tags: ${allGenres}</p>
                           <p>Price: $38</p>
-                          <button class="cart-cta btn"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
-                          <div class="cart-validation-container"><p>Item added to cart</p></div>
+                          <button class="cart-cta btn open-button"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
+                          <dialog class="modal" id="modal">
+                            <p>Item added to cart!</p>
+                            <div class="flex modal-buttons">
+                            <button class="cart-cta btn close-button">Close</button>
+                            <button class="cart-cta btn checkout-button">Cart</button>
+                            </div>
+                          </dialog>
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>
                           <p class="game-summary">${filteredSentences}</p>
                           </div>`;
 
-    const validatorContainer = document.querySelector(".cart-validation-container");
-    const cartCta = document.querySelector(".cart-cta");
+    const modal = document.querySelector("#modal");
+    const openButton = document.querySelector(".open-button");
+    const closeButton = document.querySelector(".close-button");
 
-    cartCta.onclick = () => {
-      validatorContainer.classList.toggle("cart-cta-active");
+    const checkoutButton = document.querySelector(".checkout-button");
+
+    openButton.addEventListener("click", () => {
+      modal.showModal();
+      console.log("open");
+    });
+
+    closeButton.addEventListener("click", () => {
+      modal.close();
+      console.log("close");
+    });
+
+    checkoutButton.onclick = () => {
+      location.href = "/cart.html";
     };
 
     //SUGGESTED GAMES QUERY

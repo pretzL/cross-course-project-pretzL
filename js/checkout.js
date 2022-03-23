@@ -4,6 +4,7 @@ const multiStepForm = document.querySelector("[data-multi-step]");
 const formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
 const progressBar = document.querySelector(".progress-bar");
 const progressBarSteps = [...progressBar.querySelectorAll(".progress-step")];
+const validatorContainer = document.querySelector(".validator-container");
 
 let currentStep = formSteps.findIndex((step) => {
   return step.classList.contains("active");
@@ -51,3 +52,10 @@ function showCurrentStep() {
     step.classList.toggle("progress-active", index === currentStep);
   });
 }
+
+function noSubmit(form) {
+  form.preventDefault();
+  validatorContainer.style.display = "block";
+}
+
+multiStepForm.addEventListener("submit", noSubmit);
