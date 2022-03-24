@@ -86,9 +86,11 @@ getGames();
 //FAVORITE ICON
 
 function favoriteIconFunction(game) {
-  const favoriteIcon = document.querySelector(".favorite-icon");
+  const favoriteIcon = document.querySelectorAll(".favorite-icon");
 
-  favoriteIcon.addEventListener("click", handleClick);
+  favoriteIcon.forEach((button) => {
+    button.addEventListener("click", handleClick);
+  });
 
   const favorites = getExistingFavorites();
 
