@@ -29,6 +29,9 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
+
+      const game = games[i];
+      favoriteIconFunction(game);
     }
 
     marketplaceContainer.innerHTML = "";
@@ -47,6 +50,9 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
+
+      const game = games[i];
+      favoriteIconFunction(game);
     }
 
     comingSoonContainer.innerHTML = "";
@@ -65,6 +71,9 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
+
+      const game = games[i];
+      favoriteIconFunction(game);
     }
   } catch (error) {
     console.log(error);
@@ -73,3 +82,50 @@ async function getGames() {
 }
 
 getGames();
+
+//FAVORITE ICON
+
+function favoriteIconFunction(game) {
+  const favoriteIcon = document.querySelector(".favorite-icon");
+
+  favoriteIcon.addEventListener("click", handleClick);
+
+  const favorites = getExistingFavorites();
+
+  const doesObjectExist = favorites.find(function (fav) {
+    return fav.id === game.id;
+  });
+
+  if (doesObjectExist) {
+    favoriteIcon.innerHTML = " favorite ";
+  }
+
+  function handleClick() {
+    if (favoriteIcon.innerHTML === " favorite_border ") {
+      favoriteIcon.innerHTML = " favorite ";
+    } else {
+      favoriteIcon.innerHTML = " favorite_border ";
+    }
+
+    const currentFavorites = getExistingFavorites();
+
+    const favoriteExists = currentFavorites.find(function (fav) {
+      return fav.id === game.id;
+    });
+
+    if (!favoriteExists) {
+      const gameToFavorite = game;
+
+      currentFavorites.push(gameToFavorite);
+
+      saveFavorites(currentFavorites);
+    } else {
+      const newFavorites = currentFavorites.filter((fav) => fav.id !== game.id);
+      saveFavorites(newFavorites);
+    }
+  }
+
+  function saveFavorites(favorites) {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+}
