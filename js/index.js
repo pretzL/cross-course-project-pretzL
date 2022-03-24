@@ -29,9 +29,6 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
-
-      const game = games[i];
-      favoriteIconFunction(game);
     }
 
     marketplaceContainer.innerHTML = "";
@@ -50,9 +47,6 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
-
-      const game = games[i];
-      favoriteIconFunction(game);
     }
 
     comingSoonContainer.innerHTML = "";
@@ -71,10 +65,9 @@ async function getGames() {
       </a>
         <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
       </div>`;
-
-      const game = games[i];
-      favoriteIconFunction(game);
     }
+
+    favoriteIconFunction();
   } catch (error) {
     console.log(error);
     errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
@@ -109,20 +102,24 @@ function favoriteIconFunction(game) {
       favoriteIcon.innerHTML = " favorite_border ";
     }
 
+    const id = this.dataset.id;
+
+    console.log(id);
+
     const currentFavorites = getExistingFavorites();
 
     const favoriteExists = currentFavorites.find(function (fav) {
-      return fav.id === game.id;
+      return fav.id === id;
     });
 
     if (!favoriteExists) {
-      const gameToFavorite = game;
+      const gameToFavorite = game.id;
 
       currentFavorites.push(gameToFavorite);
 
       saveFavorites(currentFavorites);
     } else {
-      const newFavorites = currentFavorites.filter((fav) => fav.id !== game.id);
+      const newFavorites = currentFavorites.filter((fav) => fav.id !== id);
       saveFavorites(newFavorites);
     }
   }
