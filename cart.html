@@ -44,7 +44,10 @@
               <label class="menu-dropdown" for="menu-dropdown"><span class="material-icons md-36"> menu </span></label>
             </div>
             <div class="header-icons">
-              <a href="cart.html"><span class="material-icons md-36 right-nav-icon"> shopping_cart </span></a>
+              <div class="cart-icons">
+                <a href="cart.html"><span class="material-icons md-36 right-nav-icon"> shopping_cart </span></a>
+                <div class="cart-number-icon"></div>
+              </div>
               <a href="login.html"><span class="material-icons md-36 right-nav-icon"> account_circle </span></a>
             </div>
           </div>
@@ -73,34 +76,7 @@
         <main>
           <div class="cart-page">
             <h2 class="cart-grid1">Your Items</h2>
-            <div class="cart-item cart-grid2">
-              <h3>Item</h3>
-              <div class="item-one">
-                <img src="images/The_Elder_Scrolls_V_Skyrim_cover.jpg" class="cart-image-small item-grid1" alt="Cart Item Image Small" />
-                <p class="item-grid2">The Elder Scrolls V: Skyrim</p>
-                <div class="item-one-total-counter item-grid3">
-                  <button class="item-one-number-minus">-</button>
-                  <p class="item-one-total-number">1</p>
-                  <button class="item-one-number-plus">+</button>
-                </div>
-              </div>
-              <div class="item-two">
-                <img src="images/raftwallpaper.jpg" class="cart-image-small item-grid1" alt="Cart Item Image Small" />
-                <p class="item-grid2">Raft</p>
-                <div class="item-two-total-counter item-grid3">
-                  <button class="item-two-number-minus">-</button>
-                  <p class="item-two-total-number">1</p>
-                  <button class="item-two-number-plus">+</button>
-                </div>
-              </div>
-            </div>
-            <div class="cart-price cart-grid3">
-              <h3>Price</h3>
-              <div class="price-list">
-                <p class="item-one-price">$40.83</p>
-                <p class="item-two-price">$19.94</p>
-              </div>
-            </div>
+            <div class="cart-container cart-grid2"></div>
             <h4 class="item-total-price cart-grid4">Total:</h4>
             <button class="btn checkout-btn cart-grid5">Checkout</button>
           </div>
@@ -143,7 +119,8 @@
     </div>
     <script src="js/components/error.js"></script>
     <script src="/js/navigation.js"></script>
-    <script src="/js/cart.js"></script>
+    <script src="/js/cart.js" type="module"></script>
+    <script src="/js/components/cartFunctions.js" type="module"></script>
     <script src="/js/search.js"></script>
   </body>
 </html>

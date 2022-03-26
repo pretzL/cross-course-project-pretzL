@@ -1,4 +1,6 @@
 import { getExistingFavorites } from "./components/favoriteFunctions.js";
+import { getExistingCart } from "./components/cartFunctions.js";
+import { cartItemsLength } from "./components/cartFunctions.js";
 
 const queryString = document.location.search;
 
@@ -79,7 +81,7 @@ async function fetchSingleGame() {
                           <p>Tags: ${allGenres}</p>
                           <p>Price: $38</p>
                           <div class="game-profile-buttons">
-                          <button class="cart-cta btn open-button"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
+                          <button class="cart-cta btn open-button add-to-cart-cta"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
                           <span class="material-icons md-36 favorite-icon"> favorite_border </span>
                           </div>
                           <dialog class="modal" id="modal">
@@ -157,6 +159,36 @@ async function fetchSingleGame() {
 
     function saveFavorites(favorites) {
       localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    // ADD TO CART
+
+    const cartCtaButton = document.querySelector(".add-to-cart-cta");
+
+    cartCtaButton.addEventListener("click", handleCart);
+
+    function handleCart() {
+      const currentCart = getExistingCart();
+
+      const cartExists = currentCart.find(function (item) {
+        return item.id === singleResult.id;
+      });
+
+      if (!cartExists) {
+        const gameToCart = singleResult;
+
+        currentCart.push(gameToCart);
+
+        saveCart(currentCart);
+      } else {
+        const newCart = currentCart.filter((item) => item.id !== singleResult.id);
+        saveCart(newCart);
+      }
+    }
+
+    function saveCart(cartItem) {
+      localStorage.setItem("cart", JSON.stringify(cartItem));
+      cartItemsLength();
     }
 
     //SUGGESTED GAMES QUERY
