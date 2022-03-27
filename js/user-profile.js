@@ -44,12 +44,28 @@ async function getGames() {
       if (i === 3) {
         break;
       }
-      favoriteGamesContainer.innerHTML += `<a href="/game-profile.html?id=${favorites[i].id}" class="card">
-          <img src="${favorites[i].background_image}" class="card-image" alt="${favorites[i].name}"/>
-            <h3>${favorites[i].name}</h3>
-            <p>Rating: ${favorites[i].rating}</p>
-            <p>Released: ${favorites[i].released}</p>
-            </a>`;
+
+      let iconHTML = " favorite_border ";
+
+      const favorites = getExistingFavorites();
+
+      const doesObjectExist = favorites.find(function (fav) {
+        return Number(fav.id) === Number(favorites[i].id);
+      });
+
+      if (doesObjectExist) {
+        iconHTML = " favorite ";
+      }
+
+      favoriteGamesContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${favorites[i].id}">
+        <img src="${favorites[i].background_image}" class="card-image" alt="${favorites[i].name}"/>
+        <h3>${favorites[i].name}</h3>
+        <p>Rating: ${favorites[i].rating}</p>
+        <p>Released: ${favorites[i].released}</p>
+      </a>
+      <span class="material-icons md-24 favorite-icon favorite-icon-small">${iconHTML}</span>
+      </div>`;
     }
 
     for (let i = 0; i < games.length; i++) {
@@ -63,6 +79,38 @@ async function getGames() {
             <p>Rating: ${games[i].rating}</p>
             <p>Released: ${games[i].released}</p>
             </a>`;
+    }
+
+    // REMOVE ITEM FROM CART
+
+    const favoriteIcon = document.querySelectorAll(".favorite-icon");
+
+    favoriteIcon.forEach((button) => {
+      button.addEventListener("click", removeFromFav);
+    });
+
+    function removeFromFav() {
+      favorites.forEach((favItem) => {
+        const favExists = favorites.find(function (fav) {
+          return Number(fav.id) === Number(favItem.id);
+        });
+
+        if (!favExists) {
+          const gameToFav = favItem;
+
+          currentFav.push(gameToFav);
+
+          saveFav(currentFav);
+        } else {
+          const newItem = favorites.filter((fav) => fav.id !== favItem.id);
+          saveFav(newItem);
+        }
+      });
+    }
+
+    function saveFav(favItem) {
+      localStorage.setItem("favorites", JSON.stringify(favItem));
+      location.reload();
     }
   } catch (error) {
     console.log(error);
