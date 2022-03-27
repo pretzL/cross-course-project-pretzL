@@ -37,16 +37,17 @@ for (let i = 0; i < carts.length; i++) {
 
   // PRICE CALCULATOR
 
-  const itemMinusButton = document.querySelector(".item-number-minus");
-  const itemPlusButton = document.querySelector(".item-number-plus");
+  const itemMinusButton = document.querySelectorAll(".item-number-minus");
+  const itemPlusButton = document.querySelectorAll(".item-number-plus");
+  const itemTotalNumber = document.querySelectorAll(".item-total-number");
+  const itemPrice = document.querySelectorAll(".item-price");
+  for (let i = 0; i < itemMinusButton.length; i++) {
+    itemMinusButton[i].addEventListener("click", minusCalc(i));
+  }
 
-  const itemTotalNumber = document.querySelector(".item-total-number");
-
-  const itemPrice = document.querySelector(".item-price");
-
-  itemMinusButton.addEventListener("click", minusCalc);
-
-  itemPlusButton.addEventListener("click", plusCalc);
+  for (let i = 0; i < itemPlusButton.length; i++) {
+    itemPlusButton[i].addEventListener("click", plusCalc(i));
+  }
 
   function minusCalc() {
     itemNumber--;
