@@ -8,6 +8,21 @@ export function getExistingCart() {
   }
 }
 
+function cartChecker() {
+  const cart = localStorage.getItem("cart");
+  if (!cart) {
+    const currentCart = getExistingCart();
+    saveCart(currentCart);
+  }
+}
+
+function saveCart(cartItem) {
+  localStorage.setItem("cart", JSON.stringify(cartItem));
+  cartItemsLength();
+}
+
+cartChecker();
+
 export function cartItemsLength() {
   const cartIcon = document.querySelector(".cart-number-icon");
 
