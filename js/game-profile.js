@@ -32,7 +32,7 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-
+    console.log(singleResult);
     const gameGenres = singleResult.genres;
 
     let background2 = singleResult.background_image;
@@ -43,7 +43,7 @@ async function fetchSingleGame() {
 
     let developer = "Unknown";
 
-    if (singleResult.developers.name !== null || singleResult.developers.name !== undefined) {
+    if (singleResult.developers.length > 0) {
       developer = singleResult.developers[0].name;
     }
 
