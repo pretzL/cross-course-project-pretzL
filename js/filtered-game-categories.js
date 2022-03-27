@@ -53,12 +53,15 @@ async function getFilteredGames() {
         continue;
       }
 
-      gamesContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
-          <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
-            <h3>${games[i].name}</h3>
-            <p>Rating: ${games[i].rating}</p>
-            <p>Released: ${games[i].released}</p>
-            </a>`;
+      gamesContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${games[i].id}">
+        <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
+        <h3>${games[i].name}</h3>
+        <p>Rating: ${games[i].rating}</p>
+        <p>Released: ${games[i].released}</p>
+      </a>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
+      </div>`;
     }
   } catch (error) {
     console.log(error);
