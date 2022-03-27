@@ -40,14 +40,17 @@ async function getGames() {
       favoriteGamesContainer.innerHTML = `<p class="favorites-error">You have no games in your favorites.</p>`;
     }
 
-    favorites.forEach((favorite) => {
-      favoriteGamesContainer.innerHTML += `<a href="/game-profile.html?id=${favorite.id}" class="card">
-          <img src="${favorite.background_image}" class="card-image" alt="${favorite.name}"/>
-            <h3>${favorite.name}</h3>
-            <p>Rating: ${favorite.rating}</p>
-            <p>Released: ${favorite.released}</p>
+    for (let i = 0; i < favorites.length; i++) {
+      if (i === 3) {
+        break;
+      }
+      favoriteGamesContainer.innerHTML += `<a href="/game-profile.html?id=${favorites[i].id}" class="card">
+          <img src="${favorites[i].background_image}" class="card-image" alt="${favorites[i].name}"/>
+            <h3>${favorites[i].name}</h3>
+            <p>Rating: ${favorites[i].rating}</p>
+            <p>Released: ${favorites[i].released}</p>
             </a>`;
-    });
+    }
 
     for (let i = 0; i < games.length; i++) {
       if (i === 3) {

@@ -1,3 +1,5 @@
+import { getExistingFavorites } from "./components/favoriteFunctions.js";
+
 const cors = "https://noroffcors.herokuapp.com/";
 
 const baseURL = "https://api.rawg.io/api/games";
@@ -36,6 +38,19 @@ async function getSearch() {
       if (games[i].rating === 0) {
         continue;
       }
+
+      let iconHTML = " favorite_border ";
+
+      const favorites = getExistingFavorites();
+
+      const doesObjectExist = favorites.find(function (fav) {
+        return Number(fav.id) === Number(games[i].id);
+      });
+
+      if (doesObjectExist) {
+        iconHTML = " favorite ";
+      }
+
       searchContainer.innerHTML += `<div class="card">
       <a href="/game-profile.html?id=${games[i].id}">
         <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
@@ -43,8 +58,50 @@ async function getSearch() {
         <p>Rating: ${games[i].rating}</p>
         <p>Released: ${games[i].released}</p>
       </a>
-        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}"> favorite_border </span>
+      <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].background_image}" data-name="${games[i].name}" data-rating="${games[i].rating}" data-rel="${games[i].released}">${iconHTML}</span>
       </div>`;
+    }
+
+    // FAVORITES SYSTEM
+
+    const favoriteButtons = document.querySelectorAll(".favorite-icon");
+
+    favoriteButtons.forEach((button) => {
+      button.addEventListener("click", handleClick);
+    });
+
+    function handleClick({ target }) {
+      if (target.innerHTML === " favorite_border ") {
+        target.innerHTML = " favorite ";
+      } else {
+        target.innerHTML = " favorite_border ";
+      }
+
+      const gameId = this.dataset.id;
+      const gameImg = this.dataset.img;
+      const gameName = this.dataset.name;
+      const gameRating = this.dataset.rating;
+      const gameRel = this.dataset.rel;
+
+      const currentFavorites = getExistingFavorites();
+
+      const favoriteExists = currentFavorites.find(function (fav) {
+        return fav.id === gameId;
+      });
+
+      if (!favoriteExists) {
+        const gameToFavorite = { id: gameId, background_image: gameImg, name: gameName, rating: gameRating, released: gameRel };
+        currentFavorites.push(gameToFavorite);
+
+        saveFavorites(currentFavorites);
+      } else {
+        const newFavorites = currentFavorites.filter((fav) => fav.id !== gameId);
+        saveFavorites(newFavorites);
+      }
+    }
+
+    function saveFavorites(fav) {
+      localStorage.setItem("favorites", JSON.stringify(fav));
     }
   } catch (error) {
     console.log(error);
