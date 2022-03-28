@@ -41,13 +41,14 @@ for (let i = 0; i < carts.length; i++) {
   const itemPlusButton = document.querySelectorAll(".item-number-plus");
   const itemTotalNumber = document.querySelectorAll(".item-total-number");
   const itemPrice = document.querySelectorAll(".item-price");
-  for (let i = 0; i < itemMinusButton.length; i++) {
-    itemMinusButton[i].addEventListener("click", minusCalc(i));
-  }
 
-  for (let i = 0; i < itemPlusButton.length; i++) {
-    itemPlusButton[i].addEventListener("click", plusCalc(i));
-  }
+  itemMinusButton.forEach((button) => {
+    button.addEventListener("click", minusCalc);
+  });
+
+  itemPlusButton.forEach((button) => {
+    button.addEventListener("click", plusCalc);
+  });
 
   function minusCalc() {
     itemNumber--;
