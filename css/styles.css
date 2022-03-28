@@ -892,6 +892,7 @@ h5 {
   border-radius: 50%;
   position: absolute;
   padding: 0 0.3rem;
+  cursor: pointer;
 }
 
 .cart-icons {

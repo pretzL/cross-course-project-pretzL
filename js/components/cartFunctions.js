@@ -27,6 +27,10 @@ export function cartItemsLength() {
   const cartIcon = document.querySelector(".cart-number-icon");
 
   cartIcon.innerHTML = JSON.parse(localStorage.cart).length;
+
+  cartIcon.onclick = () => {
+    location.href = "/cart.html";
+  };
 }
 
 cartItemsLength();
