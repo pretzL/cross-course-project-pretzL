@@ -13,12 +13,6 @@ if (carts.length === 0) {
   cartContainer.innerHTML = `<p class="cart-error">You have no games in your cart.</p>`;
 }
 
-let itemNumber = 1;
-
-let price = 19.94;
-
-let priceTotal = price * itemNumber;
-
 for (let i = 0; i < carts.length; i++) {
   cartContainer.innerHTML += `
       <div class="cart-item">
@@ -27,22 +21,46 @@ for (let i = 0; i < carts.length; i++) {
         </div>
         <p class="item-grid2">${carts[i].name}</p>
         <div class="item-one-total-counter item-grid3">
-          <button class="item-number-minus">-</button>
-          <p class="item-total-number">${itemNumber}</p>
-          <button class="item-number-plus">+</button>
+          <button class="item-number-minus" data-type="minus">-</button>
+          <p class="item-total-number" data-type="number">${itemNumber}</p>
+          <button class="item-number-plus" data-type="plus">+</button>
         </div>
-        <p class="item-price item-grid4">$ ${priceTotal}</p>
+        <p class="item-price item-grid4" data-type="price">${totalPrice}</p>
         <div class="item-trashcan item-grid5"><span class="material-icons"> delete </span></div>
       </div>`;
 
   // PRICE CALCULATOR
 
-  const itemMinusButton = document.querySelectorAll(".item-number-minus");
-  const itemPlusButton = document.querySelectorAll(".item-number-plus");
-  const itemTotalNumber = document.querySelectorAll(".item-total-number");
-  const itemPrice = document.querySelectorAll(".item-price");
+  const itemTotalNumber = document.querySelectorAll('[data-type="number"]');
+  const itemPrice = document.querySelectorAll('[data-type="price"]');
 
-  itemMinusButton.forEach((button) => {
+  const buttonContainer = document.querySelectorAll(".item-one-total-counter");
+
+  buttonContainer.forEach((container) => {
+    container.addEventListener("click", (event) => {
+      let itemNumber = 1;
+      let price = 20;
+      let priceTotal = price * itemNumber;
+
+      if (event.target.dataset.type === "minus") {
+        itemNumber--;
+        itemTotalNumber.innerHTML = itemNumber;
+        itemPrice.innerHTML = priceTotal;
+        console.log("minus", itemNumber);
+        console.log("price", priceTotal);
+      }
+
+      if (event.target.dataset.type === "plus") {
+        itemNumber++;
+        itemTotalNumber.innerText = itemNumber;
+        itemPrice.innerHTML = priceTotal;
+        console.log("plus", itemNumber);
+        console.log("price", priceTotal);
+      }
+    });
+  });
+
+  /* itemMinusButton.forEach((button) => {
     button.addEventListener("click", minusCalc);
   });
 
@@ -64,7 +82,7 @@ for (let i = 0; i < carts.length; i++) {
     itemPrice.innerHTML = "$" + price * itemNumber;
   }
 
-  const itemTotalPrice = document.querySelector(".item-total-price");
+  const itemTotalPrice = document.querySelector(".item-total-price"); */
 }
 
 // REMOVE ITEM FROM CART
