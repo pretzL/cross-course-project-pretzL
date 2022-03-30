@@ -481,8 +481,7 @@ footer {
   margin-left: 2rem;
 }
 
-.item-one-total-counter,
-.item-two-total-counter {
+.item-total-counter {
   display: flex;
   border: var(--border) white;
   width: 30vw;
@@ -633,8 +632,7 @@ footer {
   align-items: center;
 }
 
-.item-one-total-counter button,
-.item-two-total-counter button {
+.item-total-counter button {
   width: 20px;
 }
 
@@ -1326,8 +1324,7 @@ h5 {
     height: 90vh;
   }
 
-  .item-one-total-counter,
-  .item-two-total-counter {
+  .item-total-counter {
     width: 10vw;
   }
 

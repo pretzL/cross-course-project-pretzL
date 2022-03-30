@@ -20,7 +20,7 @@ for (let i = 0; i < carts.length; i++) {
           <img src="${carts[i].background_image}" class="cart-image-small" alt="Cart Item Image Small" />
         </div>
         <p class="item-grid2">${carts[i].name}</p>
-        <div class="item-one-total-counter item-grid3">
+        <div class="item-total-counter item-grid3">
           <button class="item-number-minus" data-type="minus">-</button>
           <p class="item-total-number" data-type="number">${itemNumber}</p>
           <button class="item-number-plus" data-type="plus">+</button>
