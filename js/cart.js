@@ -13,6 +13,11 @@ if (carts.length === 0) {
   cartContainer.innerHTML = `<p class="cart-error">You have no games in your cart.</p>`;
 }
 
+let itemNumber = 1;
+let price = 20;
+
+let totalPrice = price * itemNumber;
+
 for (let i = 0; i < carts.length; i++) {
   cartContainer.innerHTML += `
       <div class="cart-item">
@@ -25,65 +30,64 @@ for (let i = 0; i < carts.length; i++) {
           <p class="item-total-number" data-type="number">${itemNumber}</p>
           <button class="item-number-plus" data-type="plus">+</button>
         </div>
-        <p class="item-price item-grid4" data-type="price">${totalPrice}</p>
+        <p class="item-price item-grid4" data-type="price">$${totalPrice}</p>
         <div class="item-trashcan item-grid5"><span class="material-icons"> delete </span></div>
       </div>`;
-
-  // PRICE CALCULATOR
-
-  const itemTotalNumber = document.querySelectorAll('[data-type="number"]');
-  const itemPrice = document.querySelectorAll('[data-type="price"]');
-
-  const buttonContainer = document.querySelectorAll(".item-one-total-counter");
-
-  buttonContainer.forEach((container) => {
-    container.addEventListener("click", (event) => {
-      let itemNumber = 1;
-      let price = 20;
-      let priceTotal = price * itemNumber;
-
-      if (event.target.dataset.type === "minus") {
-        itemNumber--;
-        itemTotalNumber.innerHTML = itemNumber;
-        itemPrice.innerHTML = priceTotal;
-        console.log("minus", itemNumber);
-        console.log("price", priceTotal);
-      }
-
-      if (event.target.dataset.type === "plus") {
-        itemNumber++;
-        itemTotalNumber.innerText = itemNumber;
-        itemPrice.innerHTML = priceTotal;
-        console.log("plus", itemNumber);
-        console.log("price", priceTotal);
-      }
-    });
-  });
-
-  /* itemMinusButton.forEach((button) => {
-    button.addEventListener("click", minusCalc);
-  });
-
-  itemPlusButton.forEach((button) => {
-    button.addEventListener("click", plusCalc);
-  });
-
-  function minusCalc() {
-    itemNumber--;
-    console.log("minus");
-    itemTotalNumber.innerHTML = itemNumber;
-    itemPrice.innerHTML = "$" + price * itemNumber;
-  }
-
-  function plusCalc() {
-    itemNumber++;
-    console.log("plus");
-    itemTotalNumber.innerHTML = itemNumber;
-    itemPrice.innerHTML = "$" + price * itemNumber;
-  }
-
-  const itemTotalPrice = document.querySelector(".item-total-price"); */
 }
+
+// PRICE CALCULATOR
+
+/* const itemTotalNumber = document.querySelectorAll('[data-type="number"]');
+const itemPrice = document.querySelectorAll('[data-type="price"]');
+
+const buttonContainer = document.querySelectorAll(".item-one-total-counter");
+
+function createCalc() {
+  const div = document.createElement("div");
+  const minusButton = document.createElement("button");
+  const number = document.createElement("p");
+  const plusButton = document.createElement("button");
+  const trashcan = document.querySelector(".item-trashcan");
+
+  div.classList.add("item-total-counter item-grid3");
+  minusButton.classList.add("item-number-minus");
+  number.classList.add("item-total-number");
+  plusButton.classList.add("item-number-plus");
+
+  minusButton.dataset.type = "minus";
+  number.dataset.type = "number";
+  plusButton.dataset.type = "plus";
+
+  minusButton.innerText = "-";
+  plusButton.innerText = "+";
+  number.innerText = itemNumber;
+
+  minusButton;
+
+  document.body.insertBefore(div, trashcan);
+}
+
+buttonContainer.forEach((container) => {
+  container.addEventListener("click", (event) => {
+    let priceTotal = price * itemNumber;
+
+    if (event.target.dataset.type === "minus") {
+      itemNumber--;
+      itemTotalNumber.innerHTML = itemNumber;
+      itemPrice.innerHTML = priceTotal;
+      console.log("minus", itemNumber);
+      console.log("price", priceTotal);
+    }
+
+    if (event.target.dataset.type === "plus") {
+      itemNumber++;
+      itemTotalNumber.innerText = itemNumber;
+      itemPrice.innerHTML = priceTotal;
+      console.log("plus", itemNumber);
+      console.log("price", priceTotal);
+    }
+  });
+}); */
 
 // REMOVE ITEM FROM CART
 
