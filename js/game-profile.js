@@ -238,34 +238,3 @@ async function fetchSingleGame() {
 }
 
 fetchSingleGame();
-
-/*
-function handleClick() {
-      if (favoriteIcon.innerHTML === " favorite_border ") {
-        favoriteIcon.innerHTML = " favorite ";
-      } else {
-        favoriteIcon.innerHTML = " favorite_border ";
-      }
-
-      const currentFavorites = getExistingFavorites();
-
-      const favoriteExists = currentFavorites.find(function (fav) {
-        return fav.id === singleResult.id;
-      });
-
-      if (!favoriteExists) {
-        const gameToFavorite = singleResult;
-
-        currentFavorites.push(gameToFavorite);
-
-        saveFavorites(currentFavorites);
-      } else {
-        const newFavorites = currentFavorites.filter((fav) => fav.id !== singleResult.id);
-        saveFavorites(newFavorites);
-      }
-    }
-
-    function saveFavorites(favorites) {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-    */
