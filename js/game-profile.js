@@ -13,11 +13,11 @@ if (id === null) {
   location.href = "/";
 }
 
-const baseURL = "https://api.rawg.io/api/games";
-const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-const detailsURL = baseURL + "/" + id + key;
+const URL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products/";
 
-const cors = "https://noroffcors.herokuapp.com/";
+const key = "?consumer_key=ck_44e09142efd549e6fc0fccc82da53cd3c729ed35&consumer_secret=cs_1c51b536d5c44192e46721509bf3a9d1eecc07af";
+
+const detailsURL = URL + id + key;
 
 const gameInfo = document.querySelector(".game-info");
 const pageTitle = document.querySelector("title");
@@ -33,25 +33,12 @@ async function fetchSingleGame() {
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
     console.log(singleResult);
-    const gameGenres = singleResult.genres;
-
-    let background2 = singleResult.background_image;
-
-    if (singleResult.background_image_additional !== null) {
-      background2 = singleResult.background_image_additional;
-    }
-
-    let developer = "Unknown";
-
-    if (singleResult.developers.length > 0) {
-      developer = singleResult.developers[0].name;
-    }
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
-    headerImage.style.backgroundImage = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.background_image})`;
-    subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${background2})`;
-    subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${background2})`;
+    headerImage.style.backgroundImage = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.images[0].src})`;
+    subHeading1.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.images[1].src})`;
+    subHeading2.style.background = `linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(${singleResult.images[1].src})`;
     headerImage.style.backgroundSize = "cover";
     headerImage.style.backgroundRepeat = "norepeat";
     headerImage.style.backgroundPosition = "center";
@@ -62,27 +49,29 @@ async function fetchSingleGame() {
     subHeading2.style.backgroundRepeat = "norepeat";
     subHeading2.style.backgroundPosition = "center";
 
-    const allGenres = gameGenres.map((game) => game.name).join(", ");
+    let iconHTML = " favorite_border ";
 
-    const descriptionString = singleResult.description;
+    const getFavorites = getExistingFavorites();
 
-    const filteredSentences = descriptionString.split(".").filter((item, index) => {
-      if (index < 7) {
-        return item;
-      }
+    const ifObjectExist = getFavorites.find(function (fav) {
+      return Number(fav.id) === Number(singleResult.id);
     });
 
-    gameInfo.innerHTML = `<img src=${singleResult.background_image} class="game-image-large game-grid1" />
-                          <img src=${background2} class="game-image-small game-grid2" />
+    if (ifObjectExist) {
+      iconHTML = " favorite ";
+    }
+
+    gameInfo.innerHTML = `<img src=${singleResult.images[0].src} class="game-image-large game-grid1" />
+                          <img src=${singleResult.images[1].src} class="game-image-small game-grid2" />
                           <div class="about-the-game game-grid3">
-                          <p>Rating: ${singleResult.rating}</p>
-                          <p>Release date: ${singleResult.released}</p>
-                          <p>Developer: ${developer}</p>
-                          <p>Tags: ${allGenres}</p>
-                          <p>Price: $38</p>
+                          <p>Rating: ${singleResult.attributes[0].options[0]}</p>
+                          <p>Release date: ${singleResult.attributes[1].options[0]}</p>
+                          <p>Developer: ${singleResult.attributes[2].options[0]}</p>
+                          <p>Tags: ${singleResult.attributes[3].options[0]}</p>
+                          <p>Price: $${singleResult.price}</p>
                           <div class="game-profile-buttons">
                           <button class="cart-cta btn open-button add-to-cart-cta"><span class="material-icons md-18 cart-cta-icon"> shopping_cart </span>Add to Cart</button>
-                          <span class="material-icons md-36 favorite-icon"> favorite_border </span>
+                          <span class="material-icons md-36 favorite-icon" data-id="${singleResult.id}" data-img="${singleResult.images[0].src}" data-name="${singleResult.name}" data-rating="${singleResult.attributes[0].options[0]}" data-rel="${singleResult.attributes[1].options[0]}">${iconHTML}</span>
                           </div>
                           <dialog class="modal" id="modal">
                             <p>Item added to cart!</p>
@@ -94,7 +83,7 @@ async function fetchSingleGame() {
                           </div>
                           <div class="game-summary game-grid4">
                           <h3>Summary</h3>
-                          <p class="game-summary">${filteredSentences}</p>
+                          <p class="game-summary">${singleResult.description}</p>
                           </div>`;
     // MODAL
 
@@ -132,33 +121,38 @@ async function fetchSingleGame() {
       favoriteIcon.innerHTML = " favorite ";
     }
 
-    function handleClick() {
-      if (favoriteIcon.innerHTML === " favorite_border ") {
-        favoriteIcon.innerHTML = " favorite ";
+    function handleClick({ target }) {
+      if (target.innerHTML === " favorite_border ") {
+        target.innerHTML = " favorite ";
       } else {
-        favoriteIcon.innerHTML = " favorite_border ";
+        target.innerHTML = " favorite_border ";
       }
+
+      const gameId = this.dataset.id;
+      const gameImg = this.dataset.img;
+      const gameName = this.dataset.name;
+      const gameRating = this.dataset.rating;
+      const gameRel = this.dataset.rel;
 
       const currentFavorites = getExistingFavorites();
 
       const favoriteExists = currentFavorites.find(function (fav) {
-        return fav.id === singleResult.id;
+        return fav.id === gameId;
       });
 
       if (!favoriteExists) {
-        const gameToFavorite = singleResult;
-
+        const gameToFavorite = { id: gameId, background_image: gameImg, name: gameName, rating: gameRating, released: gameRel };
         currentFavorites.push(gameToFavorite);
 
         saveFavorites(currentFavorites);
       } else {
-        const newFavorites = currentFavorites.filter((fav) => fav.id !== singleResult.id);
+        const newFavorites = currentFavorites.filter((fav) => fav.id !== gameId);
         saveFavorites(newFavorites);
       }
     }
 
-    function saveFavorites(favorites) {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
+    function saveFavorites(fav) {
+      localStorage.setItem("favorites", JSON.stringify(fav));
     }
 
     // ADD TO CART
@@ -193,7 +187,7 @@ async function fetchSingleGame() {
 
     //SUGGESTED GAMES QUERY
 
-    let loopedGameSlugs = "";
+    /* let loopedGameSlugs = "";
     let slug1 = "adventure";
     let slug2 = "";
 
@@ -236,7 +230,7 @@ async function fetchSingleGame() {
             <p>Rating: ${filteredGames[i].rating}</p>
             <p>Released: ${filteredGames[i].released}</p>
             </a>`;
-    }
+    } */
   } catch (error) {
     console.log(error);
     errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
@@ -244,3 +238,34 @@ async function fetchSingleGame() {
 }
 
 fetchSingleGame();
+
+/*
+function handleClick() {
+      if (favoriteIcon.innerHTML === " favorite_border ") {
+        favoriteIcon.innerHTML = " favorite ";
+      } else {
+        favoriteIcon.innerHTML = " favorite_border ";
+      }
+
+      const currentFavorites = getExistingFavorites();
+
+      const favoriteExists = currentFavorites.find(function (fav) {
+        return fav.id === singleResult.id;
+      });
+
+      if (!favoriteExists) {
+        const gameToFavorite = singleResult;
+
+        currentFavorites.push(gameToFavorite);
+
+        saveFavorites(currentFavorites);
+      } else {
+        const newFavorites = currentFavorites.filter((fav) => fav.id !== singleResult.id);
+        saveFavorites(newFavorites);
+      }
+    }
+
+    function saveFavorites(favorites) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+    */
