@@ -187,50 +187,36 @@ async function fetchSingleGame() {
 
     //SUGGESTED GAMES QUERY
 
-    /* let loopedGameSlugs = "";
-    let slug1 = "adventure";
-    let slug2 = "";
+    const gameTags = singleResult.tags[0].id;
+    const baseURL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products";
 
-    for (let count = 0; count < gameGenres.length; count++) {
-      if (count === 2) {
-        break;
-      }
+    console.log(gameTags);
 
-      if (gameGenres[0].slug) {
-        slug1 = gameGenres[0].slug;
-      }
-
-      if (gameGenres.slug) {
-        slug2 = gameGenres[1].slug;
-      }
-
-      loopedGameSlugs += gameGenres[count].slug + ",";
-    }
-
-    const tags = `&genres=${slug1},${slug2}`;
-    const suggestedURL = cors + baseURL + key + tags;
+    const tags = `&tag=${gameTags}`;
+    const exclude = `&exclude=${singleResult.id}`;
+    const suggestedURL = baseURL + key + tags + exclude;
     const suggestedResponse = await fetch(suggestedURL);
     const suggestedSingleResult = await suggestedResponse.json();
 
-    const suggestedGamesResult = suggestedSingleResult.results;
+    console.log(suggestedSingleResult);
 
     suggestedGames.innerHTML = "";
 
-    const filteredID = Number(id);
-    const filteredGames = suggestedGamesResult.filter((game) => game.id !== filteredID).slice(0, 3);
-
-    for (let i = 0; i < filteredGames.length; i++) {
+    for (let i = 0; i < suggestedSingleResult.length; i++) {
       if (i === 3) {
         break;
       }
 
-      suggestedGames.innerHTML += `<a href="/game-profile.html?id=${filteredGames[i].id}" class="card">
-          <img src="${filteredGames[i].background_image}" class="card-image" alt="${filteredGames[i].name}"/>
-            <h3>${filteredGames[i].name}</h3>
-            <p>Rating: ${filteredGames[i].rating}</p>
-            <p>Released: ${filteredGames[i].released}</p>
-            </a>`;
-    } */
+      suggestedGames.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${suggestedSingleResult[i].id}">
+        <img src="${suggestedSingleResult[i].images[0].src}" class="card-image" alt="${suggestedSingleResult[i].name}"/>
+        <h3>${suggestedSingleResult[i].name}</h3>
+        <p>Rating: ${suggestedSingleResult[i].attributes[0].options[0]}</p>
+        <p>Released: ${suggestedSingleResult[i].attributes[1].options[0]}</p>
+      </a>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${suggestedSingleResult[i].id}" data-img="${suggestedSingleResult[i].images[0].src}" data-name="${suggestedSingleResult[i].name}" data-rating="${suggestedSingleResult[i].attributes[0].options[0]}" data-rel="${suggestedSingleResult[i].attributes[1].options[0]}">${iconHTML}</span>
+      </div>`;
+    }
   } catch (error) {
     console.log(error);
     errorContainer.innerHTML = errorMessage("An error occurred when calling the API, error: " + error);
