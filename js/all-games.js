@@ -15,6 +15,8 @@ async function getGames() {
 
     const games = [...results];
 
+    // SORT RESULTS ALPHABETICALLY
+
     games.sort(function (a, b) {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();

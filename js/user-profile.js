@@ -10,16 +10,16 @@ const headingOne = document.querySelector("h1");
 const usernameText = document.querySelector(".username-text");
 
 if (username === null) {
-  headingOne.innerHTML = "User Profile";
-  usernameText.innerHTML = "Username";
+  headingOne.innerText = "User Profile";
+  usernameText.innerText = "Username";
 } else {
-  headingOne.innerHTML = username + "`s profile";
-  usernameText.innerHTML = username;
+  headingOne.innerText = username + "`s profile";
+  usernameText.innerText = username;
 }
 
-const URL = "https://api.rawg.io/api/games";
+const URL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products?per_page=20";
 
-const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
+const key = "&consumer_key=ck_44e09142efd549e6fc0fccc82da53cd3c729ed35&consumer_secret=cs_1c51b536d5c44192e46721509bf3a9d1eecc07af";
 
 const favoriteGamesContainer = document.querySelector(".user-favorite-games-content");
 const purchasedGamesContainer = document.querySelector(".user-purchased-games-content");
@@ -29,7 +29,7 @@ async function getGames() {
     const response = await fetch(URL + key);
     const results = await response.json();
 
-    const games = results.results;
+    const games = results;
 
     favoriteGamesContainer.innerHTML = "";
     purchasedGamesContainer.innerHTML = "";
@@ -73,44 +73,69 @@ async function getGames() {
         break;
       }
 
-      purchasedGamesContainer.innerHTML += `<a href="/game-profile.html?id=${games[i].id}" class="card">
-          <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
-            <h3>${games[i].name}</h3>
-            <p>Rating: ${games[i].rating}</p>
-            <p>Released: ${games[i].released}</p>
-            </a>`;
+      let iconHTML = " favorite_border ";
+
+      const favorites = getExistingFavorites();
+
+      const doesObjectExist = favorites.find(function (fav) {
+        return Number(fav.id) === Number(games[i].id);
+      });
+
+      if (doesObjectExist) {
+        iconHTML = " favorite ";
+      }
+
+      purchasedGamesContainer.innerHTML += `<div class="card">
+      <a href="/game-profile.html?id=${games[i].id}">
+        <img src="${games[i].images[0].src}" class="card-image" alt="${games[i].name}"/>
+        <h3>${games[i].name}</h3>
+        <p>Rating: ${games[i].attributes[0].options[0]}</p>
+        <p>Released: ${games[i].attributes[1].options[0]}</p>
+      </a>
+      <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].images[0].src}" data-name="${games[i].name}" data-rating="${games[i].attributes[0].options[0]}" data-rel="${games[i].attributes[1].options[0]}">${iconHTML}</span>
+      </div>`;
     }
 
-    // REMOVE ITEM FROM CART
+    // FAVORITES SYSTEM
 
-    const favoriteIcon = document.querySelectorAll(".favorite-icon");
+    const favoriteButtons = document.querySelectorAll(".favorite-icon");
 
-    favoriteIcon.forEach((button) => {
-      button.addEventListener("click", removeFromFav);
+    favoriteButtons.forEach((button) => {
+      button.addEventListener("click", handleClick);
     });
 
-    function removeFromFav() {
-      favorites.forEach((favItem) => {
-        const favExists = favorites.find(function (fav) {
-          return Number(fav.id) === Number(favItem.id);
-        });
+    function handleClick({ target }) {
+      if (target.innerHTML === " favorite_border ") {
+        target.innerHTML = " favorite ";
+      } else {
+        target.innerHTML = " favorite_border ";
+      }
 
-        if (!favExists) {
-          const gameToFav = favItem;
+      const gameId = this.dataset.id;
+      const gameImg = this.dataset.img;
+      const gameName = this.dataset.name;
+      const gameRating = this.dataset.rating;
+      const gameRel = this.dataset.rel;
 
-          currentFav.push(gameToFav);
+      const currentFavorites = getExistingFavorites();
 
-          saveFav(currentFav);
-        } else {
-          const newItem = favorites.filter((fav) => fav.id !== favItem.id);
-          saveFav(newItem);
-        }
+      const favoriteExists = currentFavorites.find(function (fav) {
+        return fav.id === gameId;
       });
+
+      if (!favoriteExists) {
+        const gameToFavorite = { id: gameId, background_image: gameImg, name: gameName, rating: gameRating, released: gameRel };
+        currentFavorites.push(gameToFavorite);
+
+        saveFavorites(currentFavorites);
+      } else {
+        const newFavorites = currentFavorites.filter((fav) => fav.id !== gameId);
+        saveFavorites(newFavorites);
+      }
     }
 
-    function saveFav(favItem) {
-      localStorage.setItem("favorites", JSON.stringify(favItem));
-      location.reload();
+    function saveFavorites(fav) {
+      localStorage.setItem("favorites", JSON.stringify(fav));
     }
   } catch (error) {
     console.log(error);

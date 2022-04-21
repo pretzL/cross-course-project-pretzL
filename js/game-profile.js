@@ -32,7 +32,6 @@ async function fetchSingleGame() {
     //INITIAL ID QUERY
     const response = await fetch(detailsURL);
     const singleResult = await response.json();
-    console.log(singleResult);
 
     pageTitle.innerHTML = `${singleResult.name}`;
     headingOne.innerHTML = `${singleResult.name}`;
@@ -187,18 +186,16 @@ async function fetchSingleGame() {
 
     //SUGGESTED GAMES QUERY
 
-    const gameTags = singleResult.tags[0].id;
     const baseURL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products";
 
-    console.log(gameTags);
-
+    // Sort based on the viewed games' tags
+    const gameTags = singleResult.tags[0].id;
     const tags = `&tag=${gameTags}`;
     const exclude = `&exclude=${singleResult.id}`;
+
     const suggestedURL = baseURL + key + tags + exclude;
     const suggestedResponse = await fetch(suggestedURL);
     const suggestedSingleResult = await suggestedResponse.json();
-
-    console.log(suggestedSingleResult);
 
     suggestedGames.innerHTML = "";
 

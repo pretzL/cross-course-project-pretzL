@@ -13,8 +13,6 @@ if (carts.length === 0) {
   cartContainer.innerHTML = `<p class="cart-error">You have no games in your cart.</p>`;
 }
 
-console.log(carts);
-
 let itemNumber = 1;
 
 for (let i = 0; i < carts.length; i++) {

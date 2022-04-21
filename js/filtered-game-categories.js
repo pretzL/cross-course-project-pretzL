@@ -16,19 +16,28 @@ const parameter = params.get("parameter");
 
 const headingOne = document.querySelector("h1");
 
+const newReleasesNav = document.querySelector(".new-releases-nav");
+const topGamesNav = document.querySelector(".top-games-nav");
+
+// Sort by date
+
 if (parameter === "new") {
   orderBy = `&orderby=date&order=desc`;
   headingOne.innerHTML = "New Releases";
+  newReleasesNav.classList.add("page-active");
 }
 
+// This option would only be worth using if the API was being updated with upcoming games.
+
 if (parameter === "coming") {
-  orderBy = "";
+  orderBy = `&orderby=date&order=desc`;
   headingOne.innerHTML = "Coming Soon";
 }
 
 if (parameter === "top") {
-  orderBy = "";
+  orderBy = ``;
   headingOne.innerHTML = "Top Games";
+  topGamesNav.classList.add("page-active");
 }
 
 async function getFilteredGames() {
