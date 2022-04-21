@@ -4,14 +4,31 @@ const URL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products?per_page=20";
 
 const key = "&consumer_key=ck_44e09142efd549e6fc0fccc82da53cd3c729ed35&consumer_secret=cs_1c51b536d5c44192e46721509bf3a9d1eecc07af";
 
+const orderBy = "&orderby=title";
+
 const gamesContainer = document.querySelector(".all-games-content");
 
 async function getGames() {
   try {
-    const response = await fetch(URL + key);
+    const response = await fetch(URL + key + orderBy);
     const results = await response.json();
 
-    const games = results;
+    const games = [...results];
+
+    games.sort(function (a, b) {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    });
 
     gamesContainer.innerHTML = "";
 
