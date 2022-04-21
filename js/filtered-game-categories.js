@@ -43,7 +43,6 @@ async function getFilteredGames() {
 
     if (parameter === "top") {
       const sortedResults = results.sort(function (a, b) {
-        console.log({ a: parseFloat(a.attributes[0].options[0]) });
         return parseFloat(b.attributes[0].options[0]) - parseFloat(a.attributes[0].options[0]);
       });
       games = [...sortedResults];
