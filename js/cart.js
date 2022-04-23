@@ -19,7 +19,7 @@ for (let i = 0; i < carts.length; i++) {
   cartContainer.innerHTML += `
       <div class="cart-item">
         <div class="cart-image-container item-grid1">
-          <img src="${carts[i].images[0].src}" class="cart-image-small" alt="Cart Item Image Small" />
+          <img src="${carts[i].images[0].src}" class="cart-image-small" alt="${carts[i].name} Image Small" />
         </div>
         <p class="item-grid2">${carts[i].name}</p>
         <div class="item-total-counter item-grid3">

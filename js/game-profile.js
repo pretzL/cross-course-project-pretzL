@@ -60,8 +60,8 @@ async function fetchSingleGame() {
       iconHTML = " favorite ";
     }
 
-    gameInfo.innerHTML = `<img src=${singleResult.images[0].src} class="game-image-large game-grid1" />
-                          <img src=${singleResult.images[1].src} class="game-image-small game-grid2" />
+    gameInfo.innerHTML = `<img src=${singleResult.images[0].src} class="game-image-large game-grid1" alt="${singleResult.name} cover" />
+                          <img src=${singleResult.images[1].src} class="game-image-small game-grid2" alt="${singleResult.name} banner"/>
                           <div class="about-the-game game-grid3">
                           <p>Rating: ${singleResult.attributes[0].options[0]}</p>
                           <p>Release date: ${singleResult.attributes[1].options[0]}</p>
