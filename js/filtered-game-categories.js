@@ -1,12 +1,8 @@
 import { getExistingFavorites } from "./components/favoriteFunctions.js";
 
-const cors = "https://noroffcors.herokuapp.com/";
+const baseURL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products?per_page=20";
 
-const baseURL = "https://api.rawg.io/api/games";
-
-const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
-
-const page_size = "&page_size=20";
+const key = "&consumer_key=ck_44e09142efd549e6fc0fccc82da53cd3c729ed35&consumer_secret=cs_1c51b536d5c44192e46721509bf3a9d1eecc07af";
 
 let orderBy = "";
 
@@ -20,33 +16,46 @@ const parameter = params.get("parameter");
 
 const headingOne = document.querySelector("h1");
 
-const today = new Date().toISOString().split("T")[0];
+const newReleasesNav = document.querySelector(".new-releases-nav");
+const topGamesNav = document.querySelector(".top-games-nav");
 
-const oneYearFromNow = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
-const filteredYear = oneYearFromNow.toISOString().split("T")[0];
+// Sort by date
 
 if (parameter === "new") {
-  orderBy = `&dates=2022-01-01,${today}&ordering=-released`;
+  orderBy = `&orderby=date&order=desc`;
   headingOne.innerHTML = "New Releases";
+  newReleasesNav.classList.add("page-active");
 }
 
+// This option would only be worth using if the API was being updated with upcoming games.
+
 if (parameter === "coming") {
-  orderBy = `&dates=${today},${filteredYear}&ordering=released`;
+  orderBy = `&orderby=date&order=desc`;
   headingOne.innerHTML = "Coming Soon";
 }
 
 if (parameter === "top") {
-  orderBy = "&ordering=-rating";
+  orderBy = ``;
   headingOne.innerHTML = "Top Games";
+  topGamesNav.classList.add("page-active");
 }
 
 async function getFilteredGames() {
   try {
-    const url = cors + baseURL + key + page_size + orderBy;
+    const url = baseURL + key + orderBy;
     const response = await fetch(url);
     const results = await response.json();
 
-    const games = results.results;
+    let games = [...results];
+
+    // Solution for top sorting from Abi
+
+    if (parameter === "top") {
+      const sortedResults = results.sort(function (a, b) {
+        return parseFloat(b.attributes[0].options[0]) - parseFloat(a.attributes[0].options[0]);
+      });
+      games = [...sortedResults];
+    }
 
     gamesContainer.innerHTML = "";
 
@@ -69,12 +78,12 @@ async function getFilteredGames() {
 
       gamesContainer.innerHTML += `<div class="card">
       <a href="/game-profile.html?id=${games[i].id}">
-        <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
+        <img src="${games[i].images[0].src}" class="card-image" alt="${games[i].name}"/>
         <h3>${games[i].name}</h3>
-        <p>Rating: ${games[i].rating}</p>
-        <p>Released: ${games[i].released}</p>
+        <p>Rating: ${games[i].attributes[0].options[0]}</p>
+        <p>Released: ${games[i].attributes[1].options[0]}</p>
       </a>
-      <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].background_image}" data-name="${games[i].name}" data-rating="${games[i].rating}" data-rel="${games[i].released}">${iconHTML}</span>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].images[0].src}" data-name="${games[i].name}" data-rating="${games[i].attributes[0].options[0]}" data-rel="${games[i].attributes[1].options[0]}">${iconHTML}</span>
       </div>`;
     }
 

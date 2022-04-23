@@ -1,5 +1,4 @@
 import { getExistingCart } from "./components/cartFunctions.js";
-import { cartItemsLength } from "./components/cartFunctions.js";
 
 // Form tutorial by Web Dev Simplified (YouTube)
 
@@ -94,19 +93,3 @@ for (let i = 0; i < carts.length; i++) {
 }
 
 itemTotal.innerHTML = "Total: $" + calculatedPriceTotal.toFixed(2);
-
-/* <h3 class="">Item</h3>
-                  <div class="checkout-item-one">
-                    <p>The Elder Scrolls V: Skyrim</p>
-                  </div>
-                  <div class="checkout-item-two">
-                    <p>Raft</p>
-                  </div>
-                </div>
-                <div class="checkout-price checkout-grid3">
-                  <h3>Price</h3>
-                  <div class="price-list">
-                    <p class="item-one-price">$40.83</p>
-                    <p class="item-two-price">$19.94</p>
-                  </div>
-*/

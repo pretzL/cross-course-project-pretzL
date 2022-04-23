@@ -1,17 +1,36 @@
 import { getExistingFavorites } from "./components/favoriteFunctions.js";
 
-const URL = "https://api.rawg.io/api/games";
+const URL = "https://pretzl.one/gamehub-wp/wp-json/wc/v3/products?per_page=20";
 
-const key = "?key=35f9fd70b7b54c25bfa1662ebdeaff60";
+const key = "&consumer_key=ck_44e09142efd549e6fc0fccc82da53cd3c729ed35&consumer_secret=cs_1c51b536d5c44192e46721509bf3a9d1eecc07af";
+
+const orderBy = "&orderby=title";
 
 const gamesContainer = document.querySelector(".all-games-content");
 
 async function getGames() {
   try {
-    const response = await fetch(URL + key);
+    const response = await fetch(URL + key + orderBy);
     const results = await response.json();
 
-    const games = results.results;
+    const games = [...results];
+
+    // SORT RESULTS ALPHABETICALLY
+
+    games.sort(function (a, b) {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    });
 
     gamesContainer.innerHTML = "";
 
@@ -34,12 +53,12 @@ async function getGames() {
 
       gamesContainer.innerHTML += `<div class="card">
       <a href="/game-profile.html?id=${games[i].id}">
-        <img src="${games[i].background_image}" class="card-image" alt="${games[i].name}"/>
+        <img src="${games[i].images[0].src}" class="card-image" alt="${games[i].name}"/>
         <h3>${games[i].name}</h3>
-        <p>Rating: ${games[i].rating}</p>
-        <p>Released: ${games[i].released}</p>
+        <p>Rating: ${games[i].attributes[0].options[0]}</p>
+        <p>Released: ${games[i].attributes[1].options[0]}</p>
       </a>
-      <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].background_image}" data-name="${games[i].name}" data-rating="${games[i].rating}" data-rel="${games[i].released}">${iconHTML}</span>
+        <span class="material-icons md-24 favorite-icon favorite-icon-small" data-id="${games[i].id}" data-img="${games[i].images[0].src}" data-name="${games[i].name}" data-rating="${games[i].attributes[0].options[0]}" data-rel="${games[i].attributes[1].options[0]}">${iconHTML}</span>
       </div>`;
     }
 
