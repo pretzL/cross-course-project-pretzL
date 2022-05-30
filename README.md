@@ -1,4 +1,4 @@
-# Food For Thought
+# GameHub WordPress
 
 ![GameHub website](https://user-images.githubusercontent.com/30121693/171004488-359b41af-29be-4329-8cc9-e9ed717b86cb.png)
 
